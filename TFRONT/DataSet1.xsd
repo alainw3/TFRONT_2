@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TFRONT" msprop:Generator_RowEvHandlerName="TFRONTRowChangeEventHandler" msprop:Generator_RowDeletedName="TFRONTRowDeleted" msprop:Generator_RowDeletingName="TFRONTRowDeleting" msprop:Generator_RowEvArgName="TFRONTRowChangeEvent" msprop:Generator_TablePropName="TFRONT" msprop:Generator_RowChangedName="TFRONTRowChanged" msprop:Generator_UserTableName="TFRONT" msprop:Generator_RowChangingName="TFRONTRowChanging" msprop:Generator_RowClassName="TFRONTRow" msprop:Generator_TableClassName="TFRONTDataTable" msprop:Generator_TableVarName="tableTFRONT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colid" msprop:Generator_ColumnPropNameInTable="colidColumn" msprop:Generator_ColumnPropNameInRow="colid" msprop:Generator_UserColumnName="colid" msprop:Generator_ColumnVarNameInTable="columncolid" type="xs:string" minOccurs="0" />
+              <xs:element name="colDat" msdata:DateTimeMode="Local" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_UserColumnName="colDat" msprop:Generator_ColumnVarNameInTable="columncolDat" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="THOUR" msprop:Generator_RowEvHandlerName="THOURRowChangeEventHandler" msprop:Generator_RowDeletedName="THOURRowDeleted" msprop:Generator_RowDeletingName="THOURRowDeleting" msprop:Generator_RowEvArgName="THOURRowChangeEvent" msprop:Generator_TablePropName="THOUR" msprop:Generator_RowChangedName="THOURRowChanged" msprop:Generator_UserTableName="THOUR" msprop:Generator_RowChangingName="THOURRowChanging" msprop:Generator_RowClassName="THOURRow" msprop:Generator_TableClassName="THOURDataTable" msprop:Generator_TableVarName="tableTHOUR">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colid" msprop:Generator_ColumnPropNameInTable="colidColumn" msprop:Generator_ColumnPropNameInRow="colid" msprop:Generator_UserColumnName="colid" msprop:Generator_ColumnVarNameInTable="columncolid" type="xs:string" />
+              <xs:element name="colTitle" msprop:Generator_ColumnPropNameInTable="colTitleColumn" msprop:Generator_ColumnPropNameInRow="colTitle" msprop:Generator_UserColumnName="colTitle" msprop:Generator_ColumnVarNameInTable="columncolTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="colMon" msprop:Generator_ColumnPropNameInTable="colMonColumn" msprop:Generator_ColumnPropNameInRow="colMon" msprop:Generator_UserColumnName="colMon" msprop:Generator_ColumnVarNameInTable="columncolMon" type="xs:string" minOccurs="0" />
+              <xs:element name="colTue" msprop:Generator_ColumnPropNameInTable="colTueColumn" msprop:Generator_ColumnPropNameInRow="colTue" msprop:Generator_UserColumnName="colTue" msprop:Generator_ColumnVarNameInTable="columncolTue" type="xs:string" minOccurs="0" />
+              <xs:element name="colWed" msprop:Generator_ColumnPropNameInTable="colWedColumn" msprop:Generator_ColumnPropNameInRow="colWed" msprop:Generator_UserColumnName="colWed" msprop:Generator_ColumnVarNameInTable="columncolWed" type="xs:string" minOccurs="0" />
+              <xs:element name="colThu" msprop:Generator_ColumnPropNameInTable="colThuColumn" msprop:Generator_ColumnPropNameInRow="colThu" msprop:Generator_UserColumnName="colThu" msprop:Generator_ColumnVarNameInTable="columncolThu" type="xs:string" minOccurs="0" />
+              <xs:element name="colFri" msprop:Generator_ColumnPropNameInTable="colFriColumn" msprop:Generator_ColumnPropNameInRow="colFri" msprop:Generator_UserColumnName="colFri" msprop:Generator_ColumnVarNameInTable="columncolFri" type="xs:string" minOccurs="0" />
+              <xs:element name="colSat" msprop:Generator_ColumnPropNameInTable="colSatColumn" msprop:Generator_ColumnPropNameInRow="colSat" msprop:Generator_UserColumnName="colSat" msprop:Generator_ColumnVarNameInTable="columncolSat" type="xs:string" minOccurs="0" />
+              <xs:element name="colSun" msprop:Generator_ColumnPropNameInTable="colSunColumn" msprop:Generator_ColumnPropNameInRow="colSun" msprop:Generator_UserColumnName="colSun" msprop:Generator_ColumnVarNameInTable="columncolSun" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TLEARN" msprop:Generator_RowEvHandlerName="TLEARNRowChangeEventHandler" msprop:Generator_RowDeletedName="TLEARNRowDeleted" msprop:Generator_RowDeletingName="TLEARNRowDeleting" msprop:Generator_RowEvArgName="TLEARNRowChangeEvent" msprop:Generator_TablePropName="TLEARN" msprop:Generator_RowChangedName="TLEARNRowChanged" msprop:Generator_RowChangingName="TLEARNRowChanging" msprop:Generator_TableClassName="TLEARNDataTable" msprop:Generator_RowClassName="TLEARNRow" msprop:Generator_TableVarName="tableTLEARN" msprop:Generator_UserTableName="TLEARN">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colId" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnVarNameInTable="columncolId" msprop:Generator_UserColumnName="colId" type="xs:string" />
+              <xs:element name="colLang" msprop:Generator_ColumnPropNameInRow="colLang" msprop:Generator_ColumnPropNameInTable="colLangColumn" msprop:Generator_ColumnVarNameInTable="columncolLang" msprop:Generator_UserColumnName="colLang" type="xs:string" minOccurs="0" />
+              <xs:element name="colDat" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnVarNameInTable="columncolDat" msprop:Generator_UserColumnName="colDat" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="TFRONTKey1">
+      <xs:selector xpath=".//mstns:TFRONT" />
+      <xs:field xpath="mstns:colid" />
+    </xs:unique>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:THOUR" />
+      <xs:field xpath="mstns:colid" />
+    </xs:unique>
+    <xs:unique name="TLEARN_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TLEARN" />
+      <xs:field xpath="mstns:colId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

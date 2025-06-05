@@ -1,0 +1,713 @@
+﻿namespace TFRONT
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            pictureBox1 = new PictureBox();
+            labelCV = new Label();
+            dateTimePickerCV = new DateTimePicker();
+            tFRONTBindingSource = new BindingSource(components);
+            button1 = new Button();
+            dataSet11 = new DataSet1();
+            labelHK = new Label();
+            dateTimePickerHK = new DateTimePicker();
+            tFRONTBindingSource1 = new BindingSource(components);
+            labelSP = new Label();
+            dateTimePickerSP = new DateTimePicker();
+            tFRONTBindingSource2 = new BindingSource(components);
+            groupBox1 = new GroupBox();
+            buttonCV = new Button();
+            dateTimePickerCVEnv = new DateTimePicker();
+            tFRONTBindingCVEnv = new BindingSource(components);
+            labelCVEnv = new Label();
+            dateTimePickerCVFRLecture = new DateTimePicker();
+            tFRONTBindingCVFRLecture = new BindingSource(components);
+            labelCVFRLecture = new Label();
+            label3 = new Label();
+            labelCVFRUpdate = new Label();
+            dateTimePickerCVFR = new DateTimePicker();
+            tFRONTBindingCVFRUpdate = new BindingSource(components);
+            dateTimePickerCVLecture = new DateTimePicker();
+            tFRONTBindingCVLecture = new BindingSource(components);
+            labelCVLecture = new Label();
+            label1 = new Label();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            groupBox2 = new GroupBox();
+            dateTimePickerMAT = new DateTimePicker();
+            bindingSourceMAT = new BindingSource(components);
+            labelMAT = new Label();
+            dateTimePickerPRO = new DateTimePicker();
+            bindingSourcePRO = new BindingSource(components);
+            labelPRO = new Label();
+            dateTimePickerMIT = new DateTimePicker();
+            bindingSourceMIT = new BindingSource(components);
+            labelMIT = new Label();
+            dateTimePickerLLM = new DateTimePicker();
+            tFRONTBindingLLM = new BindingSource(components);
+            labelLLM = new Label();
+            dataGridView1 = new DataGridView();
+            colLangDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colDatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tLEARNBindingSource = new BindingSource(components);
+            dataGridView2 = new DataGridView();
+            colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colMonDataGridViewTHOUR = new DataGridViewCheckBoxColumn();
+            colTueDataGridViewTHOUR = new DataGridViewCheckBoxColumn();
+            colWedDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
+            colThuDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
+            colFriDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
+            colSatDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
+            colSunDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
+            tHOURBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource2).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVEnv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRLecture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRUpdate).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVLecture).BeginInit();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceMAT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourcePRO).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceMIT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingLLM).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).BeginInit();
+            SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.mr;
+            pictureBox1.Location = new Point(12, 25);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(197, 197);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // labelCV
+            // 
+            labelCV.AutoSize = true;
+            labelCV.Location = new Point(24, 60);
+            labelCV.Name = "labelCV";
+            labelCV.Size = new Size(69, 15);
+            labelCV.TabIndex = 1;
+            labelCV.Text = "Last Update";
+            // 
+            // dateTimePickerCV
+            // 
+            dateTimePickerCV.DataBindings.Add(new Binding("Text", tFRONTBindingSource, "colDat", true));
+            dateTimePickerCV.DataBindings.Add(new Binding("Value", tFRONTBindingSource, "colDat", true));
+            dateTimePickerCV.Format = DateTimePickerFormat.Short;
+            dateTimePickerCV.Location = new Point(108, 58);
+            dateTimePickerCV.Name = "dateTimePickerCV";
+            dateTimePickerCV.Size = new Size(128, 23);
+            dateTimePickerCV.TabIndex = 2;
+            // 
+            // tFRONTBindingSource
+            // 
+            tFRONTBindingSource.DataMember = "TFRONT";
+            tFRONTBindingSource.DataSource = typeof(DataSet1);
+            tFRONTBindingSource.Filter = "colid='01'";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(889, 509);
+            button1.Name = "button1";
+            button1.Size = new Size(132, 33);
+            button1.TabIndex = 3;
+            button1.Text = "Save";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // dataSet11
+            // 
+            dataSet11.DataSetName = "DataSet1";
+            dataSet11.Namespace = "http://tempuri.org/DataSet1.xsd";
+            dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // labelHK
+            // 
+            labelHK.AutoSize = true;
+            labelHK.BackColor = SystemColors.Control;
+            labelHK.Location = new Point(890, 30);
+            labelHK.Name = "labelHK";
+            labelHK.Size = new Size(70, 15);
+            labelHK.TabIndex = 4;
+            labelHK.Text = "HackerRank";
+            // 
+            // dateTimePickerHK
+            // 
+            dateTimePickerHK.DataBindings.Add(new Binding("Text", tFRONTBindingSource1, "colDat", true));
+            dateTimePickerHK.Font = new Font("Segoe UI", 9F);
+            dateTimePickerHK.Format = DateTimePickerFormat.Short;
+            dateTimePickerHK.Location = new Point(969, 25);
+            dateTimePickerHK.Name = "dateTimePickerHK";
+            dateTimePickerHK.Size = new Size(128, 23);
+            dateTimePickerHK.TabIndex = 5;
+            // 
+            // tFRONTBindingSource1
+            // 
+            tFRONTBindingSource1.DataMember = "TFRONT";
+            tFRONTBindingSource1.DataSource = dataSet11;
+            tFRONTBindingSource1.Filter = "colid='02'";
+            // 
+            // labelSP
+            // 
+            labelSP.AutoSize = true;
+            labelSP.Location = new Point(24, 265);
+            labelSP.Name = "labelSP";
+            labelSP.Size = new Size(35, 15);
+            labelSP.TabIndex = 6;
+            labelSP.Text = "Sport";
+            // 
+            // dateTimePickerSP
+            // 
+            dateTimePickerSP.DataBindings.Add(new Binding("Text", tFRONTBindingSource2, "colDat", true));
+            dateTimePickerSP.Format = DateTimePickerFormat.Short;
+            dateTimePickerSP.Location = new Point(81, 263);
+            dateTimePickerSP.Name = "dateTimePickerSP";
+            dateTimePickerSP.Size = new Size(128, 23);
+            dateTimePickerSP.TabIndex = 7;
+            // 
+            // tFRONTBindingSource2
+            // 
+            tFRONTBindingSource2.DataMember = "TFRONT";
+            tFRONTBindingSource2.DataSource = dataSet11;
+            tFRONTBindingSource2.Filter = "colid='03'";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(buttonCV);
+            groupBox1.Controls.Add(dateTimePickerCVEnv);
+            groupBox1.Controls.Add(labelCVEnv);
+            groupBox1.Controls.Add(dateTimePickerCVFRLecture);
+            groupBox1.Controls.Add(labelCVFRLecture);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(labelCVFRUpdate);
+            groupBox1.Controls.Add(dateTimePickerCVFR);
+            groupBox1.Controls.Add(dateTimePickerCVLecture);
+            groupBox1.Controls.Add(labelCVLecture);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(labelCV);
+            groupBox1.Controls.Add(dateTimePickerCV);
+            groupBox1.Location = new Point(239, 25);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(333, 399);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "CV";
+            // 
+            // buttonCV
+            // 
+            buttonCV.Location = new Point(24, 355);
+            buttonCV.Name = "buttonCV";
+            buttonCV.Size = new Size(107, 35);
+            buttonCV.TabIndex = 13;
+            buttonCV.Text = "CV";
+            buttonCV.UseVisualStyleBackColor = true;
+            buttonCV.Click += buttonCV_Click;
+            // 
+            // dateTimePickerCVEnv
+            // 
+            dateTimePickerCVEnv.DataBindings.Add(new Binding("Text", tFRONTBindingCVEnv, "colDat", true));
+            dateTimePickerCVEnv.Format = DateTimePickerFormat.Short;
+            dateTimePickerCVEnv.Location = new Point(154, 291);
+            dateTimePickerCVEnv.Name = "dateTimePickerCVEnv";
+            dateTimePickerCVEnv.Size = new Size(132, 23);
+            dateTimePickerCVEnv.TabIndex = 12;
+            // 
+            // tFRONTBindingCVEnv
+            // 
+            tFRONTBindingCVEnv.DataMember = "TFRONT";
+            tFRONTBindingCVEnv.DataSource = dataSet11;
+            tFRONTBindingCVEnv.Filter = "colId='07'";
+            // 
+            // labelCVEnv
+            // 
+            labelCVEnv.AutoSize = true;
+            labelCVEnv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelCVEnv.Location = new Point(24, 294);
+            labelCVEnv.Name = "labelCVEnv";
+            labelCVEnv.Size = new Size(74, 15);
+            labelCVEnv.TabIndex = 11;
+            labelCVEnv.Text = "Candidature";
+            // 
+            // dateTimePickerCVFRLecture
+            // 
+            dateTimePickerCVFRLecture.DataBindings.Add(new Binding("Text", tFRONTBindingCVFRLecture, "colDat", true));
+            dateTimePickerCVFRLecture.Format = DateTimePickerFormat.Short;
+            dateTimePickerCVFRLecture.Location = new Point(155, 246);
+            dateTimePickerCVFRLecture.Name = "dateTimePickerCVFRLecture";
+            dateTimePickerCVFRLecture.Size = new Size(131, 23);
+            dateTimePickerCVFRLecture.TabIndex = 10;
+            // 
+            // tFRONTBindingCVFRLecture
+            // 
+            tFRONTBindingCVFRLecture.DataMember = "TFRONT";
+            tFRONTBindingCVFRLecture.DataSource = dataSet11;
+            tFRONTBindingCVFRLecture.Filter = "colId='06'";
+            // 
+            // labelCVFRLecture
+            // 
+            labelCVFRLecture.AutoSize = true;
+            labelCVFRLecture.Location = new Point(24, 246);
+            labelCVFRLecture.Name = "labelCVFRLecture";
+            labelCVFRLecture.Size = new Size(90, 15);
+            labelCVFRLecture.TabIndex = 9;
+            labelCVFRLecture.Text = "Dernière lecture";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label3.Location = new Point(24, 158);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 15);
+            label3.TabIndex = 8;
+            label3.Text = "Français";
+            // 
+            // labelCVFRUpdate
+            // 
+            labelCVFRUpdate.AutoSize = true;
+            labelCVFRUpdate.Location = new Point(24, 197);
+            labelCVFRUpdate.Name = "labelCVFRUpdate";
+            labelCVFRUpdate.Size = new Size(112, 15);
+            labelCVFRUpdate.TabIndex = 6;
+            labelCVFRUpdate.Text = "Dernière mise à jour";
+            // 
+            // dateTimePickerCVFR
+            // 
+            dateTimePickerCVFR.DataBindings.Add(new Binding("Value", tFRONTBindingSource, "colDat", true));
+            dateTimePickerCVFR.DataBindings.Add(new Binding("Text", tFRONTBindingCVFRUpdate, "colDat", true));
+            dateTimePickerCVFR.Format = DateTimePickerFormat.Short;
+            dateTimePickerCVFR.Location = new Point(155, 195);
+            dateTimePickerCVFR.Name = "dateTimePickerCVFR";
+            dateTimePickerCVFR.Size = new Size(128, 23);
+            dateTimePickerCVFR.TabIndex = 7;
+            // 
+            // tFRONTBindingCVFRUpdate
+            // 
+            tFRONTBindingCVFRUpdate.DataMember = "TFRONT";
+            tFRONTBindingCVFRUpdate.DataSource = dataSet11;
+            tFRONTBindingCVFRUpdate.Filter = "colId='05'";
+            // 
+            // dateTimePickerCVLecture
+            // 
+            dateTimePickerCVLecture.DataBindings.Add(new Binding("Text", tFRONTBindingCVLecture, "colDat", true));
+            dateTimePickerCVLecture.Format = DateTimePickerFormat.Short;
+            dateTimePickerCVLecture.Location = new Point(107, 109);
+            dateTimePickerCVLecture.Name = "dateTimePickerCVLecture";
+            dateTimePickerCVLecture.Size = new Size(131, 23);
+            dateTimePickerCVLecture.TabIndex = 5;
+            // 
+            // tFRONTBindingCVLecture
+            // 
+            tFRONTBindingCVLecture.DataMember = "TFRONT";
+            tFRONTBindingCVLecture.DataSource = dataSet11;
+            tFRONTBindingCVLecture.Filter = "colId = '04'";
+            // 
+            // labelCVLecture
+            // 
+            labelCVLecture.AutoSize = true;
+            labelCVLecture.Location = new Point(24, 109);
+            labelCVLecture.Name = "labelCVLecture";
+            labelCVLecture.Size = new Size(70, 15);
+            labelCVLecture.TabIndex = 4;
+            labelCVLecture.Text = "Last Lecture";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.Location = new Point(24, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(45, 15);
+            label1.TabIndex = 3;
+            label1.Text = "English";
+            // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(dateTimePickerMAT);
+            groupBox2.Controls.Add(labelMAT);
+            groupBox2.Controls.Add(dateTimePickerPRO);
+            groupBox2.Controls.Add(labelPRO);
+            groupBox2.Controls.Add(dateTimePickerMIT);
+            groupBox2.Controls.Add(labelMIT);
+            groupBox2.Controls.Add(dateTimePickerLLM);
+            groupBox2.Controls.Add(labelLLM);
+            groupBox2.Location = new Point(603, 25);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(259, 396);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "AI";
+            // 
+            // dateTimePickerMAT
+            // 
+            dateTimePickerMAT.DataBindings.Add(new Binding("Text", bindingSourceMAT, "colDat", true));
+            dateTimePickerMAT.Format = DateTimePickerFormat.Short;
+            dateTimePickerMAT.Location = new Point(104, 156);
+            dateTimePickerMAT.Name = "dateTimePickerMAT";
+            dateTimePickerMAT.Size = new Size(148, 23);
+            dateTimePickerMAT.TabIndex = 7;
+            dateTimePickerMAT.Validated += dateTimePickerMAT_Validated;
+            // 
+            // bindingSourceMAT
+            // 
+            bindingSourceMAT.DataMember = "TFRONT";
+            bindingSourceMAT.DataSource = dataSet11;
+            bindingSourceMAT.Filter = "colId='10'";
+            // 
+            // labelMAT
+            // 
+            labelMAT.AutoSize = true;
+            labelMAT.Location = new Point(15, 158);
+            labelMAT.Name = "labelMAT";
+            labelMAT.Size = new Size(35, 15);
+            labelMAT.TabIndex = 6;
+            labelMAT.Text = "Math";
+            // 
+            // dateTimePickerPRO
+            // 
+            dateTimePickerPRO.DataBindings.Add(new Binding("Text", bindingSourcePRO, "colDat", true));
+            dateTimePickerPRO.Format = DateTimePickerFormat.Short;
+            dateTimePickerPRO.Location = new Point(104, 201);
+            dateTimePickerPRO.Name = "dateTimePickerPRO";
+            dateTimePickerPRO.Size = new Size(148, 23);
+            dateTimePickerPRO.TabIndex = 5;
+            dateTimePickerPRO.Validated += dateTimePickerPRO_Validated;
+            // 
+            // bindingSourcePRO
+            // 
+            bindingSourcePRO.DataMember = "TFRONT";
+            bindingSourcePRO.DataSource = dataSet11;
+            bindingSourcePRO.Filter = "colId='11'";
+            // 
+            // labelPRO
+            // 
+            labelPRO.AutoSize = true;
+            labelPRO.Location = new Point(15, 204);
+            labelPRO.Name = "labelPRO";
+            labelPRO.Size = new Size(22, 15);
+            labelPRO.TabIndex = 4;
+            labelPRO.Text = "Git";
+            // 
+            // dateTimePickerMIT
+            // 
+            dateTimePickerMIT.DataBindings.Add(new Binding("Text", bindingSourceMIT, "colDat", true));
+            dateTimePickerMIT.Format = DateTimePickerFormat.Short;
+            dateTimePickerMIT.Location = new Point(104, 107);
+            dateTimePickerMIT.Name = "dateTimePickerMIT";
+            dateTimePickerMIT.Size = new Size(148, 23);
+            dateTimePickerMIT.TabIndex = 3;
+            dateTimePickerMIT.Validated += dateTimePickerMIT_Validated;
+            // 
+            // bindingSourceMIT
+            // 
+            bindingSourceMIT.DataMember = "TFRONT";
+            bindingSourceMIT.DataSource = dataSet11;
+            bindingSourceMIT.Filter = "colId='09'";
+            // 
+            // labelMIT
+            // 
+            labelMIT.AutoSize = true;
+            labelMIT.Location = new Point(15, 112);
+            labelMIT.Name = "labelMIT";
+            labelMIT.Size = new Size(27, 15);
+            labelMIT.TabIndex = 2;
+            labelMIT.Text = "MIT";
+            // 
+            // dateTimePickerLLM
+            // 
+            dateTimePickerLLM.DataBindings.Add(new Binding("Text", tFRONTBindingLLM, "colDat", true));
+            dateTimePickerLLM.Format = DateTimePickerFormat.Short;
+            dateTimePickerLLM.Location = new Point(104, 54);
+            dateTimePickerLLM.Name = "dateTimePickerLLM";
+            dateTimePickerLLM.Size = new Size(148, 23);
+            dateTimePickerLLM.TabIndex = 1;
+            dateTimePickerLLM.ValueChanged += dateTimePickerLLM_ValueChanged;
+            dateTimePickerLLM.Validated += dateTimePickerLLM_Validated;
+            // 
+            // tFRONTBindingLLM
+            // 
+            tFRONTBindingLLM.DataMember = "TFRONT";
+            tFRONTBindingLLM.DataSource = dataSet11;
+            tFRONTBindingLLM.Filter = "colId='08'";
+            // 
+            // labelLLM
+            // 
+            labelLLM.AutoSize = true;
+            labelLLM.Location = new Point(15, 59);
+            labelLLM.Name = "labelLLM";
+            labelLLM.Size = new Size(30, 15);
+            labelLLM.TabIndex = 0;
+            labelLLM.Text = "LLM";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colLangDataGridViewTextBoxColumn, colDatDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = tLEARNBindingSource;
+            dataGridView1.Location = new Point(898, 66);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(351, 283);
+            dataGridView1.TabIndex = 10;
+            dataGridView1.CellPainting += dataGridView1_CellPainting;
+            // 
+            // colLangDataGridViewTextBoxColumn
+            // 
+            colLangDataGridViewTextBoxColumn.DataPropertyName = "colLang";
+            colLangDataGridViewTextBoxColumn.HeaderText = "colLang";
+            colLangDataGridViewTextBoxColumn.Name = "colLangDataGridViewTextBoxColumn";
+            colLangDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colDatDataGridViewTextBoxColumn
+            // 
+            colDatDataGridViewTextBoxColumn.DataPropertyName = "colDat";
+            colDatDataGridViewTextBoxColumn.HeaderText = "colDat";
+            colDatDataGridViewTextBoxColumn.Name = "colDatDataGridViewTextBoxColumn";
+            // 
+            // tLEARNBindingSource
+            // 
+            tLEARNBindingSource.DataMember = "TLEARN";
+            tLEARNBindingSource.DataSource = dataSet11;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { colTitleDataGridViewTHOUR, colMonDataGridViewTHOUR, colTueDataGridViewTHOUR, colWedDataGridViewTextBoxColumn, colThuDataGridViewTextBoxColumn, colFriDataGridViewTextBoxColumn, colSatDataGridViewTextBoxColumn, colSunDataGridViewTextBoxColumn });
+            dataGridView2.DataSource = tHOURBindingSource;
+            dataGridView2.Location = new Point(1313, 62);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(533, 942);
+            dataGridView2.TabIndex = 11;
+            // 
+            // colTitleDataGridViewTHOUR
+            // 
+            colTitleDataGridViewTHOUR.DataPropertyName = "colTitle";
+            colTitleDataGridViewTHOUR.HeaderText = "colTitle";
+            colTitleDataGridViewTHOUR.Name = "colTitleDataGridViewTHOUR";
+            // 
+            // colMonDataGridViewTHOUR
+            // 
+            colMonDataGridViewTHOUR.DataPropertyName = "colMon";
+            colMonDataGridViewTHOUR.FalseValue = "";
+            colMonDataGridViewTHOUR.HeaderText = "colMon";
+            colMonDataGridViewTHOUR.Name = "colMonDataGridViewTHOUR";
+            colMonDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colMonDataGridViewTHOUR.SortMode = DataGridViewColumnSortMode.Automatic;
+            colMonDataGridViewTHOUR.TrueValue = "*";
+            colMonDataGridViewTHOUR.Width = 50;
+            // 
+            // colTueDataGridViewTHOUR
+            // 
+            colTueDataGridViewTHOUR.DataPropertyName = "colTue";
+            colTueDataGridViewTHOUR.HeaderText = "colTue";
+            colTueDataGridViewTHOUR.Name = "colTueDataGridViewTHOUR";
+            colTueDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colTueDataGridViewTHOUR.SortMode = DataGridViewColumnSortMode.Automatic;
+            colTueDataGridViewTHOUR.TrueValue = "*";
+            colTueDataGridViewTHOUR.Width = 50;
+            // 
+            // colWedDataGridViewTextBoxColumn
+            // 
+            colWedDataGridViewTextBoxColumn.DataPropertyName = "colWed";
+            colWedDataGridViewTextBoxColumn.HeaderText = "colWed";
+            colWedDataGridViewTextBoxColumn.Name = "colWedDataGridViewTextBoxColumn";
+            colWedDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colWedDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            colWedDataGridViewTextBoxColumn.TrueValue = "*";
+            colWedDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colThuDataGridViewTextBoxColumn
+            // 
+            colThuDataGridViewTextBoxColumn.DataPropertyName = "colThu";
+            colThuDataGridViewTextBoxColumn.HeaderText = "colThu";
+            colThuDataGridViewTextBoxColumn.Name = "colThuDataGridViewTextBoxColumn";
+            colThuDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colThuDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            colThuDataGridViewTextBoxColumn.TrueValue = "*";
+            colThuDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colFriDataGridViewTextBoxColumn
+            // 
+            colFriDataGridViewTextBoxColumn.DataPropertyName = "colFri";
+            colFriDataGridViewTextBoxColumn.HeaderText = "colFri";
+            colFriDataGridViewTextBoxColumn.Name = "colFriDataGridViewTextBoxColumn";
+            colFriDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colFriDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            colFriDataGridViewTextBoxColumn.TrueValue = "*";
+            colFriDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSatDataGridViewTextBoxColumn
+            // 
+            colSatDataGridViewTextBoxColumn.DataPropertyName = "colSat";
+            colSatDataGridViewTextBoxColumn.HeaderText = "colSat";
+            colSatDataGridViewTextBoxColumn.Name = "colSatDataGridViewTextBoxColumn";
+            colSatDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSatDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            colSatDataGridViewTextBoxColumn.TrueValue = "*";
+            colSatDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSunDataGridViewTextBoxColumn
+            // 
+            colSunDataGridViewTextBoxColumn.DataPropertyName = "colSun";
+            colSunDataGridViewTextBoxColumn.HeaderText = "colSun";
+            colSunDataGridViewTextBoxColumn.Name = "colSunDataGridViewTextBoxColumn";
+            colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSunDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            colSunDataGridViewTextBoxColumn.TrueValue = "*";
+            colSunDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // tHOURBindingSource
+            // 
+            tHOURBindingSource.DataMember = "THOUR";
+            tHOURBindingSource.DataSource = dataSet11;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1888, 1181);
+            Controls.Add(dataGridView2);
+            Controls.Add(dataGridView1);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(dateTimePickerSP);
+            Controls.Add(labelSP);
+            Controls.Add(dateTimePickerHK);
+            Controls.Add(labelHK);
+            Controls.Add(button1);
+            Controls.Add(pictureBox1);
+            Name = "Form1";
+            Text = "Form1";
+            WindowState = FormWindowState.Maximized;
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataSet11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource2).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVEnv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRLecture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRUpdate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVLecture).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceMAT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourcePRO).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceMIT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingLLM).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private PictureBox pictureBox1;
+        private Label labelCV;
+        private DateTimePicker dateTimePickerCV;
+        private Button button1;
+        private BindingSource tFRONTBindingSource;
+        public DataSet1 dataSet11;
+        private Label labelHK;
+        private DateTimePicker dateTimePickerHK;
+        private BindingSource tFRONTBindingSource1;
+        private Label labelSP;
+        private DateTimePicker dateTimePickerSP;
+        private BindingSource tFRONTBindingSource2;
+        private GroupBox groupBox1;
+        private DateTimePicker dateTimePickerCVLecture;
+        private Label labelCVLecture;
+        private Label label1;
+        private BindingSource tFRONTBindingCVLecture;
+        private DateTimePicker dateTimePickerCVFRLecture;
+        private Label labelCVFRLecture;
+        private Label label3;
+        private Label labelCVFRUpdate;
+        private DateTimePicker dateTimePickerCVFR;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private BindingSource tFRONTBindingCVFRUpdate;
+        private BindingSource tFRONTBindingCVFRLecture;
+        private DateTimePicker dateTimePickerCVEnv;
+        private Label labelCVEnv;
+        private BindingSource tFRONTBindingCVEnv;
+        private Button buttonCV;
+        private GroupBox groupBox2;
+        private DateTimePicker dateTimePickerPRO;
+        private Label labelPRO;
+        private DateTimePicker dateTimePickerMIT;
+        private Label labelMIT;
+        private DateTimePicker dateTimePickerLLM;
+        private Label labelLLM;
+        private DateTimePicker dateTimePickerMAT;
+        private Label labelMAT;
+        private BindingSource tFRONTBindingLLM;
+        private BindingSource bindingSourceMAT;
+        private BindingSource bindingSourcePRO;
+        private BindingSource bindingSourceMIT;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn colIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn coIIdDataGridViewTextBoxColumn;
+        private DataGridView dataGridView2;
+        private BindingSource tHOURBindingSource;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private BindingSource tLEARNBindingSource;
+        private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
+        private DataGridViewCheckBoxColumn colMonDataGridViewTHOUR;
+        private DataGridViewCheckBoxColumn colTueDataGridViewTHOUR;
+        private DataGridViewCheckBoxColumn colWedDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colThuDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colFriDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colSatDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colSunDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;
+    }
+}
