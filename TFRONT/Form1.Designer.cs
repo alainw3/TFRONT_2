@@ -87,7 +87,7 @@
             tHOURBindingSource = new BindingSource(components);
             groupBox3 = new GroupBox();
             dateTimePickerAdmin = new DateTimePicker();
-            tFRONTBindingAdmin = new BindingSource(components);
+            tFRONTBindingAdministration = new BindingSource(components);
             labelAdmin = new Label();
             dateTimePickerFinance = new DateTimePicker();
             tFRONTBindingFinance = new BindingSource(components);
@@ -112,7 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).BeginInit();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdmin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdministration).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingFinance).BeginInit();
             SuspendLayout();
             // 
@@ -629,7 +629,7 @@
             // 
             // dateTimePickerAdmin
             // 
-            dateTimePickerAdmin.DataBindings.Add(new Binding("Tag", tFRONTBindingAdmin, "colDat", true));
+            dateTimePickerAdmin.DataBindings.Add(new Binding("Text", tFRONTBindingAdministration, "colDat", true));
             dateTimePickerAdmin.Format = DateTimePickerFormat.Short;
             dateTimePickerAdmin.Location = new Point(146, 98);
             dateTimePickerAdmin.Name = "dateTimePickerAdmin";
@@ -637,11 +637,11 @@
             dateTimePickerAdmin.TabIndex = 3;
             dateTimePickerAdmin.Validated += dateTimePickerAdmin_Validated;
             // 
-            // tFRONTBindingAdmin
+            // tFRONTBindingAdministration
             // 
-            tFRONTBindingAdmin.DataMember = "TFRONT";
-            tFRONTBindingAdmin.DataSource = dataSet11;
-            tFRONTBindingAdmin.Filter = "colId='13'";
+            tFRONTBindingAdministration.DataMember = "TFRONT";
+            tFRONTBindingAdministration.DataSource = dataSet11;
+            tFRONTBindingAdministration.Filter = "colId='14'";
             // 
             // labelAdmin
             // 
@@ -720,7 +720,7 @@
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdmin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdministration).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingFinance).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -790,7 +790,7 @@
         private DateTimePicker dateTimePickerFinance;
         private Label labelFinance;
         private DateTimePicker dateTimePickerAdmin;
-        private BindingSource tFRONTBindingAdmin;
         private BindingSource tFRONTBindingFinance;
+        private BindingSource tFRONTBindingAdministration;
     }
 }

@@ -59,8 +59,13 @@ namespace TFRONT
                 tFRONTBindingSource.Filter = "colid ='01'";
 
 
+
+
+
                 tFRONTBindingSource.ResetBindings(false);
                 tFRONTBindingSource1.ResetBindings(false);
+ 
+
 
 
 
@@ -258,14 +263,15 @@ namespace TFRONT
         private void dateTimePickerFinance_Validated(object sender, EventArgs e)
         {
             commandSQL(dateTimePickerFinance, "12");
-            label_Color(dateTimePickerFinance, labelMAT, cycleFinance);
+            label_Color(dateTimePickerFinance, labelFinance, cycleFinance);
         }
 
         private void dateTimePickerAdmin_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerAdmin, "12");
-            label_Color(dateTimePickerAdmin, labelMAT, cycleAdmin);
+            commandSQL(dateTimePickerAdmin, "14");
+            label_Color(dateTimePickerAdmin, labelAdmin, cycleAdmin);
         }
+
     }
 
 }
