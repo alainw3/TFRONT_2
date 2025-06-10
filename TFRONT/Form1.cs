@@ -10,6 +10,9 @@ namespace TFRONT
         SqlConnection conn;
         SqlDataAdapter dataAdapter;
         SqlDataAdapter dataAdapterTHour;
+
+        private const int cycleFinance = -2;
+        private const int cycleAdmin = -2;
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace TFRONT
 
                 conn.Open();
 
+                // TFRONT
                 SqlCommand command = conn.CreateCommand();
                 command.CommandText = "select colid , colDat from [winman].[dbo].[TBL_TFRONT]";
 
@@ -30,7 +34,7 @@ namespace TFRONT
                 dataAdapter.Fill(dataSet11.Tables[0]);
 
 
-                //
+                // THOUR
                 SqlCommand command1 = conn.CreateCommand();
                 command1.CommandText = "select colid, colTitle, colMon, colTue, colWed, colThu, colFri, colSat, colSun  from [winman].[dbo].[TBL_THOUR]";
 
@@ -39,7 +43,7 @@ namespace TFRONT
                 dataAdapterTHour.Fill(dataSet11, "THOUR");
 
 
-                //
+                // TLEARN
                 command.CommandText = "select colid , colDat, colLang from [winman].[dbo].[TBL_TLEARN]";
 
                 dataAdapter = new SqlDataAdapter(command);
@@ -50,12 +54,9 @@ namespace TFRONT
 
 
 
-
+                // Binding data source
                 tFRONTBindingSource.DataSource = dataSet11.Tables[0];
                 tFRONTBindingSource.Filter = "colid ='01'";
-
-                //tFRONTBindingSource1.DataSource = dataSet11.Tables[0];
-                //tFRONTBindingSource1.Filter = "colid ='02'";
 
 
                 tFRONTBindingSource.ResetBindings(false);
@@ -169,13 +170,19 @@ namespace TFRONT
 
             label_Color(dateTimePickerLLM, labelLLM, -3);
             label_Color(dateTimePickerMAT, labelMAT, -2);
-            label_Color(dateTimePickerMIT, labelMIT, -3); 
+            label_Color(dateTimePickerMIT, labelMIT, -3);
             label_Color(dateTimePickerPRO, labelPRO, -3);
+
+            label_Color(dateTimePickerFinance, labelFinance, cycleFinance);
+            label_Color(dateTimePickerAdmin, labelAdmin, cycleAdmin);
+
+
         }
+
 
         private void buttonCV_Click(object sender, EventArgs e)
         {
-            var cv = new CV(dataSet11);
+            var cv = new CV();
             cv.Show();
         }
 
@@ -235,17 +242,29 @@ namespace TFRONT
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == 1 &&  e.RowIndex>=0)
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0)
                 if (
                     DateTime.ParseExact(e.Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture) < DateTime.UtcNow.AddDays(-3))
                 {
-                   e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.BackColor = Color.Red;
                 }
                 else
                 {
-                    e.CellStyle.BackColor = Color.Transparent;
+                    e.CellStyle.BackColor = Color.White;
                 }
-           
+
+        }
+
+        private void dateTimePickerFinance_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerFinance, "12");
+            label_Color(dateTimePickerFinance, labelMAT, cycleFinance);
+        }
+
+        private void dateTimePickerAdmin_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerAdmin, "12");
+            label_Color(dateTimePickerAdmin, labelMAT, cycleAdmin);
         }
     }
 

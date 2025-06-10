@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            dataSet21 = new DataSet2();
+            ((System.ComponentModel.ISupportInitialize)dataSet21).BeginInit();
             SuspendLayout();
             // 
             // reportViewer1
@@ -40,6 +42,12 @@
             reportViewer1.Size = new Size(880, 624);
             reportViewer1.TabIndex = 0;
             // 
+            // dataSet21
+            // 
+            dataSet21.DataSetName = "DataSet2";
+            dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
+            dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // CV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -49,12 +57,13 @@
             Name = "CV";
             Text = "CV";
             Load += CV_Load;
+            ((System.ComponentModel.ISupportInitialize)dataSet21).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-
+        private DataSet2 dataSet21;
     }
 }

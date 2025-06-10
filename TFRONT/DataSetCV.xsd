@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet2" msprop:Generator_DataSetName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TEXPERIENCE" msprop:Generator_RowEvHandlerName="TEXPERIENCERowChangeEventHandler" msprop:Generator_RowDeletedName="TEXPERIENCERowDeleted" msprop:Generator_RowDeletingName="TEXPERIENCERowDeleting" msprop:Generator_RowEvArgName="TEXPERIENCERowChangeEvent" msprop:Generator_TablePropName="TEXPERIENCE" msprop:Generator_RowChangedName="TEXPERIENCERowChanged" msprop:Generator_RowChangingName="TEXPERIENCERowChanging" msprop:Generator_TableClassName="TEXPERIENCEDataTable" msprop:Generator_RowClassName="TEXPERIENCERow" msprop:Generator_TableVarName="tableTEXPERIENCE" msprop:Generator_UserTableName="TEXPERIENCE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colId" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnVarNameInTable="columncolId" msprop:Generator_UserColumnName="colId" type="xs:string" />
+              <xs:element name="colDatFrom" msprop:Generator_ColumnPropNameInRow="colDatFrom" msprop:Generator_ColumnPropNameInTable="colDatFromColumn" msprop:Generator_ColumnVarNameInTable="columncolDatFrom" msprop:Generator_UserColumnName="colDatFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="colDatTo" msprop:Generator_ColumnPropNameInRow="colDatTo" msprop:Generator_ColumnPropNameInTable="colDatToColumn" msprop:Generator_ColumnVarNameInTable="columncolDatTo" msprop:Generator_UserColumnName="colDatTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="colEmployer" msprop:Generator_ColumnPropNameInRow="colEmployer" msprop:Generator_ColumnPropNameInTable="colEmployerColumn" msprop:Generator_ColumnVarNameInTable="columncolEmployer" msprop:Generator_UserColumnName="colEmployer" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TEXPERIENCE" />
+      <xs:field xpath="mstns:colId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

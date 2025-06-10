@@ -85,6 +85,13 @@
             colSatDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
             colSunDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
             tHOURBindingSource = new BindingSource(components);
+            groupBox3 = new GroupBox();
+            dateTimePickerAdmin = new DateTimePicker();
+            tFRONTBindingAdmin = new BindingSource(components);
+            labelAdmin = new Label();
+            dateTimePickerFinance = new DateTimePicker();
+            tFRONTBindingFinance = new BindingSource(components);
+            labelFinance = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -104,6 +111,9 @@
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).BeginInit();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdmin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingFinance).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -604,11 +614,75 @@
             tHOURBindingSource.DataMember = "THOUR";
             tHOURBindingSource.DataSource = dataSet11;
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(dateTimePickerAdmin);
+            groupBox3.Controls.Add(labelAdmin);
+            groupBox3.Controls.Add(dateTimePickerFinance);
+            groupBox3.Controls.Add(labelFinance);
+            groupBox3.Location = new Point(244, 440);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(326, 140);
+            groupBox3.TabIndex = 12;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Finance -   Administration";
+            // 
+            // dateTimePickerAdmin
+            // 
+            dateTimePickerAdmin.DataBindings.Add(new Binding("Tag", tFRONTBindingAdmin, "colDat", true));
+            dateTimePickerAdmin.Format = DateTimePickerFormat.Short;
+            dateTimePickerAdmin.Location = new Point(146, 98);
+            dateTimePickerAdmin.Name = "dateTimePickerAdmin";
+            dateTimePickerAdmin.Size = new Size(132, 23);
+            dateTimePickerAdmin.TabIndex = 3;
+            dateTimePickerAdmin.Validated += dateTimePickerAdmin_Validated;
+            // 
+            // tFRONTBindingAdmin
+            // 
+            tFRONTBindingAdmin.DataMember = "TFRONT";
+            tFRONTBindingAdmin.DataSource = dataSet11;
+            tFRONTBindingAdmin.Filter = "colId='13'";
+            // 
+            // labelAdmin
+            // 
+            labelAdmin.AutoSize = true;
+            labelAdmin.Location = new Point(22, 104);
+            labelAdmin.Name = "labelAdmin";
+            labelAdmin.Size = new Size(86, 15);
+            labelAdmin.TabIndex = 2;
+            labelAdmin.Text = "Administration";
+            // 
+            // dateTimePickerFinance
+            // 
+            dateTimePickerFinance.DataBindings.Add(new Binding("Text", tFRONTBindingFinance, "colDat", true));
+            dateTimePickerFinance.Format = DateTimePickerFormat.Short;
+            dateTimePickerFinance.Location = new Point(146, 37);
+            dateTimePickerFinance.Name = "dateTimePickerFinance";
+            dateTimePickerFinance.Size = new Size(132, 23);
+            dateTimePickerFinance.TabIndex = 1;
+            dateTimePickerFinance.Validated += dateTimePickerFinance_Validated;
+            // 
+            // tFRONTBindingFinance
+            // 
+            tFRONTBindingFinance.DataMember = "TFRONT";
+            tFRONTBindingFinance.DataSource = dataSet11;
+            tFRONTBindingFinance.Filter = "colId='12'";
+            // 
+            // labelFinance
+            // 
+            labelFinance.AutoSize = true;
+            labelFinance.Location = new Point(22, 40);
+            labelFinance.Name = "labelFinance";
+            labelFinance.Size = new Size(48, 15);
+            labelFinance.TabIndex = 0;
+            labelFinance.Text = "Finance";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1888, 1181);
+            Controls.Add(groupBox3);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox2);
@@ -644,6 +718,10 @@
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdmin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingFinance).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -694,10 +772,8 @@
         private BindingSource bindingSourceMIT;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn colIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn coIIdDataGridViewTextBoxColumn;
         private DataGridView dataGridView2;
         private BindingSource tHOURBindingSource;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private BindingSource tLEARNBindingSource;
         private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
         private DataGridViewCheckBoxColumn colMonDataGridViewTHOUR;
@@ -709,5 +785,12 @@
         private DataGridViewCheckBoxColumn colSunDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;
+        private GroupBox groupBox3;
+        private Label labelAdmin;
+        private DateTimePicker dateTimePickerFinance;
+        private Label labelFinance;
+        private DateTimePicker dateTimePickerAdmin;
+        private BindingSource tFRONTBindingAdmin;
+        private BindingSource tFRONTBindingFinance;
     }
 }
