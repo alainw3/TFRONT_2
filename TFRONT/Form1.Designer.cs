@@ -32,15 +32,15 @@
             pictureBox1 = new PictureBox();
             labelCV = new Label();
             dateTimePickerCV = new DateTimePicker();
-            tFRONTBindingSource = new BindingSource(components);
+            tFRONTBindingSourceCV = new BindingSource(components);
             button1 = new Button();
             dataSet11 = new DataSet1();
             labelHK = new Label();
             dateTimePickerHK = new DateTimePicker();
-            tFRONTBindingSource1 = new BindingSource(components);
+            tFRONTBindingSourceHK = new BindingSource(components);
             labelSP = new Label();
             dateTimePickerSP = new DateTimePicker();
-            tFRONTBindingSource2 = new BindingSource(components);
+            tFRONTBindingSourceSP = new BindingSource(components);
             groupBox1 = new GroupBox();
             buttonCV = new Button();
             dateTimePickerCVEnv = new DateTimePicker();
@@ -50,9 +50,9 @@
             tFRONTBindingCVFRLecture = new BindingSource(components);
             labelCVFRLecture = new Label();
             label3 = new Label();
-            labelCVFRUpdate = new Label();
+            labelCVFR = new Label();
             dateTimePickerCVFR = new DateTimePicker();
-            tFRONTBindingCVFRUpdate = new BindingSource(components);
+            tFRONTBindingSourceCVFR = new BindingSource(components);
             dateTimePickerCVLecture = new DateTimePicker();
             tFRONTBindingCVLecture = new BindingSource(components);
             labelCVLecture = new Label();
@@ -63,13 +63,13 @@
             tFRONTBindingWebSite = new BindingSource(components);
             labelWebSite = new Label();
             dateTimePickerMAT = new DateTimePicker();
-            bindingSourceMAT = new BindingSource(components);
+            tFRONTbindingSourceMAT = new BindingSource(components);
             labelMAT = new Label();
             dateTimePickerPRO = new DateTimePicker();
-            bindingSourcePRO = new BindingSource(components);
+            tFRONTbindingSourcePRO = new BindingSource(components);
             labelPRO = new Label();
             dateTimePickerMIT = new DateTimePicker();
-            bindingSourceMIT = new BindingSource(components);
+            tFRINTbindingSourceMIT = new BindingSource(components);
             labelMIT = new Label();
             dateTimePickerLLM = new DateTimePicker();
             tFRONTBindingLLM = new BindingSource(components);
@@ -105,20 +105,20 @@
             tFRONTBindingMada = new BindingSource(components);
             labelMada = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceHK).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceSP).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVEnv).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRLecture).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRUpdate).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCVFR).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVLecture).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingWebSite).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceMAT).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourcePRO).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceMIT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTbindingSourceMAT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTbindingSourcePRO).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRINTbindingSourceMIT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLLM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).BeginInit();
@@ -152,19 +152,20 @@
             // 
             // dateTimePickerCV
             // 
-            dateTimePickerCV.DataBindings.Add(new Binding("Text", tFRONTBindingSource, "colDat", true));
-            dateTimePickerCV.DataBindings.Add(new Binding("Value", tFRONTBindingSource, "colDat", true));
+            dateTimePickerCV.DataBindings.Add(new Binding("Text", tFRONTBindingSourceCV, "colDat", true));
+            dateTimePickerCV.DataBindings.Add(new Binding("Value", tFRONTBindingSourceCV, "colDat", true));
             dateTimePickerCV.Format = DateTimePickerFormat.Short;
             dateTimePickerCV.Location = new Point(108, 58);
             dateTimePickerCV.Name = "dateTimePickerCV";
             dateTimePickerCV.Size = new Size(128, 23);
             dateTimePickerCV.TabIndex = 2;
+            dateTimePickerCV.Validated += dateTimePickerCV_Validated;
             // 
-            // tFRONTBindingSource
+            // tFRONTBindingSourceCV
             // 
-            tFRONTBindingSource.DataMember = "TFRONT";
-            tFRONTBindingSource.DataSource = typeof(DataSet1);
-            tFRONTBindingSource.Filter = "colid='01'";
+            tFRONTBindingSourceCV.DataMember = "TFRONT";
+            tFRONTBindingSourceCV.DataSource = typeof(DataSet1);
+            tFRONTBindingSourceCV.Filter = "colid='01'";
             // 
             // button1
             // 
@@ -194,19 +195,20 @@
             // 
             // dateTimePickerHK
             // 
-            dateTimePickerHK.DataBindings.Add(new Binding("Text", tFRONTBindingSource1, "colDat", true));
+            dateTimePickerHK.DataBindings.Add(new Binding("Text", tFRONTBindingSourceHK, "colDat", true));
             dateTimePickerHK.Font = new Font("Segoe UI", 9F);
             dateTimePickerHK.Format = DateTimePickerFormat.Short;
             dateTimePickerHK.Location = new Point(969, 25);
             dateTimePickerHK.Name = "dateTimePickerHK";
             dateTimePickerHK.Size = new Size(128, 23);
             dateTimePickerHK.TabIndex = 5;
+            dateTimePickerHK.Validated += dateTimePickerHK_Validated;
             // 
-            // tFRONTBindingSource1
+            // tFRONTBindingSourceHK
             // 
-            tFRONTBindingSource1.DataMember = "TFRONT";
-            tFRONTBindingSource1.DataSource = dataSet11;
-            tFRONTBindingSource1.Filter = "colid='02'";
+            tFRONTBindingSourceHK.DataMember = "TFRONT";
+            tFRONTBindingSourceHK.DataSource = dataSet11;
+            tFRONTBindingSourceHK.Filter = "colid='02'";
             // 
             // labelSP
             // 
@@ -219,18 +221,19 @@
             // 
             // dateTimePickerSP
             // 
-            dateTimePickerSP.DataBindings.Add(new Binding("Text", tFRONTBindingSource2, "colDat", true));
+            dateTimePickerSP.DataBindings.Add(new Binding("Text", tFRONTBindingSourceSP, "colDat", true));
             dateTimePickerSP.Format = DateTimePickerFormat.Short;
             dateTimePickerSP.Location = new Point(81, 263);
             dateTimePickerSP.Name = "dateTimePickerSP";
             dateTimePickerSP.Size = new Size(128, 23);
             dateTimePickerSP.TabIndex = 7;
+            dateTimePickerSP.Validated += dateTimePickerSP_Validated;
             // 
-            // tFRONTBindingSource2
+            // tFRONTBindingSourceSP
             // 
-            tFRONTBindingSource2.DataMember = "TFRONT";
-            tFRONTBindingSource2.DataSource = dataSet11;
-            tFRONTBindingSource2.Filter = "colid='03'";
+            tFRONTBindingSourceSP.DataMember = "TFRONT";
+            tFRONTBindingSourceSP.DataSource = dataSet11;
+            tFRONTBindingSourceSP.Filter = "colid='03'";
             // 
             // groupBox1
             // 
@@ -240,7 +243,7 @@
             groupBox1.Controls.Add(dateTimePickerCVFRLecture);
             groupBox1.Controls.Add(labelCVFRLecture);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(labelCVFRUpdate);
+            groupBox1.Controls.Add(labelCVFR);
             groupBox1.Controls.Add(dateTimePickerCVFR);
             groupBox1.Controls.Add(dateTimePickerCVLecture);
             groupBox1.Controls.Add(labelCVLecture);
@@ -272,6 +275,7 @@
             dateTimePickerCVEnv.Name = "dateTimePickerCVEnv";
             dateTimePickerCVEnv.Size = new Size(132, 23);
             dateTimePickerCVEnv.TabIndex = 12;
+            dateTimePickerCVEnv.Validated += dateTimePickerCVEnv_Validated;
             // 
             // tFRONTBindingCVEnv
             // 
@@ -297,6 +301,7 @@
             dateTimePickerCVFRLecture.Name = "dateTimePickerCVFRLecture";
             dateTimePickerCVFRLecture.Size = new Size(131, 23);
             dateTimePickerCVFRLecture.TabIndex = 10;
+            dateTimePickerCVFRLecture.Validated += dateTimePickerCVFRLecture_Validated;
             // 
             // tFRONTBindingCVFRLecture
             // 
@@ -323,30 +328,30 @@
             label3.TabIndex = 8;
             label3.Text = "Français";
             // 
-            // labelCVFRUpdate
+            // labelCVFR
             // 
-            labelCVFRUpdate.AutoSize = true;
-            labelCVFRUpdate.Location = new Point(24, 197);
-            labelCVFRUpdate.Name = "labelCVFRUpdate";
-            labelCVFRUpdate.Size = new Size(112, 15);
-            labelCVFRUpdate.TabIndex = 6;
-            labelCVFRUpdate.Text = "Dernière mise à jour";
+            labelCVFR.AutoSize = true;
+            labelCVFR.Location = new Point(24, 197);
+            labelCVFR.Name = "labelCVFR";
+            labelCVFR.Size = new Size(112, 15);
+            labelCVFR.TabIndex = 6;
+            labelCVFR.Text = "Dernière mise à jour";
             // 
             // dateTimePickerCVFR
             // 
-            dateTimePickerCVFR.DataBindings.Add(new Binding("Value", tFRONTBindingSource, "colDat", true));
-            dateTimePickerCVFR.DataBindings.Add(new Binding("Text", tFRONTBindingCVFRUpdate, "colDat", true));
+            dateTimePickerCVFR.DataBindings.Add(new Binding("Text", tFRONTBindingSourceCVFR, "colDat", true));
             dateTimePickerCVFR.Format = DateTimePickerFormat.Short;
             dateTimePickerCVFR.Location = new Point(155, 195);
             dateTimePickerCVFR.Name = "dateTimePickerCVFR";
             dateTimePickerCVFR.Size = new Size(128, 23);
             dateTimePickerCVFR.TabIndex = 7;
+            dateTimePickerCVFR.Validated += dateTimePickerCVFR_Validated;
             // 
-            // tFRONTBindingCVFRUpdate
+            // tFRONTBindingSourceCVFR
             // 
-            tFRONTBindingCVFRUpdate.DataMember = "TFRONT";
-            tFRONTBindingCVFRUpdate.DataSource = dataSet11;
-            tFRONTBindingCVFRUpdate.Filter = "colId='05'";
+            tFRONTBindingSourceCVFR.DataMember = "TFRONT";
+            tFRONTBindingSourceCVFR.DataSource = dataSet11;
+            tFRONTBindingSourceCVFR.Filter = "colId='05'";
             // 
             // dateTimePickerCVLecture
             // 
@@ -356,6 +361,7 @@
             dateTimePickerCVLecture.Name = "dateTimePickerCVLecture";
             dateTimePickerCVLecture.Size = new Size(131, 23);
             dateTimePickerCVLecture.TabIndex = 5;
+            dateTimePickerCVLecture.Validated += dateTimePickerCVLecture_Validated;
             // 
             // tFRONTBindingCVLecture
             // 
@@ -433,7 +439,7 @@
             // 
             // dateTimePickerMAT
             // 
-            dateTimePickerMAT.DataBindings.Add(new Binding("Text", bindingSourceMAT, "colDat", true));
+            dateTimePickerMAT.DataBindings.Add(new Binding("Text", tFRONTbindingSourceMAT, "colDat", true));
             dateTimePickerMAT.Format = DateTimePickerFormat.Short;
             dateTimePickerMAT.Location = new Point(104, 156);
             dateTimePickerMAT.Name = "dateTimePickerMAT";
@@ -441,11 +447,11 @@
             dateTimePickerMAT.TabIndex = 7;
             dateTimePickerMAT.Validated += dateTimePickerMAT_Validated;
             // 
-            // bindingSourceMAT
+            // tFRONTbindingSourceMAT
             // 
-            bindingSourceMAT.DataMember = "TFRONT";
-            bindingSourceMAT.DataSource = dataSet11;
-            bindingSourceMAT.Filter = "colId='10'";
+            tFRONTbindingSourceMAT.DataMember = "TFRONT";
+            tFRONTbindingSourceMAT.DataSource = dataSet11;
+            tFRONTbindingSourceMAT.Filter = "colId='10'";
             // 
             // labelMAT
             // 
@@ -458,7 +464,7 @@
             // 
             // dateTimePickerPRO
             // 
-            dateTimePickerPRO.DataBindings.Add(new Binding("Text", bindingSourcePRO, "colDat", true));
+            dateTimePickerPRO.DataBindings.Add(new Binding("Text", tFRONTbindingSourcePRO, "colDat", true));
             dateTimePickerPRO.Format = DateTimePickerFormat.Short;
             dateTimePickerPRO.Location = new Point(104, 201);
             dateTimePickerPRO.Name = "dateTimePickerPRO";
@@ -466,11 +472,11 @@
             dateTimePickerPRO.TabIndex = 5;
             dateTimePickerPRO.Validated += dateTimePickerPRO_Validated;
             // 
-            // bindingSourcePRO
+            // tFRONTbindingSourcePRO
             // 
-            bindingSourcePRO.DataMember = "TFRONT";
-            bindingSourcePRO.DataSource = dataSet11;
-            bindingSourcePRO.Filter = "colId='11'";
+            tFRONTbindingSourcePRO.DataMember = "TFRONT";
+            tFRONTbindingSourcePRO.DataSource = dataSet11;
+            tFRONTbindingSourcePRO.Filter = "colId='11'";
             // 
             // labelPRO
             // 
@@ -483,7 +489,7 @@
             // 
             // dateTimePickerMIT
             // 
-            dateTimePickerMIT.DataBindings.Add(new Binding("Text", bindingSourceMIT, "colDat", true));
+            dateTimePickerMIT.DataBindings.Add(new Binding("Text", tFRINTbindingSourceMIT, "colDat", true));
             dateTimePickerMIT.Format = DateTimePickerFormat.Short;
             dateTimePickerMIT.Location = new Point(104, 107);
             dateTimePickerMIT.Name = "dateTimePickerMIT";
@@ -491,11 +497,11 @@
             dateTimePickerMIT.TabIndex = 3;
             dateTimePickerMIT.Validated += dateTimePickerMIT_Validated;
             // 
-            // bindingSourceMIT
+            // tFRINTbindingSourceMIT
             // 
-            bindingSourceMIT.DataMember = "TFRONT";
-            bindingSourceMIT.DataSource = dataSet11;
-            bindingSourceMIT.Filter = "colId='09'";
+            tFRINTbindingSourceMIT.DataMember = "TFRONT";
+            tFRINTbindingSourceMIT.DataSource = dataSet11;
+            tFRINTbindingSourceMIT.Filter = "colId='09'";
             // 
             // labelMIT
             // 
@@ -826,22 +832,22 @@
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceHK).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceSP).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVEnv).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRLecture).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRUpdate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCVFR).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVLecture).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingWebSite).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceMAT).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourcePRO).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceMIT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTbindingSourceMAT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTbindingSourcePRO).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRINTbindingSourceMIT).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLLM).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).EndInit();
@@ -865,14 +871,14 @@
         private Label labelCV;
         private DateTimePicker dateTimePickerCV;
         private Button button1;
-        private BindingSource tFRONTBindingSource;
+        private BindingSource tFRONTBindingSourceCV;
         public DataSet1 dataSet11;
         private Label labelHK;
         private DateTimePicker dateTimePickerHK;
-        private BindingSource tFRONTBindingSource1;
+        private BindingSource tFRONTBindingSourceHK;
         private Label labelSP;
         private DateTimePicker dateTimePickerSP;
-        private BindingSource tFRONTBindingSource2;
+        private BindingSource tFRONTBindingSourceSP;
         private GroupBox groupBox1;
         private DateTimePicker dateTimePickerCVLecture;
         private Label labelCVLecture;
@@ -881,10 +887,10 @@
         private DateTimePicker dateTimePickerCVFRLecture;
         private Label labelCVFRLecture;
         private Label label3;
-        private Label labelCVFRUpdate;
+        private Label labelCVFR;
         private DateTimePicker dateTimePickerCVFR;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private BindingSource tFRONTBindingCVFRUpdate;
+        private BindingSource tFRONTBindingSourceCVFR;
         private BindingSource tFRONTBindingCVFRLecture;
         private DateTimePicker dateTimePickerCVEnv;
         private Label labelCVEnv;
@@ -900,9 +906,9 @@
         private DateTimePicker dateTimePickerMAT;
         private Label labelMAT;
         private BindingSource tFRONTBindingLLM;
-        private BindingSource bindingSourceMAT;
-        private BindingSource bindingSourcePRO;
-        private BindingSource bindingSourceMIT;
+        private BindingSource tFRONTbindingSourceMAT;
+        private BindingSource tFRONTbindingSourcePRO;
+        private BindingSource tFRINTbindingSourceMIT;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn colIdDataGridViewTextBoxColumn;
         private DataGridView dataGridView2;
