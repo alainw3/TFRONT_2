@@ -13,6 +13,10 @@ namespace TFRONT
 
         private const int cycleFinance = -2;
         private const int cycleAdmin = -2;
+        private const int cycleWebSite = -3;
+
+        private const int cycleMada = -5;
+        private const int cycleMiremont = -10;
         public Form1()
         {
             InitializeComponent();
@@ -28,45 +32,44 @@ namespace TFRONT
                 // TFRONT
                 SqlCommand command = conn.CreateCommand();
                 command.CommandText = "select colid , colDat from [winman].[dbo].[TBL_TFRONT]";
-
                 dataAdapter = new SqlDataAdapter(command);
-
                 dataAdapter.Fill(dataSet11.Tables[0]);
 
 
                 // THOUR
                 SqlCommand command1 = conn.CreateCommand();
                 command1.CommandText = "select colid, colTitle, colMon, colTue, colWed, colThu, colFri, colSat, colSun  from [winman].[dbo].[TBL_THOUR]";
-
                 dataAdapterTHour = new SqlDataAdapter(command1);
-
                 dataAdapterTHour.Fill(dataSet11, "THOUR");
 
 
                 // TLEARN
                 command.CommandText = "select colid , colDat, colLang from [winman].[dbo].[TBL_TLEARN]";
-
                 dataAdapter = new SqlDataAdapter(command);
-
-
                 dataAdapter.Fill(dataSet11, "TLEARN");
 
 
 
-
-                // Binding data source
+                // Binding data source & refresh
                 tFRONTBindingSource.DataSource = dataSet11.Tables[0];
                 tFRONTBindingSource.Filter = "colid ='01'";
 
 
-
-
-
                 tFRONTBindingSource.ResetBindings(false);
                 tFRONTBindingSource1.ResetBindings(false);
- 
 
-
+                // 
+                SqlCommand commandWeeklHour = conn.CreateCommand();
+                commandWeeklHour.CommandText = new SQL().getSqlWeeklyHour();
+                SqlDataReader rd = commandWeeklHour.ExecuteReader();
+                if (rd != null)
+                {
+                    if (rd.Read())
+                    {
+                        textBoxTotalHour.Text = rd[0].ToString();
+                    }
+                }
+                rd.Close();
 
 
 
@@ -82,11 +85,12 @@ namespace TFRONT
         private void button1_Click(object sender, EventArgs e)
         {
 
+            // TFRONT
             SqlCommand command = conn.CreateCommand();
-
+            SQL sql = new SQL(); ;
 
             command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                                + dateTimePickerCV.Value.ToString() + "',103) where colid ='01'";
+                    + dateTimePickerCV.Value.ToString() + "',103) where colid ='01'";
             command.ExecuteNonQuery();
 
             command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
@@ -178,8 +182,13 @@ namespace TFRONT
             label_Color(dateTimePickerMIT, labelMIT, -3);
             label_Color(dateTimePickerPRO, labelPRO, -3);
 
+
             label_Color(dateTimePickerFinance, labelFinance, cycleFinance);
             label_Color(dateTimePickerAdmin, labelAdmin, cycleAdmin);
+            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite);
+
+            label_Color(dateTimePickerMada, labelMada, cycleMada);
+            label_Color(dateTimePickerMiremont, labelMiremont, cycleMiremont);
 
 
         }
@@ -272,6 +281,23 @@ namespace TFRONT
             label_Color(dateTimePickerAdmin, labelAdmin, cycleAdmin);
         }
 
+        private void dateTimePickerWebSite_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerWebSite, "16");
+            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite);
+        }
+
+        private void dateTimePickerMada_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerMada , "17");
+            label_Color(dateTimePickerMada, labelMada, cycleMada);
+        }
+
+        private void dateTimePickerMiremont_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerMiremont, "15");
+            label_Color(dateTimePickerMiremont, labelMiremont, cycleMiremont);
+        }
     }
 
 }

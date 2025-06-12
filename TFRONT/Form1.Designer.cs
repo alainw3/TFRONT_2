@@ -59,6 +59,9 @@
             label1 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             groupBox2 = new GroupBox();
+            dateTimePickerWebSite = new DateTimePicker();
+            tFRONTBindingWebSite = new BindingSource(components);
+            labelWebSite = new Label();
             dateTimePickerMAT = new DateTimePicker();
             bindingSourceMAT = new BindingSource(components);
             labelMAT = new Label();
@@ -92,6 +95,15 @@
             dateTimePickerFinance = new DateTimePicker();
             tFRONTBindingFinance = new BindingSource(components);
             labelFinance = new Label();
+            textBoxTotalHour = new TextBox();
+            labelTotalHour = new Label();
+            groupBox4 = new GroupBox();
+            dateTimePickerMiremont = new DateTimePicker();
+            tFRONTBindingMiremont = new BindingSource(components);
+            labelMiremont = new Label();
+            dateTimePickerMada = new DateTimePicker();
+            tFRONTBindingMada = new BindingSource(components);
+            labelMada = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -103,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVFRUpdate).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVLecture).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingWebSite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourceMAT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourcePRO).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourceMIT).BeginInit();
@@ -114,6 +127,9 @@
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdministration).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingFinance).BeginInit();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingMiremont).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -373,6 +389,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(dateTimePickerWebSite);
+            groupBox2.Controls.Add(labelWebSite);
             groupBox2.Controls.Add(dateTimePickerMAT);
             groupBox2.Controls.Add(labelMAT);
             groupBox2.Controls.Add(dateTimePickerPRO);
@@ -387,6 +405,31 @@
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             groupBox2.Text = "AI";
+            // 
+            // dateTimePickerWebSite
+            // 
+            dateTimePickerWebSite.DataBindings.Add(new Binding("Text", tFRONTBindingWebSite, "colDat", true));
+            dateTimePickerWebSite.Format = DateTimePickerFormat.Short;
+            dateTimePickerWebSite.Location = new Point(104, 259);
+            dateTimePickerWebSite.Name = "dateTimePickerWebSite";
+            dateTimePickerWebSite.Size = new Size(148, 23);
+            dateTimePickerWebSite.TabIndex = 15;
+            dateTimePickerWebSite.Validated += dateTimePickerWebSite_Validated;
+            // 
+            // tFRONTBindingWebSite
+            // 
+            tFRONTBindingWebSite.DataMember = "TFRONT";
+            tFRONTBindingWebSite.DataSource = dataSet11;
+            tFRONTBindingWebSite.Filter = "colid='16'";
+            // 
+            // labelWebSite
+            // 
+            labelWebSite.AutoSize = true;
+            labelWebSite.Location = new Point(15, 265);
+            labelWebSite.Name = "labelWebSite";
+            labelWebSite.Size = new Size(50, 15);
+            labelWebSite.TabIndex = 14;
+            labelWebSite.Text = "WebSite";
             // 
             // dateTimePickerMAT
             // 
@@ -677,11 +720,96 @@
             labelFinance.TabIndex = 0;
             labelFinance.Text = "Finance";
             // 
+            // textBoxTotalHour
+            // 
+            textBoxTotalHour.Font = new Font("Segoe UI", 15F);
+            textBoxTotalHour.Location = new Point(1149, 380);
+            textBoxTotalHour.Name = "textBoxTotalHour";
+            textBoxTotalHour.Size = new Size(100, 34);
+            textBoxTotalHour.TabIndex = 13;
+            textBoxTotalHour.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelTotalHour
+            // 
+            labelTotalHour.AutoSize = true;
+            labelTotalHour.Font = new Font("Segoe UI", 15F);
+            labelTotalHour.Location = new Point(989, 383);
+            labelTotalHour.Name = "labelTotalHour";
+            labelTotalHour.Size = new Size(142, 28);
+            labelTotalHour.TabIndex = 14;
+            labelTotalHour.Text = "WEEKLY HOUR";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(dateTimePickerMiremont);
+            groupBox4.Controls.Add(labelMiremont);
+            groupBox4.Controls.Add(dateTimePickerMada);
+            groupBox4.Controls.Add(labelMada);
+            groupBox4.Location = new Point(603, 442);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(259, 137);
+            groupBox4.TabIndex = 13;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Mada";
+            // 
+            // dateTimePickerMiremont
+            // 
+            dateTimePickerMiremont.DataBindings.Add(new Binding("Text", tFRONTBindingMiremont, "colDat", true));
+            dateTimePickerMiremont.Format = DateTimePickerFormat.Short;
+            dateTimePickerMiremont.Location = new Point(109, 98);
+            dateTimePickerMiremont.Name = "dateTimePickerMiremont";
+            dateTimePickerMiremont.Size = new Size(132, 23);
+            dateTimePickerMiremont.TabIndex = 3;
+            dateTimePickerMiremont.Validated += dateTimePickerMiremont_Validated;
+            // 
+            // tFRONTBindingMiremont
+            // 
+            tFRONTBindingMiremont.DataMember = "TFRONT";
+            tFRONTBindingMiremont.DataSource = dataSet11;
+            tFRONTBindingMiremont.Filter = "colid='15'";
+            // 
+            // labelMiremont
+            // 
+            labelMiremont.AutoSize = true;
+            labelMiremont.Location = new Point(15, 102);
+            labelMiremont.Name = "labelMiremont";
+            labelMiremont.Size = new Size(60, 15);
+            labelMiremont.TabIndex = 2;
+            labelMiremont.Text = "Miremont";
+            // 
+            // dateTimePickerMada
+            // 
+            dateTimePickerMada.DataBindings.Add(new Binding("Text", tFRONTBindingMada, "colDat", true));
+            dateTimePickerMada.Format = DateTimePickerFormat.Short;
+            dateTimePickerMada.Location = new Point(109, 37);
+            dateTimePickerMada.Name = "dateTimePickerMada";
+            dateTimePickerMada.Size = new Size(132, 23);
+            dateTimePickerMada.TabIndex = 1;
+            dateTimePickerMada.Validated += dateTimePickerMada_Validated;
+            // 
+            // tFRONTBindingMada
+            // 
+            tFRONTBindingMada.DataMember = "TFRONT";
+            tFRONTBindingMada.DataSource = dataSet11;
+            tFRONTBindingMada.Filter = "colId='17'";
+            // 
+            // labelMada
+            // 
+            labelMada.AutoSize = true;
+            labelMada.Location = new Point(16, 40);
+            labelMada.Name = "labelMada";
+            labelMada.Size = new Size(37, 15);
+            labelMada.TabIndex = 0;
+            labelMada.Text = "Mada";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1888, 1181);
+            Controls.Add(groupBox4);
+            Controls.Add(labelTotalHour);
+            Controls.Add(textBoxTotalHour);
             Controls.Add(groupBox3);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
@@ -710,6 +838,7 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVLecture).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingWebSite).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourceMAT).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourcePRO).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourceMIT).EndInit();
@@ -722,6 +851,10 @@
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdministration).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingFinance).EndInit();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingMiremont).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -792,5 +925,17 @@
         private DateTimePicker dateTimePickerAdmin;
         private BindingSource tFRONTBindingFinance;
         private BindingSource tFRONTBindingAdministration;
+        private TextBox textBoxTotalHour;
+        private Label labelTotalHour;
+        private Label labelWebSite;
+        private DateTimePicker dateTimePickerWebSite;
+        private BindingSource tFRONTBindingWebSite;
+        private GroupBox groupBox4;
+        private DateTimePicker dateTimePickerMiremont;
+        private Label labelMiremont;
+        private DateTimePicker dateTimePickerMada;
+        private Label labelMada;
+        private BindingSource tFRONTBindingMiremont;
+        private BindingSource tFRONTBindingMada;
     }
 }
