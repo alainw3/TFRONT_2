@@ -37,13 +37,17 @@ namespace TFRONT
 
                 SqlCommand command = conn.CreateCommand();
                 command.CommandText = "select colId , colDatFrom, colDatTo, colEmployer from [winman].[dbo].[TEXPERIENCE]";
-
                 dataAdapter = new SqlDataAdapter(command);
-
                 dataAdapter.Fill(dataSet21.Tables[0]);
 
+                command.CommandText = "select colCategory , colLanguage, colYear , colLastUse from [cv].[dbo].[TLANGUAGE]";
+                dataAdapter = new SqlDataAdapter(command);
+                dataAdapter.Fill(dataSet21.Tables[1]);
 
-              
+
+
+
+
 
             }
             catch (SqlException e)
@@ -55,12 +59,16 @@ namespace TFRONT
 
         private void CV_Load(object sender, EventArgs e)
         {
-            ReportDataSource rds = new ReportDataSource("Experience", dataSet21.Tables[0]);
-
             reportViewer1.LocalReport.ReportEmbeddedResource = "TFRONT.Report1.rdlc";
             reportViewer1.LocalReport.Refresh();
-            reportViewer1.LocalReport.DataSources.Add(rds);
-            
+
+            ReportDataSource rdsExperience = new ReportDataSource("Experience", dataSet21.Tables[0]);
+            reportViewer1.LocalReport.DataSources.Add(rdsExperience);
+
+
+            ReportDataSource rdsLanguage = new ReportDataSource("Language", dataSet21.Tables[1]);
+            reportViewer1.LocalReport.DataSources.Add(rdsLanguage);
+
             reportViewer1.RefreshReport();
         }
     }

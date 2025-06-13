@@ -93,40 +93,7 @@ namespace TFRONT
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // TFRONT
-            SqlCommand command = conn.CreateCommand();
-            SQL sql = new SQL(); ;
-
-            command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                    + dateTimePickerCV.Value.ToString() + "',103) where colid ='01'";
-            command.ExecuteNonQuery();
-
-            command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                    + dateTimePickerCVLecture.Value.ToString() + "',103) where colid ='04'";
-            command.ExecuteNonQuery();
-
-
-            command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                    + dateTimePickerCVFR.Value.ToString() + "',103) where colid ='05'";
-            command.ExecuteNonQuery();
-
-            command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                    + dateTimePickerCVFRLecture.Value.ToString() + "',103) where colid ='06'";
-            command.ExecuteNonQuery();
-
-
-            command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                    + dateTimePickerHK.Value.ToString() + "',103) where colid ='02'";
-            command.ExecuteNonQuery();
-
-
-            command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                    + dateTimePickerSP.Value.ToString() + "',103) where colid ='03'";
-            command.ExecuteNonQuery();
-
-            command.CommandText = "UPDATE  [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime,'"
-                    + dateTimePickerCVEnv.Value.ToString() + "',103) where colid ='07'";
-            command.ExecuteNonQuery();
+                
 
             //TLANG
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
