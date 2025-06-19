@@ -24,7 +24,7 @@ namespace TFRONT
         private const int cycleWebSite = -3;
 
         private const int cycleMada = -5;
-        private const int cycleMiremont = -10;
+        private const int cycleMiremont = -3;
         public Form1()
         {
             InitializeComponent();
@@ -44,11 +44,6 @@ namespace TFRONT
                 dataAdapter.Fill(dataSet11.Tables[0]);
 
 
-                // THOUR
-                SqlCommand command1 = conn.CreateCommand();
-                command1.CommandText = "select colid, colTitle, colMon, colTue, colWed, colThu, colFri, colSat, colSun  from [winman].[dbo].[TBL_THOUR]";
-                dataAdapterTHour = new SqlDataAdapter(command1);
-                dataAdapterTHour.Fill(dataSet11, "THOUR");
 
 
                 // TLEARN
@@ -66,19 +61,7 @@ namespace TFRONT
                 tFRONTBindingSourceCV.ResetBindings(false);
                 tFRONTBindingSourceHK.ResetBindings(false);
 
-                // 
-                SqlCommand commandWeeklHour = conn.CreateCommand();
-                commandWeeklHour.CommandText = new SQL().getSqlWeeklyHour();
-                SqlDataReader rd = commandWeeklHour.ExecuteReader();
-                if (rd != null)
-                {
-                    if (rd.Read())
-                    {
-                        textBoxTotalHour.Text = rd[0].ToString();
-                    }
-                }
-                rd.Close();
-
+                updateHourly();
 
 
 
@@ -90,10 +73,34 @@ namespace TFRONT
             }
         }
 
+        private void updateHourly()
+        {
+
+            // THOUR
+            SqlCommand command1 = conn.CreateCommand();
+            command1.CommandText = "select colid, colTitle, colMon, colTue, colWed, colThu, colFri, colSat, colSun  from [winman].[dbo].[TBL_THOUR]";
+            dataAdapterTHour = new SqlDataAdapter(command1);
+            dataAdapterTHour.Fill(dataSet11, "THOUR");
+
+
+            // 
+            SqlCommand commandWeeklHour = conn.CreateCommand();
+            commandWeeklHour.CommandText = new SQL().getSqlWeeklyHour();
+            SqlDataReader rd = commandWeeklHour.ExecuteReader();
+            if (rd != null)
+            {
+                if (rd.Read())
+                {
+                    textBoxTotalHour.Text = rd[0].ToString();
+                }
+            }
+            rd.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
-                
+
 
             //TLANG
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -299,6 +306,45 @@ namespace TFRONT
         {
             commandSQL(dateTimePickerHK, tFRONTBindingSourceHK.Filter);
             label_Color(dateTimePickerHK, labelHK, cycleCVLecture);
+        }
+
+        private void buttonResetDay_Click(object sender, EventArgs e)
+        {
+            if (
+                MessageBox.Show("Are you sure",
+                                "Question", 
+                                 MessageBoxButtons.YesNo, 
+                                 MessageBoxIcon.Question, 
+                                 MessageBoxDefaultButton.Button1)   == DialogResult.Yes ){
+
+                SQL sQL = new SQL();
+                SqlCommand command = conn.CreateCommand();
+
+                command.CommandText = sQL.getSqlResetDay("FRIDAY", "colFri");
+                command.ExecuteNonQuery();
+
+                command.CommandText = sQL.getSqlResetDay("MONDAY", "colMon");
+                command.ExecuteNonQuery();
+
+                command.CommandText = sQL.getSqlResetDay("THURSDAY", "colThu");
+                command.ExecuteNonQuery();
+
+                command.CommandText = sQL.getSqlResetDay("WEDNESDAY", "colWed");
+                command.ExecuteNonQuery();
+
+                command.CommandText = sQL.getSqlResetDay("TUESDAY", "colTue");
+                command.ExecuteNonQuery();
+
+                command.CommandText = sQL.getSqlResetDay("SUNDAY", "colSun");
+                command.ExecuteNonQuery();
+
+                command.CommandText = sQL.getSqlResetDay("SATURDAY", "colSat");
+                command.ExecuteNonQuery();
+
+
+                updateHourly();
+            }
+
         }
     }
 
