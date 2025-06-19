@@ -34,9 +34,12 @@ namespace TFRONT
                  "     ) A";
 
             //and(upper(DATENAME(weekday, GETDATE())) != 'FRIDAY')
-
-
         }
 
+        public string getSqlResetDay(string weekday, string weekcol) {
+            return " update[winman].[dbo].[TBL_THOUR] set " + weekcol +" = NULL where" +
+                   " (upper(DATENAME(weekday, GETDATE())) = '" + weekday +"') and " + weekcol + " = '*' ";
+
+        }
     }
 }

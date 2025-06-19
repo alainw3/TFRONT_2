@@ -104,6 +104,7 @@
             dateTimePickerMada = new DateTimePicker();
             tFRONTBindingMada = new BindingSource(components);
             labelMada = new Label();
+            buttonResetDay = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -808,11 +809,22 @@
             labelMada.TabIndex = 0;
             labelMada.Text = "Mada";
             // 
+            // buttonResetDay
+            // 
+            buttonResetDay.Location = new Point(1339, 1029);
+            buttonResetDay.Name = "buttonResetDay";
+            buttonResetDay.Size = new Size(115, 33);
+            buttonResetDay.TabIndex = 15;
+            buttonResetDay.Text = "Reset Day";
+            buttonResetDay.UseVisualStyleBackColor = true;
+            buttonResetDay.Click += buttonResetDay_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1888, 1181);
+            Controls.Add(buttonResetDay);
             Controls.Add(groupBox4);
             Controls.Add(labelTotalHour);
             Controls.Add(textBoxTotalHour);
@@ -943,5 +955,6 @@
         private Label labelMada;
         private BindingSource tFRONTBindingMiremont;
         private BindingSource tFRONTBindingMada;
+        private Button buttonResetDay;
     }
 }
