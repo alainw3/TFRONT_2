@@ -81,10 +81,6 @@
             dataGridView2 = new DataGridView();
             colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
             colMonDataGridViewTHOUR = new DataGridViewCheckBoxColumn();
-            contextMenuStripHourly = new ContextMenuStrip(components);
-            jobSearchStripMenuItem = new ToolStripMenuItem();
-            administrationToolStripMenuItem = new ToolStripMenuItem();
-            financeToolStripMenuItem = new ToolStripMenuItem();
             colTueDataGridViewTHOUR = new DataGridViewCheckBoxColumn();
             colWedDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
             colThuDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
@@ -128,7 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            contextMenuStripHourly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingAdministration).BeginInit();
@@ -586,7 +581,6 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(533, 942);
             dataGridView2.TabIndex = 11;
-            dataGridView2.CellContextMenuStripNeeded += dataGridView2_CellContextMenuStripNeeded;
             // 
             // colTitleDataGridViewTHOUR
             // 
@@ -596,7 +590,6 @@
             // 
             // colMonDataGridViewTHOUR
             // 
-            colMonDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
             colMonDataGridViewTHOUR.DataPropertyName = "colMon";
             colMonDataGridViewTHOUR.FalseValue = "";
             colMonDataGridViewTHOUR.HeaderText = "colMon";
@@ -605,31 +598,6 @@
             colMonDataGridViewTHOUR.SortMode = DataGridViewColumnSortMode.Automatic;
             colMonDataGridViewTHOUR.TrueValue = "*";
             colMonDataGridViewTHOUR.Width = 50;
-            // 
-            // contextMenuStripHourly
-            // 
-            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchStripMenuItem, administrationToolStripMenuItem, financeToolStripMenuItem });
-            contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(154, 70);
-            // 
-            // jobSearchStripMenuItem
-            // 
-            jobSearchStripMenuItem.Name = "jobSearchStripMenuItem";
-            jobSearchStripMenuItem.Size = new Size(153, 22);
-            jobSearchStripMenuItem.Text = "Job Search";
-            jobSearchStripMenuItem.Click += jobSearchStripMenuItem_Click;
-            // 
-            // administrationToolStripMenuItem
-            // 
-            administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            administrationToolStripMenuItem.Size = new Size(153, 22);
-            administrationToolStripMenuItem.Text = "Administration";
-            // 
-            // financeToolStripMenuItem
-            // 
-            financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(153, 22);
-            financeToolStripMenuItem.Text = "Finance";
             // 
             // colTueDataGridViewTHOUR
             // 
@@ -896,7 +864,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            contextMenuStripHourly.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -959,6 +926,14 @@
         private DataGridView dataGridView2;
         private BindingSource tHOURBindingSource;
         private BindingSource tLEARNBindingSource;
+        private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
+        private DataGridViewCheckBoxColumn colMonDataGridViewTHOUR;
+        private DataGridViewCheckBoxColumn colTueDataGridViewTHOUR;
+        private DataGridViewCheckBoxColumn colWedDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colThuDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colFriDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colSatDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn colSunDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;
         private GroupBox groupBox3;
@@ -981,17 +956,5 @@
         private BindingSource tFRONTBindingMiremont;
         private BindingSource tFRONTBindingMada;
         private Button buttonResetDay;
-        private ContextMenuStrip contextMenuStripHourly;
-        private ToolStripMenuItem jobSearchStripMenuItem;
-        private ToolStripMenuItem administrationToolStripMenuItem;
-        private ToolStripMenuItem financeToolStripMenuItem;
-        private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
-        private DataGridViewCheckBoxColumn colMonDataGridViewTHOUR;
-        private DataGridViewCheckBoxColumn colTueDataGridViewTHOUR;
-        private DataGridViewCheckBoxColumn colWedDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colThuDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colFriDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colSatDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colSunDataGridViewTextBoxColumn;
     }
 }
