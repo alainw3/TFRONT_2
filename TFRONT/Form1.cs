@@ -71,6 +71,8 @@ namespace TFRONT
             {
                 MessageBox.Show(e.ToString());
             }
+
+
         }
 
         private void updateHourly()
@@ -312,10 +314,11 @@ namespace TFRONT
         {
             if (
                 MessageBox.Show("Are you sure",
-                                "Question", 
-                                 MessageBoxButtons.YesNo, 
-                                 MessageBoxIcon.Question, 
-                                 MessageBoxDefaultButton.Button1)   == DialogResult.Yes ){
+                                "Question",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question,
+                                 MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
 
                 SQL sQL = new SQL();
                 SqlCommand command = conn.CreateCommand();
@@ -344,6 +347,18 @@ namespace TFRONT
 
                 updateHourly();
             }
+
+        }
+
+        private void jobSearchStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have clicked Job Search");
+        }
+
+        private void dataGridView2_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            MessageBox.Show(dataGridView2.Columns[e.ColumnIndex].HeaderText);
+            MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
 
         }
     }
