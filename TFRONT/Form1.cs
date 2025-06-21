@@ -333,6 +333,17 @@ namespace TFRONT
             commandSQL(dateTimePickerHK, tFRONTBindingSourceHK.Filter);
             label_Color(dateTimePickerHK, labelHK, cycleCVLecture);
         }
+
+        private void jobSearchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You have clicked on Job Search");
+        }
+
+        private void dataGridView2_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            MessageBox.Show(dataGridView2.Columns[e.ColumnIndex].HeaderText);
+            MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+        }
     }
 
 }
