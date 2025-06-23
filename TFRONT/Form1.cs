@@ -25,6 +25,9 @@ namespace TFRONT
 
         private const int cycleMada = -5;
         private const int cycleMiremont = -3;
+
+        private const int cycleJR = -5;
+        private const int cycleCVNew= -3;
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +42,7 @@ namespace TFRONT
 
                 // TFRONT
                 SqlCommand command = conn.CreateCommand();
-                command.CommandText = "select colid , colDat from [winman].[dbo].[TBL_TFRONT]";
+                command.CommandText = "select colid , colDat, colCycle from [winman].[dbo].[TBL_TFRONT]";
                 dataAdapter = new SqlDataAdapter(command);
                 dataAdapter.Fill(dataSet11.Tables[0]);
 
@@ -97,6 +100,7 @@ namespace TFRONT
             rd.Close();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -104,16 +108,12 @@ namespace TFRONT
 
             //TLANG
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
-
             SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
-
             dataAdapter.Update(dataSet11.Tables[2]);
 
             //THOUR
             sqlCommandBuilder = new SqlCommandBuilder(dataAdapterTHour);
-
             sqlCommand = sqlCommandBuilder.GetUpdateCommand();
-
             dataAdapterTHour.Update(dataSet11.Tables[1]);
 
 
@@ -157,6 +157,8 @@ namespace TFRONT
             label_Color(dateTimePickerMada, labelMada, cycleMada);
             label_Color(dateTimePickerMiremont, labelMiremont, cycleMiremont);
 
+            label_Color(dateTimePickerJR, labelJR, cycleJR);
+            label_Color(dateTimePickerCVNew, labelCVNew, cycleCVNew);
 
         }
 
@@ -357,6 +359,18 @@ namespace TFRONT
         {
             MessageBox.Show(dataGridView2.Columns[e.ColumnIndex].HeaderText);
             MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+        }
+
+        private void dateTimePickerJR_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerJR, tFRONTBindingSourceJR.Filter);
+            label_Color(dateTimePickerJR, labelJR, cycleJR);
+        }
+
+        private void dateTimePickerCVNew_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerCVNew, tFRONTBindingSourceCVNew.Filter);
+            label_Color(dateTimePickerCVNew, labelCVNew, cycleCVNew);
         }
     }
 
