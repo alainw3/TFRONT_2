@@ -12,23 +12,33 @@
   <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet2" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TEXPERIENCE" msprop:Generator_RowClassName="TEXPERIENCERow" msprop:Generator_RowEvHandlerName="TEXPERIENCERowChangeEventHandler" msprop:Generator_RowDeletedName="TEXPERIENCERowDeleted" msprop:Generator_RowDeletingName="TEXPERIENCERowDeleting" msprop:Generator_RowEvArgName="TEXPERIENCERowChangeEvent" msprop:Generator_TablePropName="TEXPERIENCE" msprop:Generator_RowChangedName="TEXPERIENCERowChanged" msprop:Generator_UserTableName="TEXPERIENCE" msprop:Generator_RowChangingName="TEXPERIENCERowChanging" msprop:Generator_TableClassName="TEXPERIENCEDataTable" msprop:Generator_TableVarName="tableTEXPERIENCE">
+        <xs:element name="TEXPERIENCE" msprop:Generator_RowEvHandlerName="TEXPERIENCERowChangeEventHandler" msprop:Generator_RowDeletedName="TEXPERIENCERowDeleted" msprop:Generator_RowDeletingName="TEXPERIENCERowDeleting" msprop:Generator_RowEvArgName="TEXPERIENCERowChangeEvent" msprop:Generator_TablePropName="TEXPERIENCE" msprop:Generator_RowChangedName="TEXPERIENCERowChanged" msprop:Generator_UserTableName="TEXPERIENCE" msprop:Generator_RowChangingName="TEXPERIENCERowChanging" msprop:Generator_RowClassName="TEXPERIENCERow" msprop:Generator_TableClassName="TEXPERIENCEDataTable" msprop:Generator_TableVarName="tableTEXPERIENCE">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="colId" msprop:Generator_UserColumnName="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnVarNameInTable="columncolId" type="xs:string" />
-              <xs:element name="colDatFrom" msprop:Generator_UserColumnName="colDatFrom" msprop:Generator_ColumnPropNameInTable="colDatFromColumn" msprop:Generator_ColumnPropNameInRow="colDatFrom" msprop:Generator_ColumnVarNameInTable="columncolDatFrom" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="colDatTo" msprop:Generator_UserColumnName="colDatTo" msprop:Generator_ColumnPropNameInTable="colDatToColumn" msprop:Generator_ColumnPropNameInRow="colDatTo" msprop:Generator_ColumnVarNameInTable="columncolDatTo" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="colEmployer" msprop:Generator_UserColumnName="colEmployer" msprop:Generator_ColumnPropNameInTable="colEmployerColumn" msprop:Generator_ColumnPropNameInRow="colEmployer" msprop:Generator_ColumnVarNameInTable="columncolEmployer" type="xs:string" minOccurs="0" />
+              <xs:element name="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_UserColumnName="colId" msprop:Generator_ColumnVarNameInTable="columncolId" type="xs:string" />
+              <xs:element name="colDatFrom" msprop:Generator_ColumnPropNameInTable="colDatFromColumn" msprop:Generator_ColumnPropNameInRow="colDatFrom" msprop:Generator_UserColumnName="colDatFrom" msprop:Generator_ColumnVarNameInTable="columncolDatFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="colDatTo" msprop:Generator_ColumnPropNameInTable="colDatToColumn" msprop:Generator_ColumnPropNameInRow="colDatTo" msprop:Generator_UserColumnName="colDatTo" msprop:Generator_ColumnVarNameInTable="columncolDatTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="colEmployer" msprop:Generator_ColumnPropNameInTable="colEmployerColumn" msprop:Generator_ColumnPropNameInRow="colEmployer" msprop:Generator_UserColumnName="colEmployer" msprop:Generator_ColumnVarNameInTable="columncolEmployer" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TLANGUAGE" msprop:Generator_RowEvHandlerName="TLANGUAGERowChangeEventHandler" msprop:Generator_RowDeletedName="TLANGUAGERowDeleted" msprop:Generator_RowDeletingName="TLANGUAGERowDeleting" msprop:Generator_RowEvArgName="TLANGUAGERowChangeEvent" msprop:Generator_TablePropName="TLANGUAGE" msprop:Generator_RowChangedName="TLANGUAGERowChanged" msprop:Generator_RowChangingName="TLANGUAGERowChanging" msprop:Generator_TableClassName="TLANGUAGEDataTable" msprop:Generator_RowClassName="TLANGUAGERow" msprop:Generator_TableVarName="tableTLANGUAGE" msprop:Generator_UserTableName="TLANGUAGE">
+        <xs:element name="TLANGUAGE" msprop:Generator_RowClassName="TLANGUAGERow" msprop:Generator_RowEvHandlerName="TLANGUAGERowChangeEventHandler" msprop:Generator_RowDeletedName="TLANGUAGERowDeleted" msprop:Generator_RowDeletingName="TLANGUAGERowDeleting" msprop:Generator_RowEvArgName="TLANGUAGERowChangeEvent" msprop:Generator_TablePropName="TLANGUAGE" msprop:Generator_RowChangedName="TLANGUAGERowChanged" msprop:Generator_UserTableName="TLANGUAGE" msprop:Generator_RowChangingName="TLANGUAGERowChanging" msprop:Generator_TableClassName="TLANGUAGEDataTable" msprop:Generator_TableVarName="tableTLANGUAGE">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="colCategory" msprop:Generator_ColumnPropNameInRow="colCategory" msprop:Generator_ColumnPropNameInTable="colCategoryColumn" msprop:Generator_ColumnVarNameInTable="columncolCategory" msprop:Generator_UserColumnName="colCategory" type="xs:string" minOccurs="0" />
-              <xs:element name="colLanguage" msprop:Generator_ColumnPropNameInRow="colLanguage" msprop:Generator_ColumnPropNameInTable="colLanguageColumn" msprop:Generator_ColumnVarNameInTable="columncolLanguage" msprop:Generator_UserColumnName="colLanguage" type="xs:string" minOccurs="0" />
-              <xs:element name="colYear" msprop:Generator_ColumnPropNameInRow="colYear" msprop:Generator_ColumnPropNameInTable="colYearColumn" msprop:Generator_ColumnVarNameInTable="columncolYear" msprop:Generator_UserColumnName="colYear" type="xs:string" minOccurs="0" />
-              <xs:element name="colLastUse" msprop:Generator_ColumnPropNameInRow="colLastUse" msprop:Generator_ColumnPropNameInTable="colLastUseColumn" msprop:Generator_ColumnVarNameInTable="columncolLastUse" msprop:Generator_UserColumnName="colLastUse" type="xs:string" minOccurs="0" />
+              <xs:element name="colCategory" msprop:Generator_UserColumnName="colCategory" msprop:Generator_ColumnPropNameInTable="colCategoryColumn" msprop:Generator_ColumnPropNameInRow="colCategory" msprop:Generator_ColumnVarNameInTable="columncolCategory" type="xs:string" minOccurs="0" />
+              <xs:element name="colLanguage" msprop:Generator_UserColumnName="colLanguage" msprop:Generator_ColumnPropNameInTable="colLanguageColumn" msprop:Generator_ColumnPropNameInRow="colLanguage" msprop:Generator_ColumnVarNameInTable="columncolLanguage" type="xs:string" minOccurs="0" />
+              <xs:element name="colYear" msprop:Generator_UserColumnName="colYear" msprop:Generator_ColumnPropNameInTable="colYearColumn" msprop:Generator_ColumnPropNameInRow="colYear" msprop:Generator_ColumnVarNameInTable="columncolYear" type="xs:string" minOccurs="0" />
+              <xs:element name="colLastUse" msprop:Generator_UserColumnName="colLastUse" msprop:Generator_ColumnPropNameInTable="colLastUseColumn" msprop:Generator_ColumnPropNameInRow="colLastUse" msprop:Generator_ColumnVarNameInTable="columncolLastUse" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TTECHEXPERIENCE" msprop:Generator_RowEvHandlerName="TTECHEXPERIENCERowChangeEventHandler" msprop:Generator_RowDeletedName="TTECHEXPERIENCERowDeleted" msprop:Generator_RowDeletingName="TTECHEXPERIENCERowDeleting" msprop:Generator_RowEvArgName="TTECHEXPERIENCERowChangeEvent" msprop:Generator_TablePropName="TTECHEXPERIENCE" msprop:Generator_RowChangedName="TTECHEXPERIENCERowChanged" msprop:Generator_RowChangingName="TTECHEXPERIENCERowChanging" msprop:Generator_TableClassName="TTECHEXPERIENCEDataTable" msprop:Generator_RowClassName="TTECHEXPERIENCERow" msprop:Generator_TableVarName="tableTTECHEXPERIENCE" msprop:Generator_UserTableName="TTECHEXPERIENCE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colExperience1" msprop:Generator_ColumnPropNameInRow="colExperience1" msprop:Generator_ColumnPropNameInTable="colExperience1Column" msprop:Generator_ColumnVarNameInTable="columncolExperience1" msprop:Generator_UserColumnName="colExperience1" type="xs:string" minOccurs="0" />
+              <xs:element name="colExperience2" msprop:Generator_ColumnPropNameInRow="colExperience2" msprop:Generator_ColumnPropNameInTable="colExperience2Column" msprop:Generator_ColumnVarNameInTable="columncolExperience2" msprop:Generator_UserColumnName="colExperience2" type="xs:string" minOccurs="0" />
+              <xs:element name="colExperience3" msprop:Generator_ColumnPropNameInRow="colExperience3" msprop:Generator_ColumnPropNameInTable="colExperience3Column" msprop:Generator_ColumnVarNameInTable="columncolExperience3" msprop:Generator_UserColumnName="colExperience3" type="xs:string" minOccurs="0" />
+              <xs:element name="colTech" msprop:Generator_ColumnPropNameInRow="colTech" msprop:Generator_ColumnPropNameInTable="colTechColumn" msprop:Generator_ColumnVarNameInTable="columncolTech" msprop:Generator_UserColumnName="colTech" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -37,6 +47,10 @@
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TEXPERIENCE" />
       <xs:field xpath="mstns:colId" />
+    </xs:unique>
+    <xs:unique name="TTECHEXPERIENCE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TTECHEXPERIENCE" />
+      <xs:field xpath="mstns:colTech" />
     </xs:unique>
   </xs:element>
 </xs:schema>

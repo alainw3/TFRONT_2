@@ -45,6 +45,11 @@ namespace TFRONT
                 dataAdapter.Fill(dataSet21.Tables[1]);
 
 
+                command.CommandText = "select colTech , colExperience1, colExperience2 , colExperience3 from [cv].[dbo].[TTECHEXPERIENCE] order by colId asc";
+                dataAdapter = new SqlDataAdapter(command);
+                dataAdapter.Fill(dataSet21.Tables[2]);
+
+
 
 
 
@@ -68,6 +73,11 @@ namespace TFRONT
 
             ReportDataSource rdsLanguage = new ReportDataSource("Language", dataSet21.Tables[1]);
             reportViewer1.LocalReport.DataSources.Add(rdsLanguage);
+
+
+            ReportDataSource rdsTechExperience = new ReportDataSource("TechExperience", dataSet21.Tables[2]);
+            reportViewer1.LocalReport.DataSources.Add(rdsTechExperience);
+
 
             reportViewer1.RefreshReport();
         }
