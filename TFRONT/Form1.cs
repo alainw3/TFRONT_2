@@ -87,6 +87,13 @@ namespace TFRONT
 
 
             // 
+            updateHourlySum();
+
+        }
+        private void updateHourlySum()
+        {
+
+            // 
             SqlCommand commandWeeklHour = conn.CreateCommand();
             commandWeeklHour.CommandText = new SQL().getSqlWeeklyHour();
             SqlDataReader rd = commandWeeklHour.ExecuteReader();
@@ -116,6 +123,7 @@ namespace TFRONT
             sqlCommand = sqlCommandBuilder.GetUpdateCommand();
             dataAdapterTHour.Update(dataSet11.Tables[1]);
 
+            updateHourlySum();
 
 
         }
