@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using System.Data;
 using System.Globalization;
 using System.Windows.Forms;
 

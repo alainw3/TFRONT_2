@@ -27,10 +27,14 @@ namespace TFRONT
         private const int cycleMiremont = -3;
 
         private const int cycleJR = -5;
-        private const int cycleCVNew= -3;
+        private const int cycleCVNew = -3;
+
+        private Hourly hourly;
+
         public Form1()
         {
             InitializeComponent();
+            hourly = new Hourly();
 
             String connectionString = "Server=DESKTOP-H8VM3SA;Database=commande;User Id=sa;Password=1T2z565%ç*5çx54;;TrustServerCertificate=true";
 
@@ -360,13 +364,20 @@ namespace TFRONT
 
         private void jobSearchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You have clicked on job search");
+            hourly.updateHourlyJobSearch();
+            updateHourly();
+
+
         }
 
         private void dataGridView2_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
         {
-            MessageBox.Show(dataGridView2.Columns[e.ColumnIndex].HeaderText);
-            MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+            //MessageBox.Show(dataGridView2.Columns[e.ColumnIndex].HeaderText);
+            //MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            hourly.setDayID(dataGridView2.Columns[e.ColumnIndex].HeaderText);
+
+            hourly.setHourID(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
         }
 
         private void dateTimePickerJR_Validated(object sender, EventArgs e)
@@ -380,6 +391,55 @@ namespace TFRONT
             commandSQL(dateTimePickerCVNew, tFRONTBindingSourceCVNew.Filter);
             label_Color(dateTimePickerCVNew, labelCVNew, cycleCVNew);
         }
-    }
 
+        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCell gridViewCell = dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if (gridViewCell.Value.ToString() == "1")
+            {
+                gridViewCell.Style.BackColor = Color.Yellow;
+            }
+            else if (gridViewCell.Value.ToString() == "*")
+            {
+                gridViewCell.Style.BackColor = Color.Blue;
+            }
+            else if (gridViewCell.Value.ToString() == "2")
+            {
+                gridViewCell.Style.BackColor = Color.Red;
+            }
+            else if (gridViewCell.Value.ToString() == "3")
+            {
+                gridViewCell.Style.BackColor = Color.Green;
+            }
+            else
+            {
+                gridViewCell.Style.BackColor = Color.White;
+            }
+        }
+
+        private void noneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyNone();
+            updateHourly();
+
+        }
+
+        private void administrationToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyAdministration();
+            updateHourly();
+        }
+
+        private void financeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyFinance();
+            updateHourly();
+        }
+
+        private void autreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyAutre();
+            updateHourly();
+        }
+    }
 }

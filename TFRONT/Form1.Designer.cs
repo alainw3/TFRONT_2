@@ -82,18 +82,14 @@
             colDatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLEARNBindingSource = new BindingSource(components);
             dataGridView2 = new DataGridView();
-            colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
-            colMonDataGridViewTHOUR = new DataGridViewCheckBoxColumn();
             contextMenuStripHourly = new ContextMenuStrip(components);
             jobSearchToolStripMenuItem = new ToolStripMenuItem();
-            administrationToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            administrationToolStripMenuItem1 = new ToolStripMenuItem();
             financeToolStripMenuItem = new ToolStripMenuItem();
-            colTueDataGridViewTHOUR = new DataGridViewCheckBoxColumn();
-            colWedDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
-            colThuDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
-            colFriDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
-            colSatDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
-            colSunDataGridViewTextBoxColumn = new DataGridViewCheckBoxColumn();
+            autreToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            noneToolStripMenuItem = new ToolStripMenuItem();
             tHOURBindingSource = new BindingSource(components);
             groupBox3 = new GroupBox();
             dateTimePickerAdmin = new DateTimePicker();
@@ -115,6 +111,15 @@
             labelJR = new Label();
             dateTimePickerJR = new DateTimePicker();
             tFRONTBindingSourceJR = new BindingSource(components);
+            administrationToolStripMenuItem = new ToolStripMenuItem();
+            colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colMonDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colTueDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colWedDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colThuDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colFriDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colSatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -623,30 +628,13 @@
             dataGridView2.Size = new Size(533, 942);
             dataGridView2.TabIndex = 11;
             dataGridView2.CellContextMenuStripNeeded += dataGridView2_CellContextMenuStripNeeded;
-            // 
-            // colTitleDataGridViewTHOUR
-            // 
-            colTitleDataGridViewTHOUR.DataPropertyName = "colTitle";
-            colTitleDataGridViewTHOUR.HeaderText = "colTitle";
-            colTitleDataGridViewTHOUR.Name = "colTitleDataGridViewTHOUR";
-            // 
-            // colMonDataGridViewTHOUR
-            // 
-            colMonDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
-            colMonDataGridViewTHOUR.DataPropertyName = "colMon";
-            colMonDataGridViewTHOUR.FalseValue = "";
-            colMonDataGridViewTHOUR.HeaderText = "colMon";
-            colMonDataGridViewTHOUR.Name = "colMonDataGridViewTHOUR";
-            colMonDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
-            colMonDataGridViewTHOUR.SortMode = DataGridViewColumnSortMode.Automatic;
-            colMonDataGridViewTHOUR.TrueValue = "*";
-            colMonDataGridViewTHOUR.Width = 50;
+            dataGridView2.CellFormatting += dataGridView2_CellFormatting;
             // 
             // contextMenuStripHourly
             // 
-            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchToolStripMenuItem, administrationToolStripMenuItem, financeToolStripMenuItem });
+            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(154, 70);
+            contextMenuStripHourly.Size = new Size(154, 126);
             // 
             // jobSearchToolStripMenuItem
             // 
@@ -655,77 +643,43 @@
             jobSearchToolStripMenuItem.Text = "Job Search";
             jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
             // 
-            // administrationToolStripMenuItem
+            // toolStripSeparator2
             // 
-            administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            administrationToolStripMenuItem.Size = new Size(153, 22);
-            administrationToolStripMenuItem.Text = "Administration";
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(150, 6);
+            // 
+            // administrationToolStripMenuItem1
+            // 
+            administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
+            administrationToolStripMenuItem1.Size = new Size(153, 22);
+            administrationToolStripMenuItem1.Text = "Administration";
+            administrationToolStripMenuItem1.Click += administrationToolStripMenuItem1_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
             financeToolStripMenuItem.Size = new Size(153, 22);
             financeToolStripMenuItem.Text = "Finance";
+            financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
             // 
-            // colTueDataGridViewTHOUR
+            // autreToolStripMenuItem
             // 
-            colTueDataGridViewTHOUR.DataPropertyName = "colTue";
-            colTueDataGridViewTHOUR.HeaderText = "colTue";
-            colTueDataGridViewTHOUR.Name = "colTueDataGridViewTHOUR";
-            colTueDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
-            colTueDataGridViewTHOUR.SortMode = DataGridViewColumnSortMode.Automatic;
-            colTueDataGridViewTHOUR.TrueValue = "*";
-            colTueDataGridViewTHOUR.Width = 50;
+            autreToolStripMenuItem.Name = "autreToolStripMenuItem";
+            autreToolStripMenuItem.Size = new Size(153, 22);
+            autreToolStripMenuItem.Text = "Autre";
+            autreToolStripMenuItem.Click += autreToolStripMenuItem_Click;
             // 
-            // colWedDataGridViewTextBoxColumn
+            // toolStripSeparator1
             // 
-            colWedDataGridViewTextBoxColumn.DataPropertyName = "colWed";
-            colWedDataGridViewTextBoxColumn.HeaderText = "colWed";
-            colWedDataGridViewTextBoxColumn.Name = "colWedDataGridViewTextBoxColumn";
-            colWedDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colWedDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
-            colWedDataGridViewTextBoxColumn.TrueValue = "*";
-            colWedDataGridViewTextBoxColumn.Width = 50;
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(150, 6);
             // 
-            // colThuDataGridViewTextBoxColumn
+            // noneToolStripMenuItem
             // 
-            colThuDataGridViewTextBoxColumn.DataPropertyName = "colThu";
-            colThuDataGridViewTextBoxColumn.HeaderText = "colThu";
-            colThuDataGridViewTextBoxColumn.Name = "colThuDataGridViewTextBoxColumn";
-            colThuDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colThuDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
-            colThuDataGridViewTextBoxColumn.TrueValue = "*";
-            colThuDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // colFriDataGridViewTextBoxColumn
-            // 
-            colFriDataGridViewTextBoxColumn.DataPropertyName = "colFri";
-            colFriDataGridViewTextBoxColumn.HeaderText = "colFri";
-            colFriDataGridViewTextBoxColumn.Name = "colFriDataGridViewTextBoxColumn";
-            colFriDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colFriDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
-            colFriDataGridViewTextBoxColumn.TrueValue = "*";
-            colFriDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // colSatDataGridViewTextBoxColumn
-            // 
-            colSatDataGridViewTextBoxColumn.DataPropertyName = "colSat";
-            colSatDataGridViewTextBoxColumn.HeaderText = "colSat";
-            colSatDataGridViewTextBoxColumn.Name = "colSatDataGridViewTextBoxColumn";
-            colSatDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colSatDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
-            colSatDataGridViewTextBoxColumn.TrueValue = "*";
-            colSatDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // colSunDataGridViewTextBoxColumn
-            // 
-            colSunDataGridViewTextBoxColumn.DataPropertyName = "colSun";
-            colSunDataGridViewTextBoxColumn.HeaderText = "colSun";
-            colSunDataGridViewTextBoxColumn.Name = "colSunDataGridViewTextBoxColumn";
-            colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colSunDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.Automatic;
-            colSunDataGridViewTextBoxColumn.TrueValue = "*";
-            colSunDataGridViewTextBoxColumn.Width = 50;
+            noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+            noneToolStripMenuItem.Size = new Size(153, 22);
+            noneToolStripMenuItem.Text = "None";
+            noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
             // tHOURBindingSource
             // 
@@ -912,6 +866,81 @@
             tFRONTBindingSourceJR.DataSource = dataSet11;
             tFRONTBindingSourceJR.Filter = "colid='18'";
             // 
+            // administrationToolStripMenuItem
+            // 
+            administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
+            administrationToolStripMenuItem.Size = new Size(180, 22);
+            administrationToolStripMenuItem.Text = "Administration";
+            // 
+            // colTitleDataGridViewTHOUR
+            // 
+            colTitleDataGridViewTHOUR.DataPropertyName = "colTitle";
+            colTitleDataGridViewTHOUR.HeaderText = "colTitle";
+            colTitleDataGridViewTHOUR.Name = "colTitleDataGridViewTHOUR";
+            // 
+            // colMonDataGridViewTHOUR
+            // 
+            colMonDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
+            colMonDataGridViewTHOUR.DataPropertyName = "colMon";
+            colMonDataGridViewTHOUR.HeaderText = "colMon";
+            colMonDataGridViewTHOUR.Name = "colMonDataGridViewTHOUR";
+            colMonDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colMonDataGridViewTHOUR.Width = 50;
+            // 
+            // colTueDataGridViewTHOUR
+            // 
+            colTueDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
+            colTueDataGridViewTHOUR.DataPropertyName = "colTue";
+            colTueDataGridViewTHOUR.HeaderText = "colTue";
+            colTueDataGridViewTHOUR.Name = "colTueDataGridViewTHOUR";
+            colTueDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colTueDataGridViewTHOUR.Width = 50;
+            // 
+            // colWedDataGridViewTextBoxColumn
+            // 
+            colWedDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colWedDataGridViewTextBoxColumn.DataPropertyName = "colWed";
+            colWedDataGridViewTextBoxColumn.HeaderText = "colWed";
+            colWedDataGridViewTextBoxColumn.Name = "colWedDataGridViewTextBoxColumn";
+            colWedDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colWedDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colThuDataGridViewTextBoxColumn
+            // 
+            colThuDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colThuDataGridViewTextBoxColumn.DataPropertyName = "colThu";
+            colThuDataGridViewTextBoxColumn.HeaderText = "colThu";
+            colThuDataGridViewTextBoxColumn.Name = "colThuDataGridViewTextBoxColumn";
+            colThuDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colThuDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colFriDataGridViewTextBoxColumn
+            // 
+            colFriDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colFriDataGridViewTextBoxColumn.DataPropertyName = "colFri";
+            colFriDataGridViewTextBoxColumn.HeaderText = "colFri";
+            colFriDataGridViewTextBoxColumn.Name = "colFriDataGridViewTextBoxColumn";
+            colFriDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colFriDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSatDataGridViewTextBoxColumn
+            // 
+            colSatDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colSatDataGridViewTextBoxColumn.DataPropertyName = "colSat";
+            colSatDataGridViewTextBoxColumn.HeaderText = "colSat";
+            colSatDataGridViewTextBoxColumn.Name = "colSatDataGridViewTextBoxColumn";
+            colSatDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSatDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSunDataGridViewTextBoxColumn
+            // 
+            colSunDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colSunDataGridViewTextBoxColumn.DataPropertyName = "colSun";
+            colSunDataGridViewTextBoxColumn.HeaderText = "colSun";
+            colSunDataGridViewTextBoxColumn.Name = "colSunDataGridViewTextBoxColumn";
+            colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSunDataGridViewTextBoxColumn.Width = 50;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1048,21 +1077,26 @@
         private Button buttonResetDay;
         private ContextMenuStrip contextMenuStripHourly;
         private ToolStripMenuItem jobSearchToolStripMenuItem;
-        private ToolStripMenuItem administrationToolStripMenuItem;
         private ToolStripMenuItem financeToolStripMenuItem;
-        private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
-        private DataGridViewCheckBoxColumn colMonDataGridViewTHOUR;
-        private DataGridViewCheckBoxColumn colTueDataGridViewTHOUR;
-        private DataGridViewCheckBoxColumn colWedDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colThuDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colFriDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colSatDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn colSunDataGridViewTextBoxColumn;
         private Label labelJR;
         private DateTimePicker dateTimePickerJR;
         private BindingSource tFRONTBindingSourceJR;
         private DateTimePicker dateTimePickerCVNew;
         private Label labelCVNew;
         private BindingSource tFRONTBindingSourceCVNew;
+        private ToolStripMenuItem noneToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem administrationToolStripMenuItem1;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem administrationToolStripMenuItem;
+        private ToolStripMenuItem autreToolStripMenuItem;
+        private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
+        private DataGridViewTextBoxColumn colMonDataGridViewTHOUR;
+        private DataGridViewTextBoxColumn colTueDataGridViewTHOUR;
+        private DataGridViewTextBoxColumn colWedDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colThuDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colFriDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colSatDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colSunDataGridViewTextBoxColumn;
     }
 }
