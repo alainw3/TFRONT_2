@@ -657,6 +657,8 @@ namespace TFRONT {
             
             private global::System.Data.DataColumn columncolLastUse;
             
+            private global::System.Data.DataColumn columncolProjet;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TLANGUAGEDataTable() {
@@ -724,6 +726,14 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn colProjetColumn {
+                get {
+                    return this.columncolProjet;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -759,13 +769,14 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TLANGUAGERow AddTLANGUAGERow(string colCategory, string colLanguage, string colYear, string colLastUse) {
+            public TLANGUAGERow AddTLANGUAGERow(string colCategory, string colLanguage, string colYear, string colLastUse, string colProjet) {
                 TLANGUAGERow rowTLANGUAGERow = ((TLANGUAGERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         colCategory,
                         colLanguage,
                         colYear,
-                        colLastUse};
+                        colLastUse,
+                        colProjet};
                 rowTLANGUAGERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTLANGUAGERow);
                 return rowTLANGUAGERow;
@@ -792,6 +803,7 @@ namespace TFRONT {
                 this.columncolLanguage = base.Columns["colLanguage"];
                 this.columncolYear = base.Columns["colYear"];
                 this.columncolLastUse = base.Columns["colLastUse"];
+                this.columncolProjet = base.Columns["colProjet"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -805,6 +817,8 @@ namespace TFRONT {
                 base.Columns.Add(this.columncolYear);
                 this.columncolLastUse = new global::System.Data.DataColumn("colLastUse", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncolLastUse);
+                this.columncolProjet = new global::System.Data.DataColumn("colProjet", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncolProjet);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1421,6 +1435,22 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string colProjet {
+                get {
+                    try {
+                        return ((string)(this[this.tableTLANGUAGE.colProjetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'colProjet\' in table \'TLANGUAGE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTLANGUAGE.colProjetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscolCategoryNull() {
                 return this.IsNull(this.tableTLANGUAGE.colCategoryColumn);
             }
@@ -1465,6 +1495,18 @@ namespace TFRONT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetcolLastUseNull() {
                 this[this.tableTLANGUAGE.colLastUseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscolProjetNull() {
+                return this.IsNull(this.tableTLANGUAGE.colProjetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcolProjetNull() {
+                this[this.tableTLANGUAGE.colProjetColumn] = global::System.Convert.DBNull;
             }
         }
         
