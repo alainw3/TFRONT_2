@@ -61,6 +61,12 @@ namespace TFRONT
             sQL.updateHourly(dayID, "*", hourID);
 
         }
+        public void updateHourlyLearn()
+        {
+
+            sQL.updateHourly(dayID, "4", hourID);
+
+        }
     }
 
 }

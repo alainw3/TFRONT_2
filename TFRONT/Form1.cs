@@ -411,6 +411,10 @@ namespace TFRONT
             {
                 gridViewCell.Style.BackColor = Color.Green;
             }
+            else if (gridViewCell.Value.ToString() == "4")
+            {
+                gridViewCell.Style.BackColor = Color.Fuchsia;
+            }
             else
             {
                 gridViewCell.Style.BackColor = Color.White;
@@ -439,6 +443,12 @@ namespace TFRONT
         private void autreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             hourly.updateHourlyAutre();
+            updateHourly();
+        }
+
+        private void learnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyLearn();
             updateHourly();
         }
     }
