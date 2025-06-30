@@ -27,19 +27,19 @@ namespace TFRONT
         {
 
             return " SELECT ROUND(SUM(cnt)/2,2) FROM" +
-                 "   (  SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSun IN ('*','1','2','3') " +
+                 "   (  SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSun IN ('*','1','2','3','4') " +
                  "      UNION ALL " +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSat IN ('*','1','2','3')  " +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSat IN ('*','1','2','3','4')  " +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colFri IN ('*','1','2','3')  " +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colFri IN ('*','1','2','3','4')  " +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colThu IN ('*','1','2','3')  " +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colThu IN ('*','1','2','3','4')  " +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colWed IN ('*','1','2','3')   " +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colWed IN ('*','1','2','3','4')   " +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colTue IN ('*','1','2','3')   " +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colTue IN ('*','1','2','3','4')   " +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colMon IN ('*','1','2','3')   " +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colMon IN ('*','1','2','3','4')   " +
                  "     ) A";
 
             //and(upper(DATENAME(weekday, GETDATE())) != 'FRIDAY')
