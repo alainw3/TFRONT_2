@@ -30,11 +30,14 @@ namespace TFRONT
         private const int cycleCVNew = -3;
 
         private Hourly hourly;
+        private Front front;
+
 
         public Form1()
         {
             InitializeComponent();
             hourly = new Hourly();
+            front = new Front();
 
             String connectionString = "Server=DESKTOP-H8VM3SA;Database=commande;User Id=sa;Password=1T2z565%ç*5çx54;;TrustServerCertificate=true";
 
@@ -45,15 +48,17 @@ namespace TFRONT
                 conn.Open();
 
                 // TFRONT
-                SqlCommand command = conn.CreateCommand();
-                command.CommandText = "select colid , colDat, colCycle from [winman].[dbo].[TBL_TFRONT]";
-                dataAdapter = new SqlDataAdapter(command);
+                //SqlCommand command = conn.CreateCommand();
+                //command.CommandText = "select colid , colDat, colCycle from [winman].[dbo].[TBL_TFRONT]";
+                //dataAdapter = new SqlDataAdapter(command);
+                dataAdapter = (SqlDataAdapter?)front.dataAdapterFront();
                 dataAdapter.Fill(dataSet11.Tables[0]);
 
 
 
 
                 // TLEARN
+                SqlCommand command = conn.CreateCommand();
                 command.CommandText = "select colid , colDat, colLang from [winman].[dbo].[TBL_TLEARN]";
                 dataAdapter = new SqlDataAdapter(command);
                 dataAdapter.Fill(dataSet11, "TLEARN");

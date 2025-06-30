@@ -86,6 +86,7 @@
             colMonDataGridViewTHOUR = new DataGridViewTextBoxColumn();
             contextMenuStripHourly = new ContextMenuStrip(components);
             jobSearchToolStripMenuItem = new ToolStripMenuItem();
+            learnToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
             administrationToolStripMenuItem1 = new ToolStripMenuItem();
             financeToolStripMenuItem = new ToolStripMenuItem();
@@ -120,7 +121,6 @@
             dateTimePickerJR = new DateTimePicker();
             tFRONTBindingSourceJR = new BindingSource(components);
             administrationToolStripMenuItem = new ToolStripMenuItem();
-            learnToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -274,7 +274,7 @@
             groupBox1.Controls.Add(dateTimePickerCV);
             groupBox1.Location = new Point(239, 25);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(333, 399);
+            groupBox1.Size = new Size(331, 409);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "CV";
@@ -283,7 +283,7 @@
             // 
             dateTimePickerCVNew.DataBindings.Add(new Binding("Text", tFRONTBindingSourceCVNew, "colDat", true));
             dateTimePickerCVNew.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVNew.Location = new Point(155, 330);
+            dateTimePickerCVNew.Location = new Point(155, 251);
             dateTimePickerCVNew.Name = "dateTimePickerCVNew";
             dateTimePickerCVNew.Size = new Size(131, 23);
             dateTimePickerCVNew.TabIndex = 15;
@@ -299,7 +299,7 @@
             // 
             labelCVNew.AutoSize = true;
             labelCVNew.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCVNew.Location = new Point(27, 331);
+            labelCVNew.Location = new Point(27, 252);
             labelCVNew.Name = "labelCVNew";
             labelCVNew.Size = new Size(51, 15);
             labelCVNew.TabIndex = 14;
@@ -307,7 +307,7 @@
             // 
             // buttonCV
             // 
-            buttonCV.Location = new Point(155, 355);
+            buttonCV.Location = new Point(155, 276);
             buttonCV.Name = "buttonCV";
             buttonCV.Size = new Size(128, 31);
             buttonCV.TabIndex = 13;
@@ -319,7 +319,7 @@
             // 
             dateTimePickerCVEnv.DataBindings.Add(new Binding("Text", tFRONTBindingCVEnv, "colDat", true));
             dateTimePickerCVEnv.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVEnv.Location = new Point(154, 291);
+            dateTimePickerCVEnv.Location = new Point(154, 337);
             dateTimePickerCVEnv.Name = "dateTimePickerCVEnv";
             dateTimePickerCVEnv.Size = new Size(132, 23);
             dateTimePickerCVEnv.TabIndex = 12;
@@ -335,7 +335,7 @@
             // 
             labelCVEnv.AutoSize = true;
             labelCVEnv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCVEnv.Location = new Point(27, 294);
+            labelCVEnv.Location = new Point(27, 340);
             labelCVEnv.Name = "labelCVEnv";
             labelCVEnv.Size = new Size(74, 15);
             labelCVEnv.TabIndex = 11;
@@ -345,7 +345,7 @@
             // 
             dateTimePickerCVFRLecture.DataBindings.Add(new Binding("Text", tFRONTBindingCVFRLecture, "colDat", true));
             dateTimePickerCVFRLecture.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVFRLecture.Location = new Point(155, 246);
+            dateTimePickerCVFRLecture.Location = new Point(155, 212);
             dateTimePickerCVFRLecture.Name = "dateTimePickerCVFRLecture";
             dateTimePickerCVFRLecture.Size = new Size(131, 23);
             dateTimePickerCVFRLecture.TabIndex = 10;
@@ -360,7 +360,7 @@
             // labelCVFRLecture
             // 
             labelCVFRLecture.AutoSize = true;
-            labelCVFRLecture.Location = new Point(24, 246);
+            labelCVFRLecture.Location = new Point(24, 212);
             labelCVFRLecture.Name = "labelCVFRLecture";
             labelCVFRLecture.Size = new Size(90, 15);
             labelCVFRLecture.TabIndex = 9;
@@ -370,7 +370,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(24, 158);
+            label3.Location = new Point(24, 138);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 8;
@@ -379,7 +379,7 @@
             // labelCVFR
             // 
             labelCVFR.AutoSize = true;
-            labelCVFR.Location = new Point(24, 197);
+            labelCVFR.Location = new Point(24, 163);
             labelCVFR.Name = "labelCVFR";
             labelCVFR.Size = new Size(112, 15);
             labelCVFR.TabIndex = 6;
@@ -389,7 +389,7 @@
             // 
             dateTimePickerCVFR.DataBindings.Add(new Binding("Text", tFRONTBindingSourceCVFR, "colDat", true));
             dateTimePickerCVFR.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVFR.Location = new Point(155, 195);
+            dateTimePickerCVFR.Location = new Point(155, 161);
             dateTimePickerCVFR.Name = "dateTimePickerCVFR";
             dateTimePickerCVFR.Size = new Size(128, 23);
             dateTimePickerCVFR.TabIndex = 7;
@@ -405,7 +405,7 @@
             // 
             dateTimePickerCVLecture.DataBindings.Add(new Binding("Text", tFRONTBindingCVLecture, "colDat", true));
             dateTimePickerCVLecture.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVLecture.Location = new Point(107, 109);
+            dateTimePickerCVLecture.Location = new Point(107, 89);
             dateTimePickerCVLecture.Name = "dateTimePickerCVLecture";
             dateTimePickerCVLecture.Size = new Size(131, 23);
             dateTimePickerCVLecture.TabIndex = 5;
@@ -420,7 +420,7 @@
             // labelCVLecture
             // 
             labelCVLecture.AutoSize = true;
-            labelCVLecture.Location = new Point(24, 109);
+            labelCVLecture.Location = new Point(24, 89);
             labelCVLecture.Name = "labelCVLecture";
             labelCVLecture.Size = new Size(70, 15);
             labelCVLecture.TabIndex = 4;
@@ -650,50 +650,57 @@
             // 
             contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchToolStripMenuItem, learnToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(181, 170);
+            contextMenuStripHourly.Size = new Size(154, 148);
             // 
             // jobSearchToolStripMenuItem
             // 
             jobSearchToolStripMenuItem.Name = "jobSearchToolStripMenuItem";
-            jobSearchToolStripMenuItem.Size = new Size(180, 22);
+            jobSearchToolStripMenuItem.Size = new Size(153, 22);
             jobSearchToolStripMenuItem.Text = "Job Search";
             jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
+            // 
+            // learnToolStripMenuItem
+            // 
+            learnToolStripMenuItem.Name = "learnToolStripMenuItem";
+            learnToolStripMenuItem.Size = new Size(153, 22);
+            learnToolStripMenuItem.Text = "Learn";
+            learnToolStripMenuItem.Click += learnToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(150, 6);
             // 
             // administrationToolStripMenuItem1
             // 
             administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
-            administrationToolStripMenuItem1.Size = new Size(180, 22);
+            administrationToolStripMenuItem1.Size = new Size(153, 22);
             administrationToolStripMenuItem1.Text = "Administration";
             administrationToolStripMenuItem1.Click += administrationToolStripMenuItem1_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(180, 22);
+            financeToolStripMenuItem.Size = new Size(153, 22);
             financeToolStripMenuItem.Text = "Finance";
             financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
             // 
             // autreToolStripMenuItem
             // 
             autreToolStripMenuItem.Name = "autreToolStripMenuItem";
-            autreToolStripMenuItem.Size = new Size(180, 22);
+            autreToolStripMenuItem.Size = new Size(153, 22);
             autreToolStripMenuItem.Text = "Autre";
             autreToolStripMenuItem.Click += autreToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(150, 6);
             // 
             // noneToolStripMenuItem
             // 
             noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            noneToolStripMenuItem.Size = new Size(180, 22);
+            noneToolStripMenuItem.Size = new Size(153, 22);
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
@@ -941,13 +948,6 @@
             administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
             administrationToolStripMenuItem.Size = new Size(180, 22);
             administrationToolStripMenuItem.Text = "Administration";
-            // 
-            // learnToolStripMenuItem
-            // 
-            learnToolStripMenuItem.Name = "learnToolStripMenuItem";
-            learnToolStripMenuItem.Size = new Size(180, 22);
-            learnToolStripMenuItem.Text = "Learn";
-            learnToolStripMenuItem.Click += learnToolStripMenuItem_Click;
             // 
             // Form1
             // 

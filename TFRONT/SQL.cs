@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,16 +12,16 @@ namespace TFRONT
     internal class SQL
     {
         SqlConnection conn;
-        SqlDataAdapter dataAdapter;
+        //SqlDataAdapter dataAdapter;
 
         private String connectionString = "Server=DESKTOP-H8VM3SA;Database=commande;User Id=sa;Password=1T2z565%ç*5çx54;;TrustServerCertificate=true";
 
         public SQL() { }
 
-        public string getSqlUpdateTFront(string dateValue,string colIdValue) {
+        public string getSqlUpdateTFront(string dateValue, string colIdValue) {
             return "UPDATE[winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime, '"
-                    + dateValue + "',103) where colid ='" + colIdValue+"'";
-                    }
+                    + dateValue + "',103) where colid ='" + colIdValue + "'";
+        }
 
         public string getSqlWeeklyHour()
         {
@@ -45,19 +46,36 @@ namespace TFRONT
         }
 
         public string getSqlResetDay(string weekday, string weekcol) {
-            return " update[winman].[dbo].[TBL_THOUR] set " + weekcol +" = NULL where" +
-                   " (upper(DATENAME(weekday, GETDATE())) = '" + weekday +"') and " + weekcol + " = '*' ";
+            return " update[winman].[dbo].[TBL_THOUR] set " + weekcol + " = NULL where" +
+                   " (upper(DATENAME(weekday, GETDATE())) = '" + weekday + "') and " + weekcol + " = '*' ";
 
         }
 
         public void updateHourly(string weekcol, string jobId, string hourId)
         {
-            string sqlUpdate= " update[winman].[dbo].[TBL_THOUR] set "  + weekcol + " = '"+ jobId + "' where" +
+            string sqlUpdate = " update[winman].[dbo].[TBL_THOUR] set " + weekcol + " = '" + jobId + "' where" +
                                 " colTitle = '" + hourId + "'";
 
             updateSqlCommand(sqlUpdate);
 
         }
+
+        public DataAdapter GetDataAdapterFront()
+        {
+            return getDataAdapter("select colid , colDat, colCycle from [winman].[dbo].[TBL_TFRONT]");
+          
+        }
+
+        private DataAdapter getDataAdapter(string selectCommand) {
+
+            connect();
+
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = selectCommand;
+            return new SqlDataAdapter(command);
+    
+        }
+
 
         private void updateSqlCommand (string sqlCommand) {
 
