@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             labelCV = new Label();
             dateTimePickerCV = new DateTimePicker();
@@ -85,6 +86,8 @@
             colDatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLEARNBindingSource = new BindingSource(components);
             dataGridView2 = new DataGridView();
+            colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colMonDataGridViewTHOUR = new DataGridViewTextBoxColumn();
             contextMenuStripHourly = new ContextMenuStrip(components);
             jobSearchToolStripMenuItem = new ToolStripMenuItem();
             learnToolStripMenuItem = new ToolStripMenuItem();
@@ -94,6 +97,12 @@
             autreToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             noneToolStripMenuItem = new ToolStripMenuItem();
+            colTueDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colWedDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colThuDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colFriDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colSatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tHOURBindingSource = new BindingSource(components);
             groupBox3 = new GroupBox();
             dateTimePickerAdmin = new DateTimePicker();
@@ -116,14 +125,17 @@
             dateTimePickerJR = new DateTimePicker();
             tFRONTBindingSourceJR = new BindingSource(components);
             administrationToolStripMenuItem = new ToolStripMenuItem();
-            colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
-            colMonDataGridViewTHOUR = new DataGridViewTextBoxColumn();
-            colTueDataGridViewTHOUR = new DataGridViewTextBoxColumn();
-            colWedDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colThuDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colFriDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colSatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            dataGridView3 = new DataGridView();
+            colCategoryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colLanguageDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colYearDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colLastUseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colProjetDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tLANGUAGEBindingSource = new BindingSource(components);
+            dataSet21 = new DataSet2();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -154,6 +166,11 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMiremont).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).BeginInit();
+            tabControl1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataSet21).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -663,6 +680,22 @@
             dataGridView2.CellContextMenuStripNeeded += dataGridView2_CellContextMenuStripNeeded;
             dataGridView2.CellFormatting += dataGridView2_CellFormatting;
             // 
+            // colTitleDataGridViewTHOUR
+            // 
+            colTitleDataGridViewTHOUR.DataPropertyName = "colTitle";
+            colTitleDataGridViewTHOUR.HeaderText = "colTitle";
+            colTitleDataGridViewTHOUR.Name = "colTitleDataGridViewTHOUR";
+            colTitleDataGridViewTHOUR.ReadOnly = true;
+            // 
+            // colMonDataGridViewTHOUR
+            // 
+            colMonDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
+            colMonDataGridViewTHOUR.DataPropertyName = "colMon";
+            colMonDataGridViewTHOUR.HeaderText = "colMon";
+            colMonDataGridViewTHOUR.Name = "colMonDataGridViewTHOUR";
+            colMonDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colMonDataGridViewTHOUR.Width = 50;
+            // 
             // contextMenuStripHourly
             // 
             contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchToolStripMenuItem, learnToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
@@ -720,6 +753,60 @@
             noneToolStripMenuItem.Size = new Size(153, 22);
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
+            // 
+            // colTueDataGridViewTHOUR
+            // 
+            colTueDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
+            colTueDataGridViewTHOUR.DataPropertyName = "colTue";
+            colTueDataGridViewTHOUR.HeaderText = "colTue";
+            colTueDataGridViewTHOUR.Name = "colTueDataGridViewTHOUR";
+            colTueDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colTueDataGridViewTHOUR.Width = 50;
+            // 
+            // colWedDataGridViewTextBoxColumn
+            // 
+            colWedDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colWedDataGridViewTextBoxColumn.DataPropertyName = "colWed";
+            colWedDataGridViewTextBoxColumn.HeaderText = "colWed";
+            colWedDataGridViewTextBoxColumn.Name = "colWedDataGridViewTextBoxColumn";
+            colWedDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colWedDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colThuDataGridViewTextBoxColumn
+            // 
+            colThuDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colThuDataGridViewTextBoxColumn.DataPropertyName = "colThu";
+            colThuDataGridViewTextBoxColumn.HeaderText = "colThu";
+            colThuDataGridViewTextBoxColumn.Name = "colThuDataGridViewTextBoxColumn";
+            colThuDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colThuDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colFriDataGridViewTextBoxColumn
+            // 
+            colFriDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colFriDataGridViewTextBoxColumn.DataPropertyName = "colFri";
+            colFriDataGridViewTextBoxColumn.HeaderText = "colFri";
+            colFriDataGridViewTextBoxColumn.Name = "colFriDataGridViewTextBoxColumn";
+            colFriDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colFriDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSatDataGridViewTextBoxColumn
+            // 
+            colSatDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colSatDataGridViewTextBoxColumn.DataPropertyName = "colSat";
+            colSatDataGridViewTextBoxColumn.HeaderText = "colSat";
+            colSatDataGridViewTextBoxColumn.Name = "colSatDataGridViewTextBoxColumn";
+            colSatDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSatDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSunDataGridViewTextBoxColumn
+            // 
+            colSunDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colSunDataGridViewTextBoxColumn.DataPropertyName = "colSun";
+            colSunDataGridViewTextBoxColumn.HeaderText = "colSun";
+            colSunDataGridViewTextBoxColumn.Name = "colSunDataGridViewTextBoxColumn";
+            colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSunDataGridViewTextBoxColumn.Width = 50;
             // 
             // tHOURBindingSource
             // 
@@ -912,81 +999,104 @@
             administrationToolStripMenuItem.Size = new Size(180, 22);
             administrationToolStripMenuItem.Text = "Administration";
             // 
-            // colTitleDataGridViewTHOUR
+            // tabControl1
             // 
-            colTitleDataGridViewTHOUR.DataPropertyName = "colTitle";
-            colTitleDataGridViewTHOUR.HeaderText = "colTitle";
-            colTitleDataGridViewTHOUR.Name = "colTitleDataGridViewTHOUR";
-            colTitleDataGridViewTHOUR.ReadOnly = true;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(29, 602);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(833, 460);
+            tabControl1.TabIndex = 18;
             // 
-            // colMonDataGridViewTHOUR
+            // tabPage1
             // 
-            colMonDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
-            colMonDataGridViewTHOUR.DataPropertyName = "colMon";
-            colMonDataGridViewTHOUR.HeaderText = "colMon";
-            colMonDataGridViewTHOUR.Name = "colMonDataGridViewTHOUR";
-            colMonDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
-            colMonDataGridViewTHOUR.Width = 50;
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(825, 432);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
-            // colTueDataGridViewTHOUR
+            // tabPage2
             // 
-            colTueDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
-            colTueDataGridViewTHOUR.DataPropertyName = "colTue";
-            colTueDataGridViewTHOUR.HeaderText = "colTue";
-            colTueDataGridViewTHOUR.Name = "colTueDataGridViewTHOUR";
-            colTueDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
-            colTueDataGridViewTHOUR.Width = 50;
+            tabPage2.Controls.Add(dataGridView3);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(825, 432);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "CVNew";
+            tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Enter += tabPage2_Enter;
             // 
-            // colWedDataGridViewTextBoxColumn
+            // dataGridView3
             // 
-            colWedDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colWedDataGridViewTextBoxColumn.DataPropertyName = "colWed";
-            colWedDataGridViewTextBoxColumn.HeaderText = "colWed";
-            colWedDataGridViewTextBoxColumn.Name = "colWedDataGridViewTextBoxColumn";
-            colWedDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colWedDataGridViewTextBoxColumn.Width = 50;
+            dataGridView3.AutoGenerateColumns = false;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { colCategoryDataGridViewTextBoxColumn, colLanguageDataGridViewTextBoxColumn, colYearDataGridViewTextBoxColumn, colLastUseDataGridViewTextBoxColumn, colProjetDataGridViewTextBoxColumn });
+            dataGridView3.DataSource = tLANGUAGEBindingSource;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView3.Location = new Point(17, 23);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.Size = new Size(691, 388);
+            dataGridView3.TabIndex = 0;
             // 
-            // colThuDataGridViewTextBoxColumn
+            // colCategoryDataGridViewTextBoxColumn
             // 
-            colThuDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colThuDataGridViewTextBoxColumn.DataPropertyName = "colThu";
-            colThuDataGridViewTextBoxColumn.HeaderText = "colThu";
-            colThuDataGridViewTextBoxColumn.Name = "colThuDataGridViewTextBoxColumn";
-            colThuDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colThuDataGridViewTextBoxColumn.Width = 50;
+            colCategoryDataGridViewTextBoxColumn.DataPropertyName = "colCategory";
+            colCategoryDataGridViewTextBoxColumn.HeaderText = "colCategory";
+            colCategoryDataGridViewTextBoxColumn.Name = "colCategoryDataGridViewTextBoxColumn";
             // 
-            // colFriDataGridViewTextBoxColumn
+            // colLanguageDataGridViewTextBoxColumn
             // 
-            colFriDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colFriDataGridViewTextBoxColumn.DataPropertyName = "colFri";
-            colFriDataGridViewTextBoxColumn.HeaderText = "colFri";
-            colFriDataGridViewTextBoxColumn.Name = "colFriDataGridViewTextBoxColumn";
-            colFriDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colFriDataGridViewTextBoxColumn.Width = 50;
+            colLanguageDataGridViewTextBoxColumn.DataPropertyName = "colLanguage";
+            colLanguageDataGridViewTextBoxColumn.HeaderText = "colLanguage";
+            colLanguageDataGridViewTextBoxColumn.Name = "colLanguageDataGridViewTextBoxColumn";
             // 
-            // colSatDataGridViewTextBoxColumn
+            // colYearDataGridViewTextBoxColumn
             // 
-            colSatDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colSatDataGridViewTextBoxColumn.DataPropertyName = "colSat";
-            colSatDataGridViewTextBoxColumn.HeaderText = "colSat";
-            colSatDataGridViewTextBoxColumn.Name = "colSatDataGridViewTextBoxColumn";
-            colSatDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colSatDataGridViewTextBoxColumn.Width = 50;
+            colYearDataGridViewTextBoxColumn.DataPropertyName = "colYear";
+            colYearDataGridViewTextBoxColumn.HeaderText = "colYear";
+            colYearDataGridViewTextBoxColumn.Name = "colYearDataGridViewTextBoxColumn";
             // 
-            // colSunDataGridViewTextBoxColumn
+            // colLastUseDataGridViewTextBoxColumn
             // 
-            colSunDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colSunDataGridViewTextBoxColumn.DataPropertyName = "colSun";
-            colSunDataGridViewTextBoxColumn.HeaderText = "colSun";
-            colSunDataGridViewTextBoxColumn.Name = "colSunDataGridViewTextBoxColumn";
-            colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colSunDataGridViewTextBoxColumn.Width = 50;
+            colLastUseDataGridViewTextBoxColumn.DataPropertyName = "colLastUse";
+            colLastUseDataGridViewTextBoxColumn.HeaderText = "colLastUse";
+            colLastUseDataGridViewTextBoxColumn.Name = "colLastUseDataGridViewTextBoxColumn";
+            // 
+            // colProjetDataGridViewTextBoxColumn
+            // 
+            colProjetDataGridViewTextBoxColumn.DataPropertyName = "colProjet";
+            colProjetDataGridViewTextBoxColumn.HeaderText = "colProjet";
+            colProjetDataGridViewTextBoxColumn.Name = "colProjetDataGridViewTextBoxColumn";
+            // 
+            // tLANGUAGEBindingSource
+            // 
+            tLANGUAGEBindingSource.DataMember = "TLANGUAGE";
+            tLANGUAGEBindingSource.DataSource = dataSet21;
+            // 
+            // dataSet21
+            // 
+            dataSet21.DataSetName = "DataSet2";
+            dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
+            dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1888, 1181);
+            Controls.Add(tabControl1);
             Controls.Add(dateTimePickerJR);
             Controls.Add(labelJR);
             Controls.Add(buttonResetDay);
@@ -1042,6 +1152,11 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMiremont).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).EndInit();
+            tabControl1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataSet21).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1091,7 +1206,6 @@
         private BindingSource tFRONTbindingSourcePRO;
         private BindingSource tFRINTbindingSourceMIT;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn colIdDataGridViewTextBoxColumn;
         private DataGridView dataGridView2;
         private BindingSource tHOURBindingSource;
         private BindingSource tLEARNBindingSource;
@@ -1144,5 +1258,16 @@
         private DataGridViewTextBoxColumn colFriDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colSatDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colSunDataGridViewTextBoxColumn;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private DataGridView dataGridView3;
+        private BindingSource tLANGUAGEBindingSource;
+        private DataSet2 dataSet21;
+        private DataGridViewTextBoxColumn colCategoryDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colLanguageDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colYearDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colLastUseDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colProjetDataGridViewTextBoxColumn;
     }
 }

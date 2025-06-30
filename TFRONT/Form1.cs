@@ -33,10 +33,12 @@ namespace TFRONT
         private Hourly hourly;
         private Front front;
 
+        private CV cV;
 
         public Form1()
         {
             InitializeComponent();
+       
             hourly = new Hourly();
             front = new Front();
 
@@ -185,8 +187,13 @@ namespace TFRONT
 
         private void buttonCV_Click(object sender, EventArgs e)
         {
-            var cv = new CV();
-            cv.Show();
+            if (cV == null)
+            {
+                cV = new CV();
+            }
+            //cV.Dispose();
+            cV.Show();
+           
         }
 
         private void dateTimePickerLLM_ValueChanged(object sender, EventArgs e)
@@ -464,6 +471,16 @@ namespace TFRONT
         {
             commandSQL(dateTimePickerReel, tFRONTBindingSourceReel.Filter);
             label_Color(dateTimePickerReel, labelReel, cycleReel);
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            if (cV == null)
+            {
+                cV = new CV();
+            }
+            tLANGUAGEBindingSource.DataSource = cV.dataSet();
+            //tLANGUAGEBindingSource.ResetBindings(true);
         }
     }
 }

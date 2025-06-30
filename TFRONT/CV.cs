@@ -20,12 +20,12 @@ namespace TFRONT
     {
         SqlConnection conn;
         SqlDataAdapter dataAdapter;
- 
+
 
         public CV()
         {
             InitializeComponent();
-            
+
             String connectionString = "Server=DESKTOP-H8VM3SA;Database=commande;User Id=sa;Password=1T2z565%ç*5çx54;;TrustServerCertificate=true";
 
             try
@@ -61,6 +61,12 @@ namespace TFRONT
 
         }
 
+        public DataSet dataSet()
+        {
+            return dataSet21;
+        }
+
+
         private void CV_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.ReportEmbeddedResource = "TFRONT.Report1.rdlc";
@@ -79,6 +85,12 @@ namespace TFRONT
 
 
             reportViewer1.RefreshReport();
+        }
+
+
+        private void CV_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
