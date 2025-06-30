@@ -42,6 +42,8 @@
             dateTimePickerSP = new DateTimePicker();
             tFRONTBindingSourceSP = new BindingSource(components);
             groupBox1 = new GroupBox();
+            dateTimePickerReel = new DateTimePicker();
+            labelReel = new Label();
             dateTimePickerCVNew = new DateTimePicker();
             tFRONTBindingSourceCVNew = new BindingSource(components);
             labelCVNew = new Label();
@@ -121,6 +123,7 @@
             dateTimePickerJR = new DateTimePicker();
             tFRONTBindingSourceJR = new BindingSource(components);
             administrationToolStripMenuItem = new ToolStripMenuItem();
+            tFRONTBindingSourceReel = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -150,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMiremont).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceReel).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -257,6 +261,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dateTimePickerReel);
+            groupBox1.Controls.Add(labelReel);
             groupBox1.Controls.Add(dateTimePickerCVNew);
             groupBox1.Controls.Add(labelCVNew);
             groupBox1.Controls.Add(buttonCV);
@@ -278,6 +284,26 @@
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "CV";
+            // 
+            // dateTimePickerReel
+            // 
+            dateTimePickerReel.DataBindings.Add(new Binding("Text", tFRONTBindingSourceReel, "colDat", true));
+            dateTimePickerReel.Format = DateTimePickerFormat.Short;
+            dateTimePickerReel.Location = new Point(151, 375);
+            dateTimePickerReel.Name = "dateTimePickerReel";
+            dateTimePickerReel.Size = new Size(132, 23);
+            dateTimePickerReel.TabIndex = 17;
+            dateTimePickerReel.Validated += dateTimePickerReel_Validated;
+            // 
+            // labelReel
+            // 
+            labelReel.AutoSize = true;
+            labelReel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelReel.Location = new Point(29, 376);
+            labelReel.Name = "labelReel";
+            labelReel.Size = new Size(32, 15);
+            labelReel.TabIndex = 16;
+            labelReel.Text = "Reel";
             // 
             // dateTimePickerCVNew
             // 
@@ -319,7 +345,7 @@
             // 
             dateTimePickerCVEnv.DataBindings.Add(new Binding("Text", tFRONTBindingCVEnv, "colDat", true));
             dateTimePickerCVEnv.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVEnv.Location = new Point(154, 337);
+            dateTimePickerCVEnv.Location = new Point(151, 337);
             dateTimePickerCVEnv.Name = "dateTimePickerCVEnv";
             dateTimePickerCVEnv.Size = new Size(132, 23);
             dateTimePickerCVEnv.TabIndex = 12;
@@ -949,6 +975,12 @@
             administrationToolStripMenuItem.Size = new Size(180, 22);
             administrationToolStripMenuItem.Text = "Administration";
             // 
+            // tFRONTBindingSourceReel
+            // 
+            tFRONTBindingSourceReel.DataMember = "TFRONT";
+            tFRONTBindingSourceReel.DataSource = dataSet11;
+            tFRONTBindingSourceReel.Filter = "colid='20'";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1008,6 +1040,7 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMiremont).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceReel).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1107,5 +1140,8 @@
         private DataGridViewTextBoxColumn colSatDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colSunDataGridViewTextBoxColumn;
         private ToolStripMenuItem learnToolStripMenuItem;
+        private DateTimePicker dateTimePickerReel;
+        private Label labelReel;
+        private BindingSource tFRONTBindingSourceReel;
     }
 }

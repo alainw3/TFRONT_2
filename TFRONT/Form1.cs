@@ -28,6 +28,7 @@ namespace TFRONT
 
         private const int cycleJR = -5;
         private const int cycleCVNew = -3;
+        private const int cycleReel = -2;
 
         private Hourly hourly;
         private Front front;
@@ -177,6 +178,8 @@ namespace TFRONT
             label_Color(dateTimePickerJR, labelJR, cycleJR);
             label_Color(dateTimePickerCVNew, labelCVNew, cycleCVNew);
 
+            label_Color(dateTimePickerReel, labelReel, cycleReel);
+
         }
 
 
@@ -312,7 +315,7 @@ namespace TFRONT
         private void dateTimePickerCVEnv_Validated(object sender, EventArgs e)
         {
             commandSQL(dateTimePickerCVEnv, tFRONTBindingCVEnv.Filter);
-            label_Color(dateTimePickerCVEnv, labelCVEnv, cycleCVLecture);
+            label_Color(dateTimePickerCVEnv, labelCVEnv, cycleCVEnv);
         }
 
         private void dateTimePickerSP_Validated(object sender, EventArgs e)
@@ -455,6 +458,12 @@ namespace TFRONT
         {
             hourly.updateHourlyLearn();
             updateHourly();
+        }
+
+        private void dateTimePickerReel_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerReel, tFRONTBindingSourceReel.Filter);
+            label_Color(dateTimePickerReel, labelReel, cycleReel);
         }
     }
 }
