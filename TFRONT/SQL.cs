@@ -18,15 +18,21 @@ namespace TFRONT
 
         public SQL() { }
 
-        public string getSqlUpdateTFront(string dateValue, string colIdValue) {
-            return "UPDATE[winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime, '"
-                    + dateValue + "',103) where colid ='" + colIdValue + "'";
+        public void  SqlUpdateTFront(string dateValue, string colIdfilter) {
+            string sqlUpdate = "UPDATE[winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime, '"
+                    + dateValue + "',103) where '" + colIdfilter + "'";
+
+            updateSqlCommand(sqlUpdate);
         }
 
-        public string getSqlWeeklyHour()
+        public string getTotalHour()
         {
+            connect();
+            String totalHour ;
 
-            return " SELECT ROUND(SUM(cnt)/2,2) FROM" +
+            SqlCommand commandWeeklHour = conn.CreateCommand();
+
+            String sql = " SELECT ROUND(SUM(cnt)/2,2) FROM" +
                  "   (  SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSun IN ('*','1','2','3','4') " +
                  "      UNION ALL " +
                  "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSat IN ('*','1','2','3','4')  " +
@@ -43,7 +49,60 @@ namespace TFRONT
                  "     ) A";
 
             //and(upper(DATENAME(weekday, GETDATE())) != 'FRIDAY')
+
+            commandWeeklHour.CommandText = sql;
+            SqlDataReader rd = commandWeeklHour.ExecuteReader();
+            //if (rd != null)
+            //{
+            //    if (rd.Read())
+            //    {
+            //        totalHour= rd[0].ToString();
+            //    }
+            //}
+            rd.Read();
+            totalHour = rd[0].ToString();
+
+            rd.Close();
+
+            return totalHour;
         }
+
+        public void resetHourly()
+        {
+            resetDay("FRIDAY", "colFri");
+           
+
+            resetDay("MONDAY", "colMon");
+           
+
+            resetDay("THURSDAY", "colThu");
+            
+
+            resetDay("WEDNESDAY", "colWed");
+            
+
+            resetDay("TUESDAY", "colTue");
+            
+
+            resetDay("SUNDAY", "colSun");
+            
+
+            resetDay("SATURDAY", "colSat");
+    
+
+        }
+
+        
+
+
+        private void resetDay(string weekday, string weekcol)
+        {
+            string sqlReset = getSqlResetDay(weekday, weekcol);
+
+            updateSqlCommand(sqlReset);
+        }
+
+
 
         public string getSqlResetDay(string weekday, string weekcol) {
             return " update[winman].[dbo].[TBL_THOUR] set " + weekcol + " = NULL where" +
@@ -51,6 +110,7 @@ namespace TFRONT
 
         }
 
+      
         public void updateHourly(string weekcol, string jobId, string hourId)
         {
             string sqlUpdate = " update[winman].[dbo].[TBL_THOUR] set " + weekcol + " = '" + jobId + "' where" +
@@ -64,6 +124,19 @@ namespace TFRONT
         {
             return getDataAdapter("select colid , colDat, colCycle from [winman].[dbo].[TBL_TFRONT]");
           
+        }
+
+        public DataAdapter GetDataAdapterLearn()
+        {
+            return getDataAdapter("select colid , colDat, colLang from [winman].[dbo].[TBL_TLEARN]");
+
+        }
+
+
+        public DataAdapter GetDataAdapterHourly()
+        {
+            return getDataAdapter("select colid, colTitle, colMon, colTue, colWed, colThu, colFri, colSat, colSun  from [winman].[dbo].[TBL_THOUR]");
+
         }
 
         private DataAdapter getDataAdapter(string selectCommand) {

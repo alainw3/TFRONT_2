@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,12 @@ namespace TFRONT
 
         public Hourly() {
             sQL = new SQL();
+        }
+
+
+        public DataAdapter dataAdapterHourly()
+        {
+            return sQL.GetDataAdapterHourly();
         }
 
         public void setJobID(string jobID)
@@ -66,6 +73,15 @@ namespace TFRONT
 
             sQL.updateHourly(dayID, "4", hourID);
 
+        }
+
+        public void resetHourly()
+        {
+            sQL.resetHourly();
+        }
+        public string getTotalHour()
+        {
+            return sQL.getTotalHour();
         }
     }
 

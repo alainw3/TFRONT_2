@@ -20,5 +20,9 @@ namespace TFRONT
             return sQL.GetDataAdapterFront();
         }
 
+        public void updateFront(string dateValue, string colIdFilter)
+        {
+          sQL.SqlUpdateTFront(dateValue, colIdFilter);
+        }
     }
 }
