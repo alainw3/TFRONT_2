@@ -94,7 +94,7 @@ namespace TFRONT
         private void updateHourlySum()
         {
 
-           hourly.getTotalHour();
+           textBoxTotalHour.Text =  hourly.getTotalHour();
         }
 
 

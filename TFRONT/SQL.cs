@@ -19,8 +19,8 @@ namespace TFRONT
         public SQL() { }
 
         public void  SqlUpdateTFront(string dateValue, string colIdfilter) {
-            string sqlUpdate = "UPDATE[winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime, '"
-                    + dateValue + "',103) where '" + colIdfilter + "'";
+            string sqlUpdate = "UPDATE [winman].[dbo].[TBL_TFRONT]  set coldat = convert(datetime, '"
+                    + dateValue + "',103) where " + colIdfilter + "";
 
             updateSqlCommand(sqlUpdate);
         }
@@ -113,7 +113,7 @@ namespace TFRONT
       
         public void updateHourly(string weekcol, string jobId, string hourId)
         {
-            string sqlUpdate = " update[winman].[dbo].[TBL_THOUR] set " + weekcol + " = '" + jobId + "' where" +
+            string sqlUpdate = " update [winman].[dbo].[TBL_THOUR] set " + weekcol + " = '" + jobId + "' where" +
                                 " colTitle = '" + hourId + "'";
 
             updateSqlCommand(sqlUpdate);
