@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             labelCV = new Label();
             dateTimePickerCV = new DateTimePicker();
@@ -49,7 +49,6 @@
             dateTimePickerCVNew = new DateTimePicker();
             tFRONTBindingSourceCVNew = new BindingSource(components);
             labelCVNew = new Label();
-            buttonCV = new Button();
             dateTimePickerCVEnv = new DateTimePicker();
             tFRONTBindingCVEnv = new BindingSource(components);
             labelCVEnv = new Label();
@@ -85,9 +84,6 @@
             colLangDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colDatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLEARNBindingSource = new BindingSource(components);
-            dataGridView2 = new DataGridView();
-            colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
-            colMonDataGridViewTHOUR = new DataGridViewTextBoxColumn();
             contextMenuStripHourly = new ContextMenuStrip(components);
             jobSearchToolStripMenuItem = new ToolStripMenuItem();
             learnToolStripMenuItem = new ToolStripMenuItem();
@@ -97,12 +93,6 @@
             autreToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             noneToolStripMenuItem = new ToolStripMenuItem();
-            colTueDataGridViewTHOUR = new DataGridViewTextBoxColumn();
-            colWedDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colThuDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colFriDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colSatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tHOURBindingSource = new BindingSource(components);
             groupBox3 = new GroupBox();
             dateTimePickerAdmin = new DateTimePicker();
@@ -127,7 +117,17 @@
             administrationToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            dataGridView2 = new DataGridView();
+            colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colMonDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colTueDataGridViewTHOUR = new DataGridViewTextBoxColumn();
+            colWedDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colThuDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colFriDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colSatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
+            buttonCV = new Button();
             dataGridView3 = new DataGridView();
             colCategoryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colLanguageDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -136,6 +136,7 @@
             colProjetDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
+            buttonSaveTLanguage = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -156,7 +157,6 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLLM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             contextMenuStripHourly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).BeginInit();
             groupBox3.SuspendLayout();
@@ -167,6 +167,8 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).BeginInit();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).BeginInit();
@@ -176,7 +178,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.mr;
-            pictureBox1.Location = new Point(12, 25);
+            pictureBox1.Location = new Point(30, 10);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(197, 197);
             pictureBox1.TabIndex = 0;
@@ -210,7 +212,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1117, 526);
+            button1.Location = new Point(938, 500);
             button1.Name = "button1";
             button1.Size = new Size(132, 33);
             button1.TabIndex = 3;
@@ -228,7 +230,7 @@
             // 
             labelHK.AutoSize = true;
             labelHK.BackColor = SystemColors.Control;
-            labelHK.Location = new Point(890, 30);
+            labelHK.Location = new Point(917, 28);
             labelHK.Name = "labelHK";
             labelHK.Size = new Size(70, 15);
             labelHK.TabIndex = 4;
@@ -239,7 +241,7 @@
             dateTimePickerHK.DataBindings.Add(new Binding("Text", tFRONTBindingSourceHK, "colDat", true));
             dateTimePickerHK.Font = new Font("Segoe UI", 9F);
             dateTimePickerHK.Format = DateTimePickerFormat.Short;
-            dateTimePickerHK.Location = new Point(969, 25);
+            dateTimePickerHK.Location = new Point(996, 23);
             dateTimePickerHK.Name = "dateTimePickerHK";
             dateTimePickerHK.Size = new Size(128, 23);
             dateTimePickerHK.TabIndex = 5;
@@ -254,7 +256,7 @@
             // labelSP
             // 
             labelSP.AutoSize = true;
-            labelSP.Location = new Point(24, 265);
+            labelSP.Location = new Point(30, 228);
             labelSP.Name = "labelSP";
             labelSP.Size = new Size(35, 15);
             labelSP.TabIndex = 6;
@@ -264,7 +266,7 @@
             // 
             dateTimePickerSP.DataBindings.Add(new Binding("Text", tFRONTBindingSourceSP, "colDat", true));
             dateTimePickerSP.Format = DateTimePickerFormat.Short;
-            dateTimePickerSP.Location = new Point(81, 263);
+            dateTimePickerSP.Location = new Point(87, 226);
             dateTimePickerSP.Name = "dateTimePickerSP";
             dateTimePickerSP.Size = new Size(128, 23);
             dateTimePickerSP.TabIndex = 7;
@@ -282,7 +284,6 @@
             groupBox1.Controls.Add(labelReel);
             groupBox1.Controls.Add(dateTimePickerCVNew);
             groupBox1.Controls.Add(labelCVNew);
-            groupBox1.Controls.Add(buttonCV);
             groupBox1.Controls.Add(dateTimePickerCVEnv);
             groupBox1.Controls.Add(labelCVEnv);
             groupBox1.Controls.Add(dateTimePickerCVFRLecture);
@@ -295,7 +296,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(labelCV);
             groupBox1.Controls.Add(dateTimePickerCV);
-            groupBox1.Location = new Point(239, 25);
+            groupBox1.Location = new Point(268, 10);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(331, 409);
             groupBox1.TabIndex = 8;
@@ -353,16 +354,6 @@
             labelCVNew.Size = new Size(51, 15);
             labelCVNew.TabIndex = 14;
             labelCVNew.Text = "CV New";
-            // 
-            // buttonCV
-            // 
-            buttonCV.Location = new Point(155, 276);
-            buttonCV.Name = "buttonCV";
-            buttonCV.Size = new Size(128, 31);
-            buttonCV.TabIndex = 13;
-            buttonCV.Text = "CV";
-            buttonCV.UseVisualStyleBackColor = true;
-            buttonCV.Click += buttonCV_Click;
             // 
             // dateTimePickerCVEnv
             // 
@@ -502,7 +493,7 @@
             groupBox2.Controls.Add(labelMIT);
             groupBox2.Controls.Add(dateTimePickerLLM);
             groupBox2.Controls.Add(labelLLM);
-            groupBox2.Location = new Point(603, 25);
+            groupBox2.Location = new Point(646, 10);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(259, 396);
             groupBox2.TabIndex = 9;
@@ -642,9 +633,9 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colLangDataGridViewTextBoxColumn, colDatDataGridViewTextBoxColumn });
             dataGridView1.DataSource = tLEARNBindingSource;
-            dataGridView1.Location = new Point(898, 66);
+            dataGridView1.Location = new Point(925, 64);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(351, 434);
+            dataGridView1.Size = new Size(263, 430);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
             // 
@@ -665,36 +656,6 @@
             // 
             tLEARNBindingSource.DataMember = "TLEARN";
             tLEARNBindingSource.DataSource = dataSet11;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AutoGenerateColumns = false;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { colTitleDataGridViewTHOUR, colMonDataGridViewTHOUR, colTueDataGridViewTHOUR, colWedDataGridViewTextBoxColumn, colThuDataGridViewTextBoxColumn, colFriDataGridViewTextBoxColumn, colSatDataGridViewTextBoxColumn, colSunDataGridViewTextBoxColumn });
-            dataGridView2.DataSource = tHOURBindingSource;
-            dataGridView2.Location = new Point(1313, 62);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(533, 942);
-            dataGridView2.TabIndex = 11;
-            dataGridView2.CellContextMenuStripNeeded += dataGridView2_CellContextMenuStripNeeded;
-            dataGridView2.CellFormatting += dataGridView2_CellFormatting;
-            // 
-            // colTitleDataGridViewTHOUR
-            // 
-            colTitleDataGridViewTHOUR.DataPropertyName = "colTitle";
-            colTitleDataGridViewTHOUR.HeaderText = "colTitle";
-            colTitleDataGridViewTHOUR.Name = "colTitleDataGridViewTHOUR";
-            colTitleDataGridViewTHOUR.ReadOnly = true;
-            // 
-            // colMonDataGridViewTHOUR
-            // 
-            colMonDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
-            colMonDataGridViewTHOUR.DataPropertyName = "colMon";
-            colMonDataGridViewTHOUR.HeaderText = "colMon";
-            colMonDataGridViewTHOUR.Name = "colMonDataGridViewTHOUR";
-            colMonDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
-            colMonDataGridViewTHOUR.Width = 50;
             // 
             // contextMenuStripHourly
             // 
@@ -754,60 +715,6 @@
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
-            // colTueDataGridViewTHOUR
-            // 
-            colTueDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
-            colTueDataGridViewTHOUR.DataPropertyName = "colTue";
-            colTueDataGridViewTHOUR.HeaderText = "colTue";
-            colTueDataGridViewTHOUR.Name = "colTueDataGridViewTHOUR";
-            colTueDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
-            colTueDataGridViewTHOUR.Width = 50;
-            // 
-            // colWedDataGridViewTextBoxColumn
-            // 
-            colWedDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colWedDataGridViewTextBoxColumn.DataPropertyName = "colWed";
-            colWedDataGridViewTextBoxColumn.HeaderText = "colWed";
-            colWedDataGridViewTextBoxColumn.Name = "colWedDataGridViewTextBoxColumn";
-            colWedDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colWedDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // colThuDataGridViewTextBoxColumn
-            // 
-            colThuDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colThuDataGridViewTextBoxColumn.DataPropertyName = "colThu";
-            colThuDataGridViewTextBoxColumn.HeaderText = "colThu";
-            colThuDataGridViewTextBoxColumn.Name = "colThuDataGridViewTextBoxColumn";
-            colThuDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colThuDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // colFriDataGridViewTextBoxColumn
-            // 
-            colFriDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colFriDataGridViewTextBoxColumn.DataPropertyName = "colFri";
-            colFriDataGridViewTextBoxColumn.HeaderText = "colFri";
-            colFriDataGridViewTextBoxColumn.Name = "colFriDataGridViewTextBoxColumn";
-            colFriDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colFriDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // colSatDataGridViewTextBoxColumn
-            // 
-            colSatDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colSatDataGridViewTextBoxColumn.DataPropertyName = "colSat";
-            colSatDataGridViewTextBoxColumn.HeaderText = "colSat";
-            colSatDataGridViewTextBoxColumn.Name = "colSatDataGridViewTextBoxColumn";
-            colSatDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colSatDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // colSunDataGridViewTextBoxColumn
-            // 
-            colSunDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
-            colSunDataGridViewTextBoxColumn.DataPropertyName = "colSun";
-            colSunDataGridViewTextBoxColumn.HeaderText = "colSun";
-            colSunDataGridViewTextBoxColumn.Name = "colSunDataGridViewTextBoxColumn";
-            colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
-            colSunDataGridViewTextBoxColumn.Width = 50;
-            // 
             // tHOURBindingSource
             // 
             tHOURBindingSource.DataMember = "THOUR";
@@ -819,7 +726,7 @@
             groupBox3.Controls.Add(labelAdmin);
             groupBox3.Controls.Add(dateTimePickerFinance);
             groupBox3.Controls.Add(labelFinance);
-            groupBox3.Location = new Point(244, 440);
+            groupBox3.Location = new Point(262, 435);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(326, 140);
             groupBox3.TabIndex = 12;
@@ -879,7 +786,7 @@
             // textBoxTotalHour
             // 
             textBoxTotalHour.Font = new Font("Segoe UI", 15F);
-            textBoxTotalHour.Location = new Point(1183, 886);
+            textBoxTotalHour.Location = new Point(1088, 622);
             textBoxTotalHour.Name = "textBoxTotalHour";
             textBoxTotalHour.Size = new Size(100, 34);
             textBoxTotalHour.TabIndex = 13;
@@ -889,7 +796,7 @@
             // 
             labelTotalHour.AutoSize = true;
             labelTotalHour.Font = new Font("Segoe UI", 15F);
-            labelTotalHour.Location = new Point(1023, 889);
+            labelTotalHour.Location = new Point(928, 625);
             labelTotalHour.Name = "labelTotalHour";
             labelTotalHour.Size = new Size(142, 28);
             labelTotalHour.TabIndex = 14;
@@ -901,7 +808,7 @@
             groupBox4.Controls.Add(labelMiremont);
             groupBox4.Controls.Add(dateTimePickerMada);
             groupBox4.Controls.Add(labelMada);
-            groupBox4.Location = new Point(603, 442);
+            groupBox4.Location = new Point(646, 435);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(259, 137);
             groupBox4.TabIndex = 13;
@@ -960,7 +867,7 @@
             // 
             // buttonResetDay
             // 
-            buttonResetDay.Location = new Point(1339, 1029);
+            buttonResetDay.Location = new Point(928, 675);
             buttonResetDay.Name = "buttonResetDay";
             buttonResetDay.Size = new Size(115, 33);
             buttonResetDay.TabIndex = 15;
@@ -971,7 +878,7 @@
             // labelJR
             // 
             labelJR.AutoSize = true;
-            labelJR.Location = new Point(29, 305);
+            labelJR.Location = new Point(35, 268);
             labelJR.Name = "labelJR";
             labelJR.Size = new Size(18, 15);
             labelJR.TabIndex = 16;
@@ -981,7 +888,7 @@
             // 
             dateTimePickerJR.DataBindings.Add(new Binding("Text", tFRONTBindingSourceJR, "colDat", true));
             dateTimePickerJR.Format = DateTimePickerFormat.Short;
-            dateTimePickerJR.Location = new Point(81, 299);
+            dateTimePickerJR.Location = new Point(87, 262);
             dateTimePickerJR.Name = "dateTimePickerJR";
             dateTimePickerJR.Size = new Size(129, 23);
             dateTimePickerJR.TabIndex = 17;
@@ -1003,33 +910,146 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(29, 602);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(833, 460);
+            tabControl1.Size = new Size(1888, 1181);
             tabControl1.TabIndex = 18;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(dataGridView2);
+            tabPage1.Controls.Add(pictureBox1);
+            tabPage1.Controls.Add(groupBox1);
+            tabPage1.Controls.Add(buttonResetDay);
+            tabPage1.Controls.Add(dateTimePickerJR);
+            tabPage1.Controls.Add(labelTotalHour);
+            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(textBoxTotalHour);
+            tabPage1.Controls.Add(groupBox4);
+            tabPage1.Controls.Add(labelSP);
+            tabPage1.Controls.Add(groupBox3);
+            tabPage1.Controls.Add(labelJR);
+            tabPage1.Controls.Add(dateTimePickerSP);
+            tabPage1.Controls.Add(groupBox2);
+            tabPage1.Controls.Add(dataGridView1);
+            tabPage1.Controls.Add(labelHK);
+            tabPage1.Controls.Add(dateTimePickerHK);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(825, 432);
+            tabPage1.Size = new Size(1880, 1153);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { colTitleDataGridViewTHOUR, colMonDataGridViewTHOUR, colTueDataGridViewTHOUR, colWedDataGridViewTextBoxColumn, colThuDataGridViewTextBoxColumn, colFriDataGridViewTextBoxColumn, colSatDataGridViewTextBoxColumn, colSunDataGridViewTextBoxColumn });
+            dataGridView2.DataSource = tHOURBindingSource;
+            dataGridView2.Location = new Point(1320, 31);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(519, 944);
+            dataGridView2.TabIndex = 18;
+            dataGridView2.CellFormatting += dataGridView2_CellFormatting;
+            // 
+            // colTitleDataGridViewTHOUR
+            // 
+            colTitleDataGridViewTHOUR.DataPropertyName = "colTitle";
+            colTitleDataGridViewTHOUR.HeaderText = "colTitle";
+            colTitleDataGridViewTHOUR.Name = "colTitleDataGridViewTHOUR";
+            colTitleDataGridViewTHOUR.ReadOnly = true;
+            // 
+            // colMonDataGridViewTHOUR
+            // 
+            colMonDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
+            colMonDataGridViewTHOUR.DataPropertyName = "colMon";
+            colMonDataGridViewTHOUR.HeaderText = "colMon";
+            colMonDataGridViewTHOUR.Name = "colMonDataGridViewTHOUR";
+            colMonDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colMonDataGridViewTHOUR.Width = 50;
+            // 
+            // colTueDataGridViewTHOUR
+            // 
+            colTueDataGridViewTHOUR.ContextMenuStrip = contextMenuStripHourly;
+            colTueDataGridViewTHOUR.DataPropertyName = "colTue";
+            colTueDataGridViewTHOUR.HeaderText = "colTue";
+            colTueDataGridViewTHOUR.Name = "colTueDataGridViewTHOUR";
+            colTueDataGridViewTHOUR.Resizable = DataGridViewTriState.True;
+            colTueDataGridViewTHOUR.Width = 50;
+            // 
+            // colWedDataGridViewTextBoxColumn
+            // 
+            colWedDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colWedDataGridViewTextBoxColumn.DataPropertyName = "colWed";
+            colWedDataGridViewTextBoxColumn.HeaderText = "colWed";
+            colWedDataGridViewTextBoxColumn.Name = "colWedDataGridViewTextBoxColumn";
+            colWedDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colWedDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colThuDataGridViewTextBoxColumn
+            // 
+            colThuDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colThuDataGridViewTextBoxColumn.DataPropertyName = "colThu";
+            colThuDataGridViewTextBoxColumn.HeaderText = "colThu";
+            colThuDataGridViewTextBoxColumn.Name = "colThuDataGridViewTextBoxColumn";
+            colThuDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colThuDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colFriDataGridViewTextBoxColumn
+            // 
+            colFriDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colFriDataGridViewTextBoxColumn.DataPropertyName = "colFri";
+            colFriDataGridViewTextBoxColumn.HeaderText = "colFri";
+            colFriDataGridViewTextBoxColumn.Name = "colFriDataGridViewTextBoxColumn";
+            colFriDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colFriDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSatDataGridViewTextBoxColumn
+            // 
+            colSatDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colSatDataGridViewTextBoxColumn.DataPropertyName = "colSat";
+            colSatDataGridViewTextBoxColumn.HeaderText = "colSat";
+            colSatDataGridViewTextBoxColumn.Name = "colSatDataGridViewTextBoxColumn";
+            colSatDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSatDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // colSunDataGridViewTextBoxColumn
+            // 
+            colSunDataGridViewTextBoxColumn.ContextMenuStrip = contextMenuStripHourly;
+            colSunDataGridViewTextBoxColumn.DataPropertyName = "colSun";
+            colSunDataGridViewTextBoxColumn.HeaderText = "colSun";
+            colSunDataGridViewTextBoxColumn.Name = "colSunDataGridViewTextBoxColumn";
+            colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
+            colSunDataGridViewTextBoxColumn.Width = 50;
+            // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(buttonSaveTLanguage);
+            tabPage2.Controls.Add(buttonCV);
             tabPage2.Controls.Add(dataGridView3);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(825, 432);
+            tabPage2.Size = new Size(1880, 1153);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "CVNew";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Enter += tabPage2_Enter;
+            // 
+            // buttonCV
+            // 
+            buttonCV.Location = new Point(725, 23);
+            buttonCV.Name = "buttonCV";
+            buttonCV.Size = new Size(128, 31);
+            buttonCV.TabIndex = 14;
+            buttonCV.Text = "CV";
+            buttonCV.UseVisualStyleBackColor = true;
+            buttonCV.Click += buttonCV_Click;
             // 
             // dataGridView3
             // 
@@ -1037,14 +1057,14 @@
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { colCategoryDataGridViewTextBoxColumn, colLanguageDataGridViewTextBoxColumn, colYearDataGridViewTextBoxColumn, colLastUseDataGridViewTextBoxColumn, colProjetDataGridViewTextBoxColumn });
             dataGridView3.DataSource = tLANGUAGEBindingSource;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView3.Location = new Point(17, 23);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.Size = new Size(691, 388);
@@ -1091,29 +1111,22 @@
             dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
             dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // buttonSaveTLanguage
+            // 
+            buttonSaveTLanguage.Location = new Point(548, 435);
+            buttonSaveTLanguage.Name = "buttonSaveTLanguage";
+            buttonSaveTLanguage.Size = new Size(75, 23);
+            buttonSaveTLanguage.TabIndex = 15;
+            buttonSaveTLanguage.Text = "SAVE";
+            buttonSaveTLanguage.UseVisualStyleBackColor = true;
+            buttonSaveTLanguage.Click += buttonTLanguageSave_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1888, 1181);
             Controls.Add(tabControl1);
-            Controls.Add(dateTimePickerJR);
-            Controls.Add(labelJR);
-            Controls.Add(buttonResetDay);
-            Controls.Add(groupBox4);
-            Controls.Add(labelTotalHour);
-            Controls.Add(textBoxTotalHour);
-            Controls.Add(groupBox3);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(dateTimePickerSP);
-            Controls.Add(labelSP);
-            Controls.Add(dateTimePickerHK);
-            Controls.Add(labelHK);
-            Controls.Add(button1);
-            Controls.Add(pictureBox1);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
@@ -1140,7 +1153,6 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLLM).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)tLEARNBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             contextMenuStripHourly.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)tHOURBindingSource).EndInit();
             groupBox3.ResumeLayout(false);
@@ -1153,12 +1165,14 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingMada).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).EndInit();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSet21).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -1191,7 +1205,6 @@
         private DateTimePicker dateTimePickerCVEnv;
         private Label labelCVEnv;
         private BindingSource tFRONTBindingCVEnv;
-        private Button buttonCV;
         private GroupBox groupBox2;
         private DateTimePicker dateTimePickerPRO;
         private Label labelPRO;
@@ -1206,7 +1219,6 @@
         private BindingSource tFRONTbindingSourcePRO;
         private BindingSource tFRINTbindingSourceMIT;
         private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
         private BindingSource tHOURBindingSource;
         private BindingSource tLEARNBindingSource;
         private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
@@ -1250,14 +1262,6 @@
         private DateTimePicker dateTimePickerReel;
         private Label labelReel;
         private BindingSource tFRONTBindingSourceReel;
-        private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
-        private DataGridViewTextBoxColumn colMonDataGridViewTHOUR;
-        private DataGridViewTextBoxColumn colTueDataGridViewTHOUR;
-        private DataGridViewTextBoxColumn colWedDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colThuDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colFriDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colSatDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colSunDataGridViewTextBoxColumn;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
@@ -1269,5 +1273,16 @@
         private DataGridViewTextBoxColumn colYearDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colLastUseDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colProjetDataGridViewTextBoxColumn;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
+        private DataGridViewTextBoxColumn colMonDataGridViewTHOUR;
+        private DataGridViewTextBoxColumn colTueDataGridViewTHOUR;
+        private DataGridViewTextBoxColumn colWedDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colThuDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colFriDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colSatDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colSunDataGridViewTextBoxColumn;
+        private Button buttonCV;
+        private Button buttonSaveTLanguage;
     }
 }

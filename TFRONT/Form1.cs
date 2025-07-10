@@ -38,7 +38,7 @@ namespace TFRONT
         public Form1()
         {
             InitializeComponent();
-       
+
             hourly = new Hourly();
             front = new Front();
             learn = new Learn();
@@ -94,7 +94,7 @@ namespace TFRONT
         private void updateHourlySum()
         {
 
-           textBoxTotalHour.Text =  hourly.getTotalHour();
+            textBoxTotalHour.Text = hourly.getTotalHour();
         }
 
 
@@ -165,13 +165,14 @@ namespace TFRONT
 
         private void buttonCV_Click(object sender, EventArgs e)
         {
+            CV cV = Application.OpenForms.OfType<CV>().FirstOrDefault();
             if (cV == null)
             {
                 cV = new CV();
             }
             //cV.Dispose();
             cV.Show();
-           
+
         }
 
         private void dateTimePickerLLM_ValueChanged(object sender, EventArgs e)
@@ -206,7 +207,7 @@ namespace TFRONT
 
         private void commandSQL(DateTimePicker dateTimePicker, string colIdFilter)
         {
-              front.updateFront(dateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss"), colIdFilter);
+            front.updateFront(dateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss"), colIdFilter);
         }
 
 
@@ -430,6 +431,11 @@ namespace TFRONT
             }
             tLANGUAGEBindingSource.DataSource = cV.dataSet();
             //tLANGUAGEBindingSource.ResetBindings(true);
+        }
+
+        private void buttonTLanguageSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
