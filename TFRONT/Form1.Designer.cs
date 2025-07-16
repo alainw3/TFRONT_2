@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             labelCV = new Label();
             dateTimePickerCV = new DateTimePicker();
@@ -83,6 +83,7 @@
             dataGridView1 = new DataGridView();
             colLangDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colDatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Refresh = new DataGridViewButtonColumn();
             tLEARNBindingSource = new BindingSource(components);
             contextMenuStripHourly = new ContextMenuStrip(components);
             jobSearchToolStripMenuItem = new ToolStripMenuItem();
@@ -90,6 +91,7 @@
             toolStripSeparator2 = new ToolStripSeparator();
             administrationToolStripMenuItem1 = new ToolStripMenuItem();
             financeToolStripMenuItem = new ToolStripMenuItem();
+            leTempsToolStripMenuItem = new ToolStripMenuItem();
             autreToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             noneToolStripMenuItem = new ToolStripMenuItem();
@@ -127,6 +129,7 @@
             colSatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
+            buttonSaveTLanguage = new Button();
             buttonCV = new Button();
             dataGridView3 = new DataGridView();
             colCategoryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -136,7 +139,6 @@
             colProjetDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
-            buttonSaveTLanguage = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -631,12 +633,13 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colLangDataGridViewTextBoxColumn, colDatDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colLangDataGridViewTextBoxColumn, colDatDataGridViewTextBoxColumn, Refresh });
             dataGridView1.DataSource = tLEARNBindingSource;
             dataGridView1.Location = new Point(925, 64);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(263, 430);
+            dataGridView1.Size = new Size(352, 430);
             dataGridView1.TabIndex = 10;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
             // 
             // colLangDataGridViewTextBoxColumn
@@ -652,6 +655,11 @@
             colDatDataGridViewTextBoxColumn.HeaderText = "colDat";
             colDatDataGridViewTextBoxColumn.Name = "colDatDataGridViewTextBoxColumn";
             // 
+            // Refresh
+            // 
+            Refresh.HeaderText = "Refresh";
+            Refresh.Name = "Refresh";
+            // 
             // tLEARNBindingSource
             // 
             tLEARNBindingSource.DataMember = "TLEARN";
@@ -659,9 +667,9 @@
             // 
             // contextMenuStripHourly
             // 
-            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchToolStripMenuItem, learnToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
+            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchToolStripMenuItem, learnToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, leTempsToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(154, 148);
+            contextMenuStripHourly.Size = new Size(154, 170);
             // 
             // jobSearchToolStripMenuItem
             // 
@@ -695,6 +703,13 @@
             financeToolStripMenuItem.Size = new Size(153, 22);
             financeToolStripMenuItem.Text = "Finance";
             financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
+            // 
+            // leTempsToolStripMenuItem
+            // 
+            leTempsToolStripMenuItem.Name = "leTempsToolStripMenuItem";
+            leTempsToolStripMenuItem.Size = new Size(153, 22);
+            leTempsToolStripMenuItem.Text = "Le Temps";
+            leTempsToolStripMenuItem.Click += leTempsToolStripMenuItem_Click;
             // 
             // autreToolStripMenuItem
             // 
@@ -955,6 +970,7 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(519, 944);
             dataGridView2.TabIndex = 18;
+            dataGridView2.CellContextMenuStripNeeded += dataGridView2_CellContextMenuStripNeeded;
             dataGridView2.CellFormatting += dataGridView2_CellFormatting;
             // 
             // colTitleDataGridViewTHOUR
@@ -1041,6 +1057,16 @@
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Enter += tabPage2_Enter;
             // 
+            // buttonSaveTLanguage
+            // 
+            buttonSaveTLanguage.Location = new Point(548, 435);
+            buttonSaveTLanguage.Name = "buttonSaveTLanguage";
+            buttonSaveTLanguage.Size = new Size(75, 23);
+            buttonSaveTLanguage.TabIndex = 15;
+            buttonSaveTLanguage.Text = "SAVE";
+            buttonSaveTLanguage.UseVisualStyleBackColor = true;
+            buttonSaveTLanguage.Click += buttonTLanguageSave_Click;
+            // 
             // buttonCV
             // 
             buttonCV.Location = new Point(725, 23);
@@ -1057,14 +1083,14 @@
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { colCategoryDataGridViewTextBoxColumn, colLanguageDataGridViewTextBoxColumn, colYearDataGridViewTextBoxColumn, colLastUseDataGridViewTextBoxColumn, colProjetDataGridViewTextBoxColumn });
             dataGridView3.DataSource = tLANGUAGEBindingSource;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridView3.Location = new Point(17, 23);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.Size = new Size(691, 388);
@@ -1110,16 +1136,6 @@
             dataSet21.DataSetName = "DataSet2";
             dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
             dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // buttonSaveTLanguage
-            // 
-            buttonSaveTLanguage.Location = new Point(548, 435);
-            buttonSaveTLanguage.Name = "buttonSaveTLanguage";
-            buttonSaveTLanguage.Size = new Size(75, 23);
-            buttonSaveTLanguage.TabIndex = 15;
-            buttonSaveTLanguage.Text = "SAVE";
-            buttonSaveTLanguage.UseVisualStyleBackColor = true;
-            buttonSaveTLanguage.Click += buttonTLanguageSave_Click;
             // 
             // Form1
             // 
@@ -1221,8 +1237,6 @@
         private DataGridView dataGridView1;
         private BindingSource tHOURBindingSource;
         private BindingSource tLEARNBindingSource;
-        private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;
         private GroupBox groupBox3;
         private Label labelAdmin;
         private DateTimePicker dateTimePickerFinance;
@@ -1284,5 +1298,9 @@
         private DataGridViewTextBoxColumn colSunDataGridViewTextBoxColumn;
         private Button buttonCV;
         private Button buttonSaveTLanguage;
+        private ToolStripMenuItem leTempsToolStripMenuItem;
+        private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;
+        private DataGridViewButtonColumn Refresh;
     }
 }

@@ -41,7 +41,10 @@ namespace TFRONT
         public void updateHourlyJobSearch() { 
 
             sQL.updateHourly(dayID, "1" , hourID);
-
+        }
+        public void updateHourlyLeTemps()
+        {
+            sQL.updateHourly(dayID, "5", hourID);
         }
 
         public void updateHourlyNone()

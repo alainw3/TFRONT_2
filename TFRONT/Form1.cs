@@ -380,11 +380,22 @@ namespace TFRONT
             {
                 gridViewCell.Style.BackColor = Color.Fuchsia;
             }
+            else if (gridViewCell.Value.ToString() == "5")
+            {
+                gridViewCell.Style.BackColor = Color.Khaki;
+            }
             else
             {
                 gridViewCell.Style.BackColor = Color.White;
             }
+
+            //if (dataGridView2.Columns[e.ColumnIndex].HeaderText =="colTitle" && gridViewCell.Value.ToString().IndexOf("Job") == 0)
+            //{
+            //    gridViewCell.Style.BackColor = Color.Cyan;
+            //}
         }
+
+        
 
         private void noneToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -434,6 +445,17 @@ namespace TFRONT
         }
 
         private void buttonTLanguageSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void leTempsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyLeTemps();
+            updateHourly();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
