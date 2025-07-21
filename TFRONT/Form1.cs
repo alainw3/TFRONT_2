@@ -100,22 +100,12 @@ namespace TFRONT
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-            //TLANG
-            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
-            SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
-            dataAdapter.Update(dataSet11.Tables[2]);
-
             //THOUR
-            sqlCommandBuilder = new SqlCommandBuilder(dataAdapterTHour);
-            sqlCommand = sqlCommandBuilder.GetUpdateCommand();
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapterTHour);
+            SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
             dataAdapterTHour.Update(dataSet11.Tables[1]);
 
             updateHourlySum();
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -389,13 +379,10 @@ namespace TFRONT
                 gridViewCell.Style.BackColor = Color.White;
             }
 
-            //if (dataGridView2.Columns[e.ColumnIndex].HeaderText =="colTitle" && gridViewCell.Value.ToString().IndexOf("Job") == 0)
-            //{
-            //    gridViewCell.Style.BackColor = Color.Cyan;
-            //}
+
         }
 
-        
+
 
         private void noneToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -457,7 +444,38 @@ namespace TFRONT
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex != 2)
+            {
+                return; // Ignore clicks on header or invalid cells
+            }
+            if (MessageBox.Show("Do you want to update the date for " + dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex - 2].Value,
+                                               "Question",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question,
+                                 MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+            {
+                return; // User chose not to update
+            }
 
+
+
+            dataGridView1.BeginEdit(true);
+
+            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex - 1].Value = DateTime.UtcNow.ToString("dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+
+
+            buttonTLANG.Focus();
+            buttonTLANG_Click(sender, e); // Save changes to the database
+
+
+
+        }
+
+        private void buttonTLANG_Click(object sender, EventArgs e)
+        {
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+            SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
+            dataAdapter.Update(dataSet11.Tables[2]);
         }
     }
 }

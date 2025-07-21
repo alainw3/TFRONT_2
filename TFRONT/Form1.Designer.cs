@@ -34,7 +34,6 @@
             labelCV = new Label();
             dateTimePickerCV = new DateTimePicker();
             tFRONTBindingSourceCV = new BindingSource(components);
-            button1 = new Button();
             dataSet11 = new DataSet1();
             labelHK = new Label();
             dateTimePickerHK = new DateTimePicker();
@@ -119,6 +118,7 @@
             administrationToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            buttonTLANG = new Button();
             dataGridView2 = new DataGridView();
             colTitleDataGridViewTHOUR = new DataGridViewTextBoxColumn();
             colMonDataGridViewTHOUR = new DataGridViewTextBoxColumn();
@@ -211,16 +211,6 @@
             tFRONTBindingSourceCV.DataMember = "TFRONT";
             tFRONTBindingSourceCV.DataSource = typeof(DataSet1);
             tFRONTBindingSourceCV.Filter = "colid='01'";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(938, 500);
-            button1.Name = "button1";
-            button1.Size = new Size(132, 33);
-            button1.TabIndex = 3;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // dataSet11
             // 
@@ -659,6 +649,7 @@
             // 
             Refresh.HeaderText = "Refresh";
             Refresh.Name = "Refresh";
+            Refresh.Text = "hhhh";
             // 
             // tLEARNBindingSource
             // 
@@ -934,13 +925,13 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(buttonTLANG);
             tabPage1.Controls.Add(dataGridView2);
             tabPage1.Controls.Add(pictureBox1);
             tabPage1.Controls.Add(groupBox1);
             tabPage1.Controls.Add(buttonResetDay);
             tabPage1.Controls.Add(dateTimePickerJR);
             tabPage1.Controls.Add(labelTotalHour);
-            tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(textBoxTotalHour);
             tabPage1.Controls.Add(groupBox4);
             tabPage1.Controls.Add(labelSP);
@@ -958,6 +949,16 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonTLANG
+            // 
+            buttonTLANG.Location = new Point(1007, 500);
+            buttonTLANG.Name = "buttonTLANG";
+            buttonTLANG.Size = new Size(181, 23);
+            buttonTLANG.TabIndex = 19;
+            buttonTLANG.Text = "TLANGAve";
+            buttonTLANG.UseVisualStyleBackColor = true;
+            buttonTLANG.Click += buttonTLANG_Click;
             // 
             // dataGridView2
             // 
@@ -1196,7 +1197,6 @@
         private PictureBox pictureBox1;
         private Label labelCV;
         private DateTimePicker dateTimePickerCV;
-        private Button button1;
         private BindingSource tFRONTBindingSourceCV;
         public DataSet1 dataSet11;
         private Label labelHK;
@@ -1302,5 +1302,6 @@
         private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn Refresh;
+        private Button buttonTLANG;
     }
 }
