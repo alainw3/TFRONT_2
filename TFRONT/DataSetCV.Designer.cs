@@ -28,7 +28,9 @@ namespace TFRONT {
         
         private TLANGUAGEDataTable tableTLANGUAGE;
         
-        private TTECHEXPERIENCEDataTable tableTTECHEXPERIENCE;
+        private TJOBTITLEDataTable tableTJOBTITLE;
+        
+        private TEXPERDESRIPTIONDataTable tableTEXPERDESRIPTION;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -64,8 +66,11 @@ namespace TFRONT {
                 if ((ds.Tables["TLANGUAGE"] != null)) {
                     base.Tables.Add(new TLANGUAGEDataTable(ds.Tables["TLANGUAGE"]));
                 }
-                if ((ds.Tables["TTECHEXPERIENCE"] != null)) {
-                    base.Tables.Add(new TTECHEXPERIENCEDataTable(ds.Tables["TTECHEXPERIENCE"]));
+                if ((ds.Tables["TJOBTITLE"] != null)) {
+                    base.Tables.Add(new TJOBTITLEDataTable(ds.Tables["TJOBTITLE"]));
+                }
+                if ((ds.Tables["TEXPERDESRIPTION"] != null)) {
+                    base.Tables.Add(new TEXPERDESRIPTIONDataTable(ds.Tables["TEXPERDESRIPTION"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -109,9 +114,19 @@ namespace TFRONT {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TTECHEXPERIENCEDataTable TTECHEXPERIENCE {
+        public TJOBTITLEDataTable TJOBTITLE {
             get {
-                return this.tableTTECHEXPERIENCE;
+                return this.tableTJOBTITLE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TEXPERDESRIPTIONDataTable TEXPERDESRIPTION {
+            get {
+                return this.tableTEXPERDESRIPTION;
             }
         }
         
@@ -188,8 +203,11 @@ namespace TFRONT {
                 if ((ds.Tables["TLANGUAGE"] != null)) {
                     base.Tables.Add(new TLANGUAGEDataTable(ds.Tables["TLANGUAGE"]));
                 }
-                if ((ds.Tables["TTECHEXPERIENCE"] != null)) {
-                    base.Tables.Add(new TTECHEXPERIENCEDataTable(ds.Tables["TTECHEXPERIENCE"]));
+                if ((ds.Tables["TJOBTITLE"] != null)) {
+                    base.Tables.Add(new TJOBTITLEDataTable(ds.Tables["TJOBTITLE"]));
+                }
+                if ((ds.Tables["TEXPERDESRIPTION"] != null)) {
+                    base.Tables.Add(new TEXPERDESRIPTIONDataTable(ds.Tables["TEXPERDESRIPTION"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -236,10 +254,16 @@ namespace TFRONT {
                     this.tableTLANGUAGE.InitVars();
                 }
             }
-            this.tableTTECHEXPERIENCE = ((TTECHEXPERIENCEDataTable)(base.Tables["TTECHEXPERIENCE"]));
+            this.tableTJOBTITLE = ((TJOBTITLEDataTable)(base.Tables["TJOBTITLE"]));
             if ((initTable == true)) {
-                if ((this.tableTTECHEXPERIENCE != null)) {
-                    this.tableTTECHEXPERIENCE.InitVars();
+                if ((this.tableTJOBTITLE != null)) {
+                    this.tableTJOBTITLE.InitVars();
+                }
+            }
+            this.tableTEXPERDESRIPTION = ((TEXPERDESRIPTIONDataTable)(base.Tables["TEXPERDESRIPTION"]));
+            if ((initTable == true)) {
+                if ((this.tableTEXPERDESRIPTION != null)) {
+                    this.tableTEXPERDESRIPTION.InitVars();
                 }
             }
         }
@@ -256,8 +280,10 @@ namespace TFRONT {
             base.Tables.Add(this.tableTEXPERIENCE);
             this.tableTLANGUAGE = new TLANGUAGEDataTable();
             base.Tables.Add(this.tableTLANGUAGE);
-            this.tableTTECHEXPERIENCE = new TTECHEXPERIENCEDataTable();
-            base.Tables.Add(this.tableTTECHEXPERIENCE);
+            this.tableTJOBTITLE = new TJOBTITLEDataTable();
+            base.Tables.Add(this.tableTJOBTITLE);
+            this.tableTEXPERDESRIPTION = new TEXPERDESRIPTIONDataTable();
+            base.Tables.Add(this.tableTEXPERDESRIPTION);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -274,7 +300,13 @@ namespace TFRONT {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeTTECHEXPERIENCE() {
+        private bool ShouldSerializeTJOBTITLE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeTEXPERDESRIPTION() {
             return false;
         }
         
@@ -340,7 +372,10 @@ namespace TFRONT {
         public delegate void TLANGUAGERowChangeEventHandler(object sender, TLANGUAGERowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void TTECHEXPERIENCERowChangeEventHandler(object sender, TTECHEXPERIENCERowChangeEvent e);
+        public delegate void TJOBTITLERowChangeEventHandler(object sender, TJOBTITLERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void TEXPERDESRIPTIONRowChangeEventHandler(object sender, TEXPERDESRIPTIONRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -950,20 +985,16 @@ namespace TFRONT {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TTECHEXPERIENCEDataTable : global::System.Data.TypedTableBase<TTECHEXPERIENCERow> {
+        public partial class TJOBTITLEDataTable : global::System.Data.TypedTableBase<TJOBTITLERow> {
             
-            private global::System.Data.DataColumn columncolExperience1;
+            private global::System.Data.DataColumn columncolId;
             
-            private global::System.Data.DataColumn columncolExperience2;
-            
-            private global::System.Data.DataColumn columncolExperience3;
-            
-            private global::System.Data.DataColumn columncolTech;
+            private global::System.Data.DataColumn columncolJobTitle;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TTECHEXPERIENCEDataTable() {
-                this.TableName = "TTECHEXPERIENCE";
+            public TJOBTITLEDataTable() {
+                this.TableName = "TJOBTITLE";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -971,7 +1002,7 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TTECHEXPERIENCEDataTable(global::System.Data.DataTable table) {
+            internal TJOBTITLEDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -988,40 +1019,24 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected TTECHEXPERIENCEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TJOBTITLEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn colExperience1Column {
+            public global::System.Data.DataColumn colIdColumn {
                 get {
-                    return this.columncolExperience1;
+                    return this.columncolId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn colExperience2Column {
+            public global::System.Data.DataColumn colJobTitleColumn {
                 get {
-                    return this.columncolExperience2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn colExperience3Column {
-                get {
-                    return this.columncolExperience3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn colTechColumn {
-                get {
-                    return this.columncolTech;
+                    return this.columncolJobTitle;
                 }
             }
             
@@ -1036,55 +1051,53 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TTECHEXPERIENCERow this[int index] {
+            public TJOBTITLERow this[int index] {
                 get {
-                    return ((TTECHEXPERIENCERow)(this.Rows[index]));
+                    return ((TJOBTITLERow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TTECHEXPERIENCERowChangeEventHandler TTECHEXPERIENCERowChanging;
+            public event TJOBTITLERowChangeEventHandler TJOBTITLERowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TTECHEXPERIENCERowChangeEventHandler TTECHEXPERIENCERowChanged;
+            public event TJOBTITLERowChangeEventHandler TJOBTITLERowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TTECHEXPERIENCERowChangeEventHandler TTECHEXPERIENCERowDeleting;
+            public event TJOBTITLERowChangeEventHandler TJOBTITLERowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TTECHEXPERIENCERowChangeEventHandler TTECHEXPERIENCERowDeleted;
+            public event TJOBTITLERowChangeEventHandler TJOBTITLERowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddTTECHEXPERIENCERow(TTECHEXPERIENCERow row) {
+            public void AddTJOBTITLERow(TJOBTITLERow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TTECHEXPERIENCERow AddTTECHEXPERIENCERow(string colExperience1, string colExperience2, string colExperience3, string colTech) {
-                TTECHEXPERIENCERow rowTTECHEXPERIENCERow = ((TTECHEXPERIENCERow)(this.NewRow()));
+            public TJOBTITLERow AddTJOBTITLERow(string colId, string colJobTitle) {
+                TJOBTITLERow rowTJOBTITLERow = ((TJOBTITLERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        colExperience1,
-                        colExperience2,
-                        colExperience3,
-                        colTech};
-                rowTTECHEXPERIENCERow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTTECHEXPERIENCERow);
-                return rowTTECHEXPERIENCERow;
+                        colId,
+                        colJobTitle};
+                rowTJOBTITLERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTJOBTITLERow);
+                return rowTJOBTITLERow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TTECHEXPERIENCERow FindBycolTech(string colTech) {
-                return ((TTECHEXPERIENCERow)(this.Rows.Find(new object[] {
-                            colTech})));
+            public TJOBTITLERow FindBycolId(string colId) {
+                return ((TJOBTITLERow)(this.Rows.Find(new object[] {
+                            colId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TTECHEXPERIENCEDataTable cln = ((TTECHEXPERIENCEDataTable)(base.Clone()));
+                TJOBTITLEDataTable cln = ((TJOBTITLEDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1092,59 +1105,53 @@ namespace TFRONT {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TTECHEXPERIENCEDataTable();
+                return new TJOBTITLEDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columncolExperience1 = base.Columns["colExperience1"];
-                this.columncolExperience2 = base.Columns["colExperience2"];
-                this.columncolExperience3 = base.Columns["colExperience3"];
-                this.columncolTech = base.Columns["colTech"];
+                this.columncolId = base.Columns["colId"];
+                this.columncolJobTitle = base.Columns["colJobTitle"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columncolExperience1 = new global::System.Data.DataColumn("colExperience1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncolExperience1);
-                this.columncolExperience2 = new global::System.Data.DataColumn("colExperience2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncolExperience2);
-                this.columncolExperience3 = new global::System.Data.DataColumn("colExperience3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncolExperience3);
-                this.columncolTech = new global::System.Data.DataColumn("colTech", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncolTech);
+                this.columncolId = new global::System.Data.DataColumn("colId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncolId);
+                this.columncolJobTitle = new global::System.Data.DataColumn("colJobTitle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncolJobTitle);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columncolTech}, true));
-                this.columncolTech.AllowDBNull = false;
-                this.columncolTech.Unique = true;
+                                this.columncolId}, true));
+                this.columncolId.AllowDBNull = false;
+                this.columncolId.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TTECHEXPERIENCERow NewTTECHEXPERIENCERow() {
-                return ((TTECHEXPERIENCERow)(this.NewRow()));
+            public TJOBTITLERow NewTJOBTITLERow() {
+                return ((TJOBTITLERow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TTECHEXPERIENCERow(builder);
+                return new TJOBTITLERow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TTECHEXPERIENCERow);
+                return typeof(TJOBTITLERow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TTECHEXPERIENCERowChanged != null)) {
-                    this.TTECHEXPERIENCERowChanged(this, new TTECHEXPERIENCERowChangeEvent(((TTECHEXPERIENCERow)(e.Row)), e.Action));
+                if ((this.TJOBTITLERowChanged != null)) {
+                    this.TJOBTITLERowChanged(this, new TJOBTITLERowChangeEvent(((TJOBTITLERow)(e.Row)), e.Action));
                 }
             }
             
@@ -1152,8 +1159,8 @@ namespace TFRONT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TTECHEXPERIENCERowChanging != null)) {
-                    this.TTECHEXPERIENCERowChanging(this, new TTECHEXPERIENCERowChangeEvent(((TTECHEXPERIENCERow)(e.Row)), e.Action));
+                if ((this.TJOBTITLERowChanging != null)) {
+                    this.TJOBTITLERowChanging(this, new TJOBTITLERowChangeEvent(((TJOBTITLERow)(e.Row)), e.Action));
                 }
             }
             
@@ -1161,8 +1168,8 @@ namespace TFRONT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TTECHEXPERIENCERowDeleted != null)) {
-                    this.TTECHEXPERIENCERowDeleted(this, new TTECHEXPERIENCERowChangeEvent(((TTECHEXPERIENCERow)(e.Row)), e.Action));
+                if ((this.TJOBTITLERowDeleted != null)) {
+                    this.TJOBTITLERowDeleted(this, new TJOBTITLERowChangeEvent(((TJOBTITLERow)(e.Row)), e.Action));
                 }
             }
             
@@ -1170,14 +1177,14 @@ namespace TFRONT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TTECHEXPERIENCERowDeleting != null)) {
-                    this.TTECHEXPERIENCERowDeleting(this, new TTECHEXPERIENCERowChangeEvent(((TTECHEXPERIENCERow)(e.Row)), e.Action));
+                if ((this.TJOBTITLERowDeleting != null)) {
+                    this.TJOBTITLERowDeleting(this, new TJOBTITLERowChangeEvent(((TJOBTITLERow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveTTECHEXPERIENCERow(TTECHEXPERIENCERow row) {
+            public void RemoveTJOBTITLERow(TJOBTITLERow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1204,7 +1211,240 @@ namespace TFRONT {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TTECHEXPERIENCEDataTable";
+                attribute2.FixedValue = "TJOBTITLEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TEXPERDESRIPTIONDataTable : global::System.Data.TypedTableBase<TEXPERDESRIPTIONRow> {
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TEXPERDESRIPTIONDataTable() {
+                this.TableName = "TEXPERDESRIPTION";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal TEXPERDESRIPTIONDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected TEXPERDESRIPTIONDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TEXPERDESRIPTIONRow this[int index] {
+                get {
+                    return ((TEXPERDESRIPTIONRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TEXPERDESRIPTIONRowChangeEventHandler TEXPERDESRIPTIONRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TEXPERDESRIPTIONRowChangeEventHandler TEXPERDESRIPTIONRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TEXPERDESRIPTIONRowChangeEventHandler TEXPERDESRIPTIONRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TEXPERDESRIPTIONRowChangeEventHandler TEXPERDESRIPTIONRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddTEXPERDESRIPTIONRow(TEXPERDESRIPTIONRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TEXPERDESRIPTIONRow AddTEXPERDESRIPTIONRow() {
+                TEXPERDESRIPTIONRow rowTEXPERDESRIPTIONRow = ((TEXPERDESRIPTIONRow)(this.NewRow()));
+                object[] columnValuesArray = new object[0];
+                rowTEXPERDESRIPTIONRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTEXPERDESRIPTIONRow);
+                return rowTEXPERDESRIPTIONRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TEXPERDESRIPTIONDataTable cln = ((TEXPERDESRIPTIONDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TEXPERDESRIPTIONDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TEXPERDESRIPTIONRow NewTEXPERDESRIPTIONRow() {
+                return ((TEXPERDESRIPTIONRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TEXPERDESRIPTIONRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TEXPERDESRIPTIONRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TEXPERDESRIPTIONRowChanged != null)) {
+                    this.TEXPERDESRIPTIONRowChanged(this, new TEXPERDESRIPTIONRowChangeEvent(((TEXPERDESRIPTIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TEXPERDESRIPTIONRowChanging != null)) {
+                    this.TEXPERDESRIPTIONRowChanging(this, new TEXPERDESRIPTIONRowChangeEvent(((TEXPERDESRIPTIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TEXPERDESRIPTIONRowDeleted != null)) {
+                    this.TEXPERDESRIPTIONRowDeleted(this, new TEXPERDESRIPTIONRowChangeEvent(((TEXPERDESRIPTIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TEXPERDESRIPTIONRowDeleting != null)) {
+                    this.TEXPERDESRIPTIONRowDeleting(this, new TEXPERDESRIPTIONRowChangeEvent(((TEXPERDESRIPTIONRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveTEXPERDESRIPTIONRow(TEXPERDESRIPTIONRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet2 ds = new DataSet2();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TEXPERDESRIPTIONDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1513,110 +1753,69 @@ namespace TFRONT {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TTECHEXPERIENCERow : global::System.Data.DataRow {
+        public partial class TJOBTITLERow : global::System.Data.DataRow {
             
-            private TTECHEXPERIENCEDataTable tableTTECHEXPERIENCE;
+            private TJOBTITLEDataTable tableTJOBTITLE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TTECHEXPERIENCERow(global::System.Data.DataRowBuilder rb) : 
+            internal TJOBTITLERow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTTECHEXPERIENCE = ((TTECHEXPERIENCEDataTable)(this.Table));
+                this.tableTJOBTITLE = ((TJOBTITLEDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string colExperience1 {
+            public string colId {
+                get {
+                    return ((string)(this[this.tableTJOBTITLE.colIdColumn]));
+                }
+                set {
+                    this[this.tableTJOBTITLE.colIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string colJobTitle {
                 get {
                     try {
-                        return ((string)(this[this.tableTTECHEXPERIENCE.colExperience1Column]));
+                        return ((string)(this[this.tableTJOBTITLE.colJobTitleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'colExperience1\' in table \'TTECHEXPERIENCE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'colJobTitle\' in table \'TJOBTITLE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTTECHEXPERIENCE.colExperience1Column] = value;
+                    this[this.tableTJOBTITLE.colJobTitleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string colExperience2 {
-                get {
-                    try {
-                        return ((string)(this[this.tableTTECHEXPERIENCE.colExperience2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'colExperience2\' in table \'TTECHEXPERIENCE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTTECHEXPERIENCE.colExperience2Column] = value;
-                }
+            public bool IscolJobTitleNull() {
+                return this.IsNull(this.tableTJOBTITLE.colJobTitleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string colExperience3 {
-                get {
-                    try {
-                        return ((string)(this[this.tableTTECHEXPERIENCE.colExperience3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'colExperience3\' in table \'TTECHEXPERIENCE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTTECHEXPERIENCE.colExperience3Column] = value;
-                }
+            public void SetcolJobTitleNull() {
+                this[this.tableTJOBTITLE.colJobTitleColumn] = global::System.Convert.DBNull;
             }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TEXPERDESRIPTIONRow : global::System.Data.DataRow {
+            
+            private TEXPERDESRIPTIONDataTable tableTEXPERDESRIPTION;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string colTech {
-                get {
-                    return ((string)(this[this.tableTTECHEXPERIENCE.colTechColumn]));
-                }
-                set {
-                    this[this.tableTTECHEXPERIENCE.colTechColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscolExperience1Null() {
-                return this.IsNull(this.tableTTECHEXPERIENCE.colExperience1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcolExperience1Null() {
-                this[this.tableTTECHEXPERIENCE.colExperience1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscolExperience2Null() {
-                return this.IsNull(this.tableTTECHEXPERIENCE.colExperience2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcolExperience2Null() {
-                this[this.tableTTECHEXPERIENCE.colExperience2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscolExperience3Null() {
-                return this.IsNull(this.tableTTECHEXPERIENCE.colExperience3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcolExperience3Null() {
-                this[this.tableTTECHEXPERIENCE.colExperience3Column] = global::System.Convert.DBNull;
+            internal TEXPERDESRIPTIONRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTEXPERDESRIPTION = ((TEXPERDESRIPTIONDataTable)(this.Table));
             }
         }
         
@@ -1692,22 +1891,56 @@ namespace TFRONT {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class TTECHEXPERIENCERowChangeEvent : global::System.EventArgs {
+        public class TJOBTITLERowChangeEvent : global::System.EventArgs {
             
-            private TTECHEXPERIENCERow eventRow;
+            private TJOBTITLERow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TTECHEXPERIENCERowChangeEvent(TTECHEXPERIENCERow row, global::System.Data.DataRowAction action) {
+            public TJOBTITLERowChangeEvent(TJOBTITLERow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TTECHEXPERIENCERow Row {
+            public TJOBTITLERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class TEXPERDESRIPTIONRowChangeEvent : global::System.EventArgs {
+            
+            private TEXPERDESRIPTIONRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TEXPERDESRIPTIONRowChangeEvent(TEXPERDESRIPTIONRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TEXPERDESRIPTIONRow Row {
                 get {
                     return this.eventRow;
                 }

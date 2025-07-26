@@ -3,7 +3,9 @@
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=arazakar;User ID=meco;Password=meco5002dfi;Unicode=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="arazakar.MECO" Provider="System.Data.OracleClient" />
+        </Connections>
         <Tables />
         <Sources />
       </DataSource>
@@ -29,18 +31,20 @@
               <xs:element name="colLanguage" msprop:Generator_ColumnPropNameInTable="colLanguageColumn" msprop:Generator_ColumnPropNameInRow="colLanguage" msprop:Generator_UserColumnName="colLanguage" msprop:Generator_ColumnVarNameInTable="columncolLanguage" type="xs:string" minOccurs="0" />
               <xs:element name="colYear" msprop:Generator_ColumnPropNameInTable="colYearColumn" msprop:Generator_ColumnPropNameInRow="colYear" msprop:Generator_UserColumnName="colYear" msprop:Generator_ColumnVarNameInTable="columncolYear" type="xs:string" minOccurs="0" />
               <xs:element name="colLastUse" msprop:Generator_ColumnPropNameInTable="colLastUseColumn" msprop:Generator_ColumnPropNameInRow="colLastUse" msprop:Generator_UserColumnName="colLastUse" msprop:Generator_ColumnVarNameInTable="columncolLastUse" type="xs:string" minOccurs="0" />
-              <xs:element name="colProjet" msprop:Generator_ColumnPropNameInRow="colProjet" msprop:Generator_ColumnPropNameInTable="colProjetColumn" msprop:Generator_ColumnVarNameInTable="columncolProjet" msprop:Generator_UserColumnName="colProjet" type="xs:string" minOccurs="0" />
+              <xs:element name="colProjet" msprop:Generator_ColumnPropNameInTable="colProjetColumn" msprop:Generator_ColumnPropNameInRow="colProjet" msprop:Generator_UserColumnName="colProjet" msprop:Generator_ColumnVarNameInTable="columncolProjet" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TTECHEXPERIENCE" msprop:Generator_RowClassName="TTECHEXPERIENCERow" msprop:Generator_RowEvHandlerName="TTECHEXPERIENCERowChangeEventHandler" msprop:Generator_RowDeletedName="TTECHEXPERIENCERowDeleted" msprop:Generator_RowDeletingName="TTECHEXPERIENCERowDeleting" msprop:Generator_RowEvArgName="TTECHEXPERIENCERowChangeEvent" msprop:Generator_TablePropName="TTECHEXPERIENCE" msprop:Generator_RowChangedName="TTECHEXPERIENCERowChanged" msprop:Generator_UserTableName="TTECHEXPERIENCE" msprop:Generator_RowChangingName="TTECHEXPERIENCERowChanging" msprop:Generator_TableClassName="TTECHEXPERIENCEDataTable" msprop:Generator_TableVarName="tableTTECHEXPERIENCE">
+        <xs:element name="TJOBTITLE" msprop:Generator_RowEvHandlerName="TJOBTITLERowChangeEventHandler" msprop:Generator_RowDeletedName="TJOBTITLERowDeleted" msprop:Generator_RowDeletingName="TJOBTITLERowDeleting" msprop:Generator_RowEvArgName="TJOBTITLERowChangeEvent" msprop:Generator_TablePropName="TJOBTITLE" msprop:Generator_RowChangedName="TJOBTITLERowChanged" msprop:Generator_RowChangingName="TJOBTITLERowChanging" msprop:Generator_TableClassName="TJOBTITLEDataTable" msprop:Generator_RowClassName="TJOBTITLERow" msprop:Generator_TableVarName="tableTJOBTITLE" msprop:Generator_UserTableName="TJOBTITLE">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="colExperience1" msprop:Generator_UserColumnName="colExperience1" msprop:Generator_ColumnPropNameInTable="colExperience1Column" msprop:Generator_ColumnPropNameInRow="colExperience1" msprop:Generator_ColumnVarNameInTable="columncolExperience1" type="xs:string" minOccurs="0" />
-              <xs:element name="colExperience2" msprop:Generator_UserColumnName="colExperience2" msprop:Generator_ColumnPropNameInTable="colExperience2Column" msprop:Generator_ColumnPropNameInRow="colExperience2" msprop:Generator_ColumnVarNameInTable="columncolExperience2" type="xs:string" minOccurs="0" />
-              <xs:element name="colExperience3" msprop:Generator_UserColumnName="colExperience3" msprop:Generator_ColumnPropNameInTable="colExperience3Column" msprop:Generator_ColumnPropNameInRow="colExperience3" msprop:Generator_ColumnVarNameInTable="columncolExperience3" type="xs:string" minOccurs="0" />
-              <xs:element name="colTech" msprop:Generator_UserColumnName="colTech" msprop:Generator_ColumnPropNameInTable="colTechColumn" msprop:Generator_ColumnPropNameInRow="colTech" msprop:Generator_ColumnVarNameInTable="columncolTech" type="xs:string" />
+              <xs:element name="colId" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnVarNameInTable="columncolId" msprop:Generator_UserColumnName="colId" type="xs:string" />
+              <xs:element name="colJobTitle" msprop:Generator_ColumnPropNameInRow="colJobTitle" msprop:Generator_ColumnPropNameInTable="colJobTitleColumn" msprop:Generator_ColumnVarNameInTable="columncolJobTitle" msprop:Generator_UserColumnName="colJobTitle" type="xs:string" minOccurs="0" />
             </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TEXPERDESRIPTION" msprop:Generator_RowEvHandlerName="TEXPERDESRIPTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="TEXPERDESRIPTIONRowDeleted" msprop:Generator_RowDeletingName="TEXPERDESRIPTIONRowDeleting" msprop:Generator_RowEvArgName="TEXPERDESRIPTIONRowChangeEvent" msprop:Generator_TablePropName="TEXPERDESRIPTION" msprop:Generator_RowChangedName="TEXPERDESRIPTIONRowChanged" msprop:Generator_RowChangingName="TEXPERDESRIPTIONRowChanging" msprop:Generator_TableClassName="TEXPERDESRIPTIONDataTable" msprop:Generator_RowClassName="TEXPERDESRIPTIONRow" msprop:Generator_TableVarName="tableTEXPERDESRIPTION" msprop:Generator_UserTableName="TEXPERDESRIPTION">
+          <xs:complexType>
           </xs:complexType>
         </xs:element>
       </xs:choice>
@@ -49,9 +53,9 @@
       <xs:selector xpath=".//mstns:TEXPERIENCE" />
       <xs:field xpath="mstns:colId" />
     </xs:unique>
-    <xs:unique name="TTECHEXPERIENCE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:TTECHEXPERIENCE" />
-      <xs:field xpath="mstns:colTech" />
+    <xs:unique name="TJOBTITLE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TJOBTITLE" />
+      <xs:field xpath="mstns:colId" />
     </xs:unique>
   </xs:element>
 </xs:schema>

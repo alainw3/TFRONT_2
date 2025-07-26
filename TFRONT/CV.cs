@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Globalization;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 
 namespace TFRONT
@@ -35,7 +36,7 @@ namespace TFRONT
                 conn.Open();
 
                 SqlCommand command = conn.CreateCommand();
-                command.CommandText = "select colId , colDatFrom, colDatTo, colEmployer from [winman].[dbo].[TEXPERIENCE]";
+                command.CommandText = "select colId , colDatFrom, colDatTo, colEmployer from [cv].[dbo].[TEXPERIENCE]";
                 dataAdapter = new SqlDataAdapter(command);
                 dataAdapter.Fill(dataSet21.Tables[0]);
 
@@ -43,12 +44,9 @@ namespace TFRONT
                 dataAdapter = new SqlDataAdapter(command);
                 dataAdapter.Fill(dataSet21.Tables[1]);
 
-
-                command.CommandText = "select colTech , colExperience1, colExperience2 , colExperience3 from [cv].[dbo].[TTECHEXPERIENCE] order by colId asc";
+                command.CommandText = "SELECT colId   ,colJobTitle           FROM [cv].[dbo].[TJOBTITLE]";
                 dataAdapter = new SqlDataAdapter(command);
-                dataAdapter.Fill(dataSet21.Tables[2]);
-
-
+                dataAdapter.Fill(dataSet21, "TJOBTITLE");
 
 
 
@@ -79,9 +77,6 @@ namespace TFRONT
             ReportDataSource rdsLanguage = new ReportDataSource("Language", dataSet21.Tables[1]);
             reportViewer1.LocalReport.DataSources.Add(rdsLanguage);
 
-
-            ReportDataSource rdsTechExperience = new ReportDataSource("TechExperience", dataSet21.Tables[2]);
-            reportViewer1.LocalReport.DataSources.Add(rdsTechExperience);
 
 
             reportViewer1.RefreshReport();
