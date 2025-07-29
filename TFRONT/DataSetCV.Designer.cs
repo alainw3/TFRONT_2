@@ -392,6 +392,10 @@ namespace TFRONT {
             
             private global::System.Data.DataColumn columncolEmployer;
             
+            private global::System.Data.DataColumn columncolDesFr;
+            
+            private global::System.Data.DataColumn columncolIdTJobtitle;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TEXPERIENCEDataTable() {
@@ -459,6 +463,22 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn colDesFrColumn {
+                get {
+                    return this.columncolDesFr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn colIdTJobtitleColumn {
+                get {
+                    return this.columncolIdTJobtitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -494,13 +514,15 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TEXPERIENCERow AddTEXPERIENCERow(string colId, System.DateTime colDatFrom, System.DateTime colDatTo, string colEmployer) {
+            public TEXPERIENCERow AddTEXPERIENCERow(string colId, System.DateTime colDatFrom, System.DateTime colDatTo, string colEmployer, string colDesFr, string colIdTJobtitle) {
                 TEXPERIENCERow rowTEXPERIENCERow = ((TEXPERIENCERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         colId,
                         colDatFrom,
                         colDatTo,
-                        colEmployer};
+                        colEmployer,
+                        colDesFr,
+                        colIdTJobtitle};
                 rowTEXPERIENCERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTEXPERIENCERow);
                 return rowTEXPERIENCERow;
@@ -534,6 +556,8 @@ namespace TFRONT {
                 this.columncolDatFrom = base.Columns["colDatFrom"];
                 this.columncolDatTo = base.Columns["colDatTo"];
                 this.columncolEmployer = base.Columns["colEmployer"];
+                this.columncolDesFr = base.Columns["colDesFr"];
+                this.columncolIdTJobtitle = base.Columns["colIdTJobtitle"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -547,6 +571,10 @@ namespace TFRONT {
                 base.Columns.Add(this.columncolDatTo);
                 this.columncolEmployer = new global::System.Data.DataColumn("colEmployer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncolEmployer);
+                this.columncolDesFr = new global::System.Data.DataColumn("colDesFr", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncolDesFr);
+                this.columncolIdTJobtitle = new global::System.Data.DataColumn("colIdTJobtitle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncolIdTJobtitle);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncolId}, true));
                 this.columncolId.AllowDBNull = false;
@@ -1560,6 +1588,38 @@ namespace TFRONT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string colDesFr {
+                get {
+                    try {
+                        return ((string)(this[this.tableTEXPERIENCE.colDesFrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'colDesFr\' in table \'TEXPERIENCE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTEXPERIENCE.colDesFrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string colIdTJobtitle {
+                get {
+                    try {
+                        return ((string)(this[this.tableTEXPERIENCE.colIdTJobtitleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'colIdTJobtitle\' in table \'TEXPERIENCE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTEXPERIENCE.colIdTJobtitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscolDatFromNull() {
                 return this.IsNull(this.tableTEXPERIENCE.colDatFromColumn);
             }
@@ -1592,6 +1652,30 @@ namespace TFRONT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetcolEmployerNull() {
                 this[this.tableTEXPERIENCE.colEmployerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscolDesFrNull() {
+                return this.IsNull(this.tableTEXPERIENCE.colDesFrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcolDesFrNull() {
+                this[this.tableTEXPERIENCE.colDesFrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscolIdTJobtitleNull() {
+                return this.IsNull(this.tableTEXPERIENCE.colIdTJobtitleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcolIdTJobtitleNull() {
+                this[this.tableTEXPERIENCE.colIdTJobtitleColumn] = global::System.Convert.DBNull;
             }
         }
         

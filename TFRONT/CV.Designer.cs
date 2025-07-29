@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            dataSet21 = new DataSet2();
-            comboBox1 = new ComboBox();
+            comboBoxTJobTitle = new ComboBox();
             tJOBTITLEBindingSource = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)dataSet21).BeginInit();
+            dataSet23 = new DataSet2();
             ((System.ComponentModel.ISupportInitialize)tJOBTITLEBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataSet23).BeginInit();
             SuspendLayout();
             // 
             // reportViewer1
@@ -45,48 +45,54 @@
             reportViewer1.Size = new Size(880, 624);
             reportViewer1.TabIndex = 0;
             // 
-            // dataSet21
+            // comboBoxTJobTitle
             // 
-            dataSet21.DataSetName = "DataSet2";
-            dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
-            dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // comboBox1
-            // 
-            comboBox1.DataSource = tJOBTITLEBindingSource;
-            comboBox1.DisplayMember = "colJobTitle";
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(922, 17);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
-            comboBox1.ValueMember = "colId";
+            comboBoxTJobTitle.DataSource = tJOBTITLEBindingSource;
+            comboBoxTJobTitle.DisplayMember = "colJobTitle";
+            comboBoxTJobTitle.FormattingEnabled = true;
+            comboBoxTJobTitle.Location = new Point(922, 17);
+            comboBoxTJobTitle.Name = "comboBoxTJobTitle";
+            comboBoxTJobTitle.Size = new Size(121, 23);
+            comboBoxTJobTitle.TabIndex = 1;
+            comboBoxTJobTitle.ValueMember = "colId";
+            comboBoxTJobTitle.SelectedIndexChanged += comboBoxTJobTitle_SelectedIndexChanged;
             // 
             // tJOBTITLEBindingSource
             // 
             tJOBTITLEBindingSource.DataMember = "TJOBTITLE";
-            tJOBTITLEBindingSource.DataSource = dataSet21;
+            tJOBTITLEBindingSource.DataSource = dataSet23;
+            // 
+            // dataSet23
+            // 
+            dataSet23.DataSetName = "DataSet2";
+            dataSet23.Namespace = "http://tempuri.org/DataSet2.xsd";
+            dataSet23.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1098, 642);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxTJobTitle);
             Controls.Add(reportViewer1);
+            DataBindings.Add(new Binding("Tag", tJOBTITLEBindingSource, "colJobTitle", true));
+            DataBindings.Add(new Binding("DataContext", tJOBTITLEBindingSource, "colId", true));
             Name = "CV";
             Text = "CV";
             Load += CV_Load;
-            ((System.ComponentModel.ISupportInitialize)dataSet21).EndInit();
             ((System.ComponentModel.ISupportInitialize)tJOBTITLEBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataSet23).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private DataSet2 dataSet21;
-        private ComboBox comboBox1;
+       
+
+        private ComboBox comboBoxTJobTitle;
+
+        private DataSet2 dataSet23;
         private BindingSource tJOBTITLEBindingSource;
     }
 }

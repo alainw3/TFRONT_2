@@ -22,6 +22,7 @@ namespace TFRONT
         SqlConnection conn;
         SqlDataAdapter dataAdapter;
 
+        private ReportParameter reportParameterIdJobTitle;
 
         public CV()
         {
@@ -36,17 +37,32 @@ namespace TFRONT
                 conn.Open();
 
                 SqlCommand command = conn.CreateCommand();
-                command.CommandText = "select colId , colDatFrom, colDatTo, colEmployer from [cv].[dbo].[TEXPERIENCE]";
+                command.CommandText = "SELECT     a2.colId," +
+                    "                             a1.colDatFrom," +
+                    "                             a1.colDatTo," +
+                    "                             a1.colEmployer," +
+                    "                             a2.colDesFr," +
+                    "                             a3.colIdTJobtitle" +
+                    "     FROM " +
+                    "               cv.dbo.TEXPERIENCE a1," +
+                    "               cv.dbo.TEXPERDESCRIPTION  a2," +
+                    "               cv.dbo.TDESCJOB  a3," +
+                    "               cv.dbo.TJOBTITLE  a4" +
+                    "     WHERE" +
+                    "                a1.colId = a2.colIdTExperience         and" +
+                    "                a2.colId  = a3.colIdTExperdescription  and" +
+                    "                a4.colId = a3.colIdTJobTitle           ";
+                
                 dataAdapter = new SqlDataAdapter(command);
-                dataAdapter.Fill(dataSet21.Tables[0]);
+                dataAdapter.Fill(dataSet23 ,"TEXPERIENCE");
 
                 command.CommandText = "select colCategory , colLanguage, colYear , colLastUse from [cv].[dbo].[TLANGUAGE]";
                 dataAdapter = new SqlDataAdapter(command);
-                dataAdapter.Fill(dataSet21.Tables[1]);
+                dataAdapter.Fill(dataSet23, "TLANGUAGE");
 
                 command.CommandText = "SELECT colId   ,colJobTitle           FROM [cv].[dbo].[TJOBTITLE]";
                 dataAdapter = new SqlDataAdapter(command);
-                dataAdapter.Fill(dataSet21, "TJOBTITLE");
+                dataAdapter.Fill(dataSet23, "TJOBTITLE");
 
 
 
@@ -61,7 +77,7 @@ namespace TFRONT
 
         public DataSet dataSet()
         {
-            return dataSet21;
+            return dataSet23;
         }
 
 
@@ -70,11 +86,16 @@ namespace TFRONT
             reportViewer1.LocalReport.ReportEmbeddedResource = "TFRONT.Report1.rdlc";
             reportViewer1.LocalReport.Refresh();
 
-            ReportDataSource rdsExperience = new ReportDataSource("Experience", dataSet21.Tables[0]);
+            reportParameterIdJobTitle = new ReportParameter("IdJobTitle","01");
+            reportViewer1.LocalReport.SetParameters(reportParameterIdJobTitle);
+
+
+            ReportDataSource rdsExperience = new ReportDataSource("Experience", dataSet23.Tables[0]);
             reportViewer1.LocalReport.DataSources.Add(rdsExperience);
+           
 
 
-            ReportDataSource rdsLanguage = new ReportDataSource("Language", dataSet21.Tables[1]);
+            ReportDataSource rdsLanguage = new ReportDataSource("Language", dataSet23.Tables[1]);
             reportViewer1.LocalReport.DataSources.Add(rdsLanguage);
 
 
@@ -86,6 +107,14 @@ namespace TFRONT
         private void CV_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void comboBoxTJobTitle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reportParameterIdJobTitle = new ReportParameter("IdJobTitle", comboBoxTJobTitle.SelectedValue.ToString());
+            reportViewer1.LocalReport.SetParameters(reportParameterIdJobTitle);
+
+            reportViewer1.RefreshReport();
         }
     }
 }
