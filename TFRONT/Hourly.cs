@@ -77,6 +77,11 @@ namespace TFRONT
             sQL.updateHourly(dayID, "4", hourID);
 
         }
+        public void updateHourlyBCIC()
+        {
+            sQL.updateHourly(dayID, "6", hourID);
+        }
+
 
         public void resetHourly()
         {

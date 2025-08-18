@@ -139,6 +139,8 @@
             colProjetDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
+            bCICToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator3 = new ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -658,66 +660,66 @@
             // 
             // contextMenuStripHourly
             // 
-            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { jobSearchToolStripMenuItem, learnToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, leTempsToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
+            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { learnToolStripMenuItem, toolStripSeparator3, jobSearchToolStripMenuItem, bCICToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, leTempsToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(154, 170);
+            contextMenuStripHourly.Size = new Size(181, 220);
             // 
             // jobSearchToolStripMenuItem
             // 
             jobSearchToolStripMenuItem.Name = "jobSearchToolStripMenuItem";
-            jobSearchToolStripMenuItem.Size = new Size(153, 22);
+            jobSearchToolStripMenuItem.Size = new Size(180, 22);
             jobSearchToolStripMenuItem.Text = "Job Search";
             jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
             // 
             // learnToolStripMenuItem
             // 
             learnToolStripMenuItem.Name = "learnToolStripMenuItem";
-            learnToolStripMenuItem.Size = new Size(153, 22);
+            learnToolStripMenuItem.Size = new Size(180, 22);
             learnToolStripMenuItem.Text = "Learn";
             learnToolStripMenuItem.Click += learnToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(150, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // administrationToolStripMenuItem1
             // 
             administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
-            administrationToolStripMenuItem1.Size = new Size(153, 22);
+            administrationToolStripMenuItem1.Size = new Size(180, 22);
             administrationToolStripMenuItem1.Text = "Administration";
             administrationToolStripMenuItem1.Click += administrationToolStripMenuItem1_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(153, 22);
+            financeToolStripMenuItem.Size = new Size(180, 22);
             financeToolStripMenuItem.Text = "Finance";
             financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
             // 
             // leTempsToolStripMenuItem
             // 
             leTempsToolStripMenuItem.Name = "leTempsToolStripMenuItem";
-            leTempsToolStripMenuItem.Size = new Size(153, 22);
+            leTempsToolStripMenuItem.Size = new Size(180, 22);
             leTempsToolStripMenuItem.Text = "Le Temps";
             leTempsToolStripMenuItem.Click += leTempsToolStripMenuItem_Click;
             // 
             // autreToolStripMenuItem
             // 
             autreToolStripMenuItem.Name = "autreToolStripMenuItem";
-            autreToolStripMenuItem.Size = new Size(153, 22);
+            autreToolStripMenuItem.Size = new Size(180, 22);
             autreToolStripMenuItem.Text = "Autre";
             autreToolStripMenuItem.Click += autreToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(150, 6);
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // noneToolStripMenuItem
             // 
             noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            noneToolStripMenuItem.Size = new Size(153, 22);
+            noneToolStripMenuItem.Size = new Size(180, 22);
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
@@ -920,7 +922,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1888, 1181);
+            tabControl1.Size = new Size(1888, 1061);
             tabControl1.TabIndex = 18;
             // 
             // tabPage1
@@ -945,7 +947,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1880, 1153);
+            tabPage1.Size = new Size(1880, 1033);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -1138,11 +1140,23 @@
             dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
             dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // bCICToolStripMenuItem
+            // 
+            bCICToolStripMenuItem.Name = "bCICToolStripMenuItem";
+            bCICToolStripMenuItem.Size = new Size(180, 22);
+            bCICToolStripMenuItem.Text = "BCIC";
+            bCICToolStripMenuItem.Click += bCICToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(177, 6);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1888, 1181);
+            ClientSize = new Size(1888, 1061);
             Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Form1";
@@ -1303,5 +1317,7 @@
         private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn Refresh;
         private Button buttonTLANG;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripMenuItem bCICToolStripMenuItem;
     }
 }

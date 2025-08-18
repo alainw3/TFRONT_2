@@ -374,6 +374,10 @@ namespace TFRONT
             {
                 gridViewCell.Style.BackColor = Color.Khaki;
             }
+            else if (gridViewCell.Value.ToString() == "6")
+            {
+                gridViewCell.Style.BackColor = Color.Aquamarine;
+            }
             else
             {
                 gridViewCell.Style.BackColor = Color.White;
@@ -476,6 +480,12 @@ namespace TFRONT
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
             SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
             dataAdapter.Update(dataSet11.Tables[2]);
+        }
+
+        private void bCICToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyBCIC();
+            updateHourly();
         }
     }
 }

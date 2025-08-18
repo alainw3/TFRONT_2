@@ -16,7 +16,7 @@ namespace TFRONT
 
         private String connectionString = "Server=DESKTOP-H8VM3SA;Database=commande;User Id=sa;Password=1T2z565%ç*5çx54;;TrustServerCertificate=true";
 
-        private const string whereClauseDay = " ('*','1','2','3','4','5')  ";
+        private const string whereClauseDay = " ('*','1','2','3','4','5','6')  ";
 
         public SQL() { }
 
