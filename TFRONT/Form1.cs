@@ -7,7 +7,6 @@ namespace TFRONT
 {
     public partial class Form1 : Form
     {
-        SqlConnection conn;
         SqlDataAdapter dataAdapter;
         SqlDataAdapter dataAdapterTHour;
 
@@ -486,6 +485,15 @@ namespace TFRONT
         {
             hourly.updateHourlyBCIC();
             updateHourly();
+        }
+
+        private void buttonSkipDays_Click(object sender, EventArgs e)
+        {
+            DialogSkipDays dialogSkipDays = new DialogSkipDays();
+
+            dialogSkipDays.ShowDialog();
+
+
         }
     }
 }

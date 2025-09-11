@@ -15,7 +15,8 @@ namespace TFRONT
 
         private SQL sQL;
 
-        public Hourly() {
+        public Hourly()
+        {
             sQL = new SQL();
         }
 
@@ -26,10 +27,11 @@ namespace TFRONT
         }
 
         public void setJobID(string jobID)
-        { 
+        {
             this.jobID = jobID;
         }
-        public void setHourID(string hourID) { 
+        public void setHourID(string hourID)
+        {
             this.hourID = hourID;
 
         }
@@ -38,9 +40,10 @@ namespace TFRONT
             this.dayID = dayID;
         }
 
-        public void updateHourlyJobSearch() { 
+        public void updateHourlyJobSearch()
+        {
 
-            sQL.updateHourly(dayID, "1" , hourID);
+            sQL.updateHourly(dayID, "1", hourID);
         }
         public void updateHourlyLeTemps()
         {

@@ -122,6 +122,20 @@ namespace TFRONT
 
         }
 
+        public bool skipDays(string nbDays)
+        {
+            string sqlUpdate;
+
+            sqlUpdate = "update[winman].[dbo].[TBL_TFRONT] set colDat = colDat " + nbDays;
+            updateSqlCommand(sqlUpdate);
+
+            sqlUpdate = "update[winman].[dbo].[TBL_TLEARN] set colDat = colDat " + nbDays;
+            updateSqlCommand(sqlUpdate);
+
+            return true;
+        }
+
+
         public DataAdapter GetDataAdapterFront()
         {
             return getDataAdapter("select colid , colDat, colCycle from [winman].[dbo].[TBL_TFRONT]");

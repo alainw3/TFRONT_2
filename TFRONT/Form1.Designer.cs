@@ -85,8 +85,10 @@
             Refresh = new DataGridViewButtonColumn();
             tLEARNBindingSource = new BindingSource(components);
             contextMenuStripHourly = new ContextMenuStrip(components);
-            jobSearchToolStripMenuItem = new ToolStripMenuItem();
             learnToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator3 = new ToolStripSeparator();
+            jobSearchToolStripMenuItem = new ToolStripMenuItem();
+            bCICToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
             administrationToolStripMenuItem1 = new ToolStripMenuItem();
             financeToolStripMenuItem = new ToolStripMenuItem();
@@ -139,8 +141,7 @@
             colProjetDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
-            bCICToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator3 = new ToolStripSeparator();
+            buttonSkipDays = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -662,64 +663,76 @@
             // 
             contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { learnToolStripMenuItem, toolStripSeparator3, jobSearchToolStripMenuItem, bCICToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, leTempsToolStripMenuItem, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(181, 220);
-            // 
-            // jobSearchToolStripMenuItem
-            // 
-            jobSearchToolStripMenuItem.Name = "jobSearchToolStripMenuItem";
-            jobSearchToolStripMenuItem.Size = new Size(180, 22);
-            jobSearchToolStripMenuItem.Text = "Job Search";
-            jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
+            contextMenuStripHourly.Size = new Size(154, 198);
             // 
             // learnToolStripMenuItem
             // 
             learnToolStripMenuItem.Name = "learnToolStripMenuItem";
-            learnToolStripMenuItem.Size = new Size(180, 22);
+            learnToolStripMenuItem.Size = new Size(153, 22);
             learnToolStripMenuItem.Text = "Learn";
             learnToolStripMenuItem.Click += learnToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(150, 6);
+            // 
+            // jobSearchToolStripMenuItem
+            // 
+            jobSearchToolStripMenuItem.Name = "jobSearchToolStripMenuItem";
+            jobSearchToolStripMenuItem.Size = new Size(153, 22);
+            jobSearchToolStripMenuItem.Text = "Job Search";
+            jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
+            // 
+            // bCICToolStripMenuItem
+            // 
+            bCICToolStripMenuItem.Name = "bCICToolStripMenuItem";
+            bCICToolStripMenuItem.Size = new Size(153, 22);
+            bCICToolStripMenuItem.Text = "BCIC";
+            bCICToolStripMenuItem.Click += bCICToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(150, 6);
             // 
             // administrationToolStripMenuItem1
             // 
             administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
-            administrationToolStripMenuItem1.Size = new Size(180, 22);
+            administrationToolStripMenuItem1.Size = new Size(153, 22);
             administrationToolStripMenuItem1.Text = "Administration";
             administrationToolStripMenuItem1.Click += administrationToolStripMenuItem1_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(180, 22);
+            financeToolStripMenuItem.Size = new Size(153, 22);
             financeToolStripMenuItem.Text = "Finance";
             financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
             // 
             // leTempsToolStripMenuItem
             // 
             leTempsToolStripMenuItem.Name = "leTempsToolStripMenuItem";
-            leTempsToolStripMenuItem.Size = new Size(180, 22);
+            leTempsToolStripMenuItem.Size = new Size(153, 22);
             leTempsToolStripMenuItem.Text = "Le Temps";
             leTempsToolStripMenuItem.Click += leTempsToolStripMenuItem_Click;
             // 
             // autreToolStripMenuItem
             // 
             autreToolStripMenuItem.Name = "autreToolStripMenuItem";
-            autreToolStripMenuItem.Size = new Size(180, 22);
+            autreToolStripMenuItem.Size = new Size(153, 22);
             autreToolStripMenuItem.Text = "Autre";
             autreToolStripMenuItem.Click += autreToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(150, 6);
             // 
             // noneToolStripMenuItem
             // 
             noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            noneToolStripMenuItem.Size = new Size(180, 22);
+            noneToolStripMenuItem.Size = new Size(153, 22);
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
@@ -927,6 +940,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(buttonSkipDays);
             tabPage1.Controls.Add(buttonTLANG);
             tabPage1.Controls.Add(dataGridView2);
             tabPage1.Controls.Add(pictureBox1);
@@ -1054,7 +1068,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1880, 1153);
+            tabPage2.Size = new Size(1880, 1033);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "CVNew";
             tabPage2.UseVisualStyleBackColor = true;
@@ -1140,17 +1154,15 @@
             dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
             dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bCICToolStripMenuItem
+            // buttonSkipDays
             // 
-            bCICToolStripMenuItem.Name = "bCICToolStripMenuItem";
-            bCICToolStripMenuItem.Size = new Size(180, 22);
-            bCICToolStripMenuItem.Text = "BCIC";
-            bCICToolStripMenuItem.Click += bCICToolStripMenuItem_Click;
-            // 
-            // toolStripSeparator3
-            // 
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(177, 6);
+            buttonSkipDays.Location = new Point(1094, 677);
+            buttonSkipDays.Name = "buttonSkipDays";
+            buttonSkipDays.Size = new Size(101, 30);
+            buttonSkipDays.TabIndex = 20;
+            buttonSkipDays.Text = "Skip Days";
+            buttonSkipDays.UseVisualStyleBackColor = true;
+            buttonSkipDays.Click += buttonSkipDays_Click;
             // 
             // Form1
             // 
@@ -1319,5 +1331,6 @@
         private Button buttonTLANG;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem bCICToolStripMenuItem;
+        private Button buttonSkipDays;
     }
 }
