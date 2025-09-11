@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /TFRONT/SQL.cs
+/TFRONT/Properties/Settings1.settings

@@ -14,7 +14,7 @@ namespace TFRONT
         SqlConnection conn;
         //SqlDataAdapter dataAdapter;
 
-        private String connectionString = "Server=DESKTOP-H8VM3SA;Database=commande;User Id=sa;Password=1T2z565%ç*5çx54;;TrustServerCertificate=true";
+        private String connectionString = Properties.Settings1.Default.msSqlConnString;
 
         private const string whereClauseDay = " ('*','1','2','3','4','5','6')  ";
 

@@ -28,7 +28,7 @@ namespace TFRONT
         {
             InitializeComponent();
 
-            String connectionString = "Server=DESKTOP-H8VM3SA;Database=commande;User Id=sa;Password=1T2z565%ç*5çx54;;TrustServerCertificate=true";
+            String connectionString =Properties.Settings1.Default.msSqlConnString;
 
             try
             {
