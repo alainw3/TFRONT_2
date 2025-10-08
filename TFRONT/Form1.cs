@@ -1,5 +1,6 @@
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -33,6 +34,8 @@ namespace TFRONT
         private Front front;
         private Learn learn;
         private CV cV;
+
+        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen };
 
         public Form1()
         {
@@ -348,40 +351,26 @@ namespace TFRONT
 
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            DataGridViewCell gridViewCell = dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex];
-            if (gridViewCell.Value.ToString() == "1")
+            if (e.ColumnIndex > 0)
             {
-                gridViewCell.Style.BackColor = Color.Yellow;
-            }
-            else if (gridViewCell.Value.ToString() == "*")
-            {
-                gridViewCell.Style.BackColor = Color.Blue;
-            }
-            else if (gridViewCell.Value.ToString() == "2")
-            {
-                gridViewCell.Style.BackColor = Color.Red;
-            }
-            else if (gridViewCell.Value.ToString() == "3")
-            {
-                gridViewCell.Style.BackColor = Color.Green;
-            }
-            else if (gridViewCell.Value.ToString() == "4")
-            {
-                gridViewCell.Style.BackColor = Color.Fuchsia;
-            }
-            else if (gridViewCell.Value.ToString() == "5")
-            {
-                gridViewCell.Style.BackColor = Color.Khaki;
-            }
-            else if (gridViewCell.Value.ToString() == "6")
-            {
-                gridViewCell.Style.BackColor = Color.Aquamarine;
-            }
-            else
-            {
-                gridViewCell.Style.BackColor = Color.White;
-            }
+                DataGridViewCell gridViewCell = dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
+                if (gridViewCell.Value.ToString() != "")
+                {
+                    if (gridViewCell.Value.ToString() == "*")
+                    {
+                        gridViewCell.Style.BackColor = Color.Blue;
+                    }
+                    else
+                    {
+                        gridViewCell.Style.BackColor = colorHour[Int32.Parse(gridViewCell.Value.ToString()) - 1];
+                    }
+                }
+                else
+                {
+                    gridViewCell.Style.BackColor = Color.White;
+                }
+            }
 
         }
 
@@ -494,6 +483,12 @@ namespace TFRONT
             dialogSkipDays.ShowDialog();
 
 
+        }
+
+        private void madaStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyMada();
+            updateHourly();
         }
     }
 }
