@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
+            comboBoxNbSkipDays = new ComboBox();
             label1 = new Label();
             buttonSkip = new Button();
             SuspendLayout();
             // 
-            // comboBox1
+            // comboBoxNbSkipDays
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7" });
-            comboBox1.Location = new Point(163, 54);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 0;
+            comboBoxNbSkipDays.FormattingEnabled = true;
+            comboBoxNbSkipDays.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7" });
+            comboBoxNbSkipDays.Location = new Point(163, 54);
+            comboBoxNbSkipDays.Name = "comboBoxNbSkipDays";
+            comboBoxNbSkipDays.Size = new Size(121, 23);
+            comboBoxNbSkipDays.TabIndex = 0;
             // 
             // label1
             // 
@@ -68,7 +68,7 @@
             ClientSize = new Size(393, 187);
             Controls.Add(buttonSkip);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxNbSkipDays);
             Name = "DialogSkipDays";
             Text = "dialogSkipDays";
             ResumeLayout(false);
@@ -77,7 +77,7 @@
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox comboBoxNbSkipDays;
         private Label label1;
         private Button buttonSkip;
     }

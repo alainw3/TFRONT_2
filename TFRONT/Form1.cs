@@ -1,5 +1,6 @@
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
@@ -51,13 +52,13 @@ namespace TFRONT
 
                 // TFRONT
                 dataAdapter = (SqlDataAdapter?)front.dataAdapterFront();
-                dataAdapter.Fill(dataSet11.Tables[0]);
+                dataAdapter.Fill(dataSet11,"TFRONT");
 
 
 
 
                 // TLEARN
-                dataAdapter = (SqlDataAdapter?)learn.dataAdapterFront();
+                dataAdapter = (SqlDataAdapter?)learn.dataAdapterLearn();
                 dataAdapter.Fill(dataSet11, "TLEARN");
 
 
@@ -481,6 +482,16 @@ namespace TFRONT
             DialogSkipDays dialogSkipDays = new DialogSkipDays();
 
             dialogSkipDays.ShowDialog();
+
+            // TFRONT
+            //dataAdapter = (SqlDataAdapter)front.dataAdapterFront();
+            //dataAdapter.Fill(dataSet11,"TFRONT");
+
+            // TLEARN
+            dataAdapter = (SqlDataAdapter?)learn.dataAdapterLearn();
+            dataAdapter.Fill(dataSet11, "TLEARN");
+
+            tFRONTBindingLLM.ResetBindings(false);
 
 
         }

@@ -126,11 +126,11 @@ namespace TFRONT
         {
             string sqlUpdate;
 
-            sqlUpdate = "update[winman].[dbo].[TBL_TFRONT] set colDat = colDat " + nbDays;
+            sqlUpdate = "update[winman].[dbo].[TBL_TFRONT] set colDat = colDat +" + nbDays;
             updateSqlCommand(sqlUpdate);
 
-            sqlUpdate = "update[winman].[dbo].[TBL_TLEARN] set colDat = colDat " + nbDays;
-            updateSqlCommand(sqlUpdate);
+            //sqlUpdate = "update[winman].[dbo].[TBL_TLEARN] set colDat = colDat +" + nbDays;
+            //updateSqlCommand(sqlUpdate);
 
             return true;
         }

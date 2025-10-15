@@ -100,6 +100,10 @@ namespace TFRONT
         {
             return sQL.getTotalHour();
         }
+        public bool  skipDays(string nbDays)
+        {
+            return sQL.skipDays(nbDays);
+        }
     }
 
 }

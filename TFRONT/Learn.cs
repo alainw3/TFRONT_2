@@ -16,7 +16,7 @@ namespace TFRONT
             sQL = new SQL();
         }
 
-        public DataAdapter dataAdapterFront()
+        public DataAdapter dataAdapterLearn()
         {
             return sQL.GetDataAdapterLearn();
         }

@@ -22,6 +22,12 @@ namespace TFRONT
 
         private void buttonSkip_Click(object sender, EventArgs e)
         {
+            String nbDays;
+
+            nbDays= comboBoxNbSkipDays.SelectedItem.ToString();
+
+            hourly.skipDays(nbDays);
+               
             this.Close();
         }
     }
