@@ -34,7 +34,7 @@ namespace TFRONT
         private Hourly hourly;
         private Front front;
         private Learn learn;
-        private CV cV;
+
 
         private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen };
 
@@ -158,13 +158,6 @@ namespace TFRONT
 
         private void buttonCV_Click(object sender, EventArgs e)
         {
-            CV cV = Application.OpenForms.OfType<CV>().FirstOrDefault();
-            if (cV == null)
-            {
-                cV = new CV();
-            }
-            //cV.Dispose();
-            cV.Show();
 
         }
 
@@ -416,12 +409,7 @@ namespace TFRONT
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            if (cV == null)
-            {
-                cV = new CV();
-            }
-            tLANGUAGEBindingSource.DataSource = cV.dataSet();
-            //tLANGUAGEBindingSource.ResetBindings(true);
+
         }
 
         private void buttonTLanguageSave_Click(object sender, EventArgs e)
@@ -484,8 +472,8 @@ namespace TFRONT
             dialogSkipDays.ShowDialog();
 
             // TFRONT
-            //dataAdapter = (SqlDataAdapter)front.dataAdapterFront();
-            //dataAdapter.Fill(dataSet11,"TFRONT");
+            dataAdapter = (SqlDataAdapter)front.dataAdapterFront();
+            dataAdapter.Fill(dataSet11,"TFRONT");
 
             // TLEARN
             dataAdapter = (SqlDataAdapter?)learn.dataAdapterLearn();

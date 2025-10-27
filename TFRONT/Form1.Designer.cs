@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             labelCV = new Label();
             dateTimePickerCV = new DateTimePicker();
@@ -134,15 +133,6 @@
             colFriDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colSatDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tabPage2 = new TabPage();
-            buttonSaveTLanguage = new Button();
-            buttonCV = new Button();
-            dataGridView3 = new DataGridView();
-            colCategoryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colLanguageDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colYearDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colLastUseDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colProjetDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -177,8 +167,6 @@
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet21).BeginInit();
             SuspendLayout();
@@ -951,7 +939,6 @@
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -1091,89 +1078,6 @@
             colSunDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.True;
             colSunDataGridViewTextBoxColumn.Width = 50;
             // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(buttonSaveTLanguage);
-            tabPage2.Controls.Add(buttonCV);
-            tabPage2.Controls.Add(dataGridView3);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1880, 1033);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "CVNew";
-            tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Enter += tabPage2_Enter;
-            // 
-            // buttonSaveTLanguage
-            // 
-            buttonSaveTLanguage.Location = new Point(548, 435);
-            buttonSaveTLanguage.Name = "buttonSaveTLanguage";
-            buttonSaveTLanguage.Size = new Size(75, 23);
-            buttonSaveTLanguage.TabIndex = 15;
-            buttonSaveTLanguage.Text = "SAVE";
-            buttonSaveTLanguage.UseVisualStyleBackColor = true;
-            buttonSaveTLanguage.Click += buttonTLanguageSave_Click;
-            // 
-            // buttonCV
-            // 
-            buttonCV.Location = new Point(725, 23);
-            buttonCV.Name = "buttonCV";
-            buttonCV.Size = new Size(128, 31);
-            buttonCV.TabIndex = 14;
-            buttonCV.Text = "CV";
-            buttonCV.UseVisualStyleBackColor = true;
-            buttonCV.Click += buttonCV_Click;
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.AutoGenerateColumns = false;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { colCategoryDataGridViewTextBoxColumn, colLanguageDataGridViewTextBoxColumn, colYearDataGridViewTextBoxColumn, colLastUseDataGridViewTextBoxColumn, colProjetDataGridViewTextBoxColumn });
-            dataGridView3.DataSource = tLANGUAGEBindingSource;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView3.Location = new Point(17, 23);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(691, 388);
-            dataGridView3.TabIndex = 0;
-            // 
-            // colCategoryDataGridViewTextBoxColumn
-            // 
-            colCategoryDataGridViewTextBoxColumn.DataPropertyName = "colCategory";
-            colCategoryDataGridViewTextBoxColumn.HeaderText = "colCategory";
-            colCategoryDataGridViewTextBoxColumn.Name = "colCategoryDataGridViewTextBoxColumn";
-            // 
-            // colLanguageDataGridViewTextBoxColumn
-            // 
-            colLanguageDataGridViewTextBoxColumn.DataPropertyName = "colLanguage";
-            colLanguageDataGridViewTextBoxColumn.HeaderText = "colLanguage";
-            colLanguageDataGridViewTextBoxColumn.Name = "colLanguageDataGridViewTextBoxColumn";
-            // 
-            // colYearDataGridViewTextBoxColumn
-            // 
-            colYearDataGridViewTextBoxColumn.DataPropertyName = "colYear";
-            colYearDataGridViewTextBoxColumn.HeaderText = "colYear";
-            colYearDataGridViewTextBoxColumn.Name = "colYearDataGridViewTextBoxColumn";
-            // 
-            // colLastUseDataGridViewTextBoxColumn
-            // 
-            colLastUseDataGridViewTextBoxColumn.DataPropertyName = "colLastUse";
-            colLastUseDataGridViewTextBoxColumn.HeaderText = "colLastUse";
-            colLastUseDataGridViewTextBoxColumn.Name = "colLastUseDataGridViewTextBoxColumn";
-            // 
-            // colProjetDataGridViewTextBoxColumn
-            // 
-            colProjetDataGridViewTextBoxColumn.DataPropertyName = "colProjet";
-            colProjetDataGridViewTextBoxColumn.HeaderText = "colProjet";
-            colProjetDataGridViewTextBoxColumn.Name = "colProjetDataGridViewTextBoxColumn";
-            // 
             // tLANGUAGEBindingSource
             // 
             tLANGUAGEBindingSource.DataMember = "TLANGUAGE";
@@ -1232,8 +1136,6 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSet21).EndInit();
             ResumeLayout(false);
@@ -1325,15 +1227,8 @@
         private BindingSource tFRONTBindingSourceReel;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private TabPage tabPage2;
-        private DataGridView dataGridView3;
         private BindingSource tLANGUAGEBindingSource;
         private DataSet2 dataSet21;
-        private DataGridViewTextBoxColumn colCategoryDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colLanguageDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colYearDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colLastUseDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn colProjetDataGridViewTextBoxColumn;
         private DataGridView dataGridView2;
         private DataGridViewTextBoxColumn colTitleDataGridViewTHOUR;
         private DataGridViewTextBoxColumn colMonDataGridViewTHOUR;
@@ -1343,8 +1238,6 @@
         private DataGridViewTextBoxColumn colFriDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colSatDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colSunDataGridViewTextBoxColumn;
-        private Button buttonCV;
-        private Button buttonSaveTLanguage;
         private ToolStripMenuItem leTempsToolStripMenuItem;
         private DataGridViewTextBoxColumn colLangDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn;

@@ -129,8 +129,8 @@ namespace TFRONT
             sqlUpdate = "update[winman].[dbo].[TBL_TFRONT] set colDat = colDat +" + nbDays;
             updateSqlCommand(sqlUpdate);
 
-            //sqlUpdate = "update[winman].[dbo].[TBL_TLEARN] set colDat = colDat +" + nbDays;
-            //updateSqlCommand(sqlUpdate);
+            sqlUpdate = "update[winman].[dbo].[TBL_TLEARN] set colDat = colDat +" + nbDays;
+            updateSqlCommand(sqlUpdate);
 
             return true;
         }
@@ -144,7 +144,7 @@ namespace TFRONT
 
         public DataAdapter GetDataAdapterLearn()
         {
-            return getDataAdapter("select colid , colDat, colLang from [winman].[dbo].[TBL_TLEARN]");
+            return getDataAdapter("select colid , colDat, colLang from [winman].[dbo].[TBL_TLEARN] where colArch is null");
 
         }
 
