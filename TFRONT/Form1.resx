@@ -187,10 +187,16 @@
     <value>629, 17</value>
   </metadata>
   <metadata name="tFRONTBindingMada.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 54</value>
+    <value>30, 54</value>
   </metadata>
   <metadata name="tFRONTBindingSourceJR.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>382, 124</value>
+  </metadata>
+  <metadata name="tFRONTBindingJardin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>30, 174</value>
+  </metadata>
+  <metadata name="tFRONTBindingVilla.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>26, 211</value>
   </metadata>
   <metadata name="tLANGUAGEBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>54, 290</value>
@@ -199,6 +205,6 @@
     <value>582, 166</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>162</value>
+    <value>247</value>
   </metadata>
 </root>

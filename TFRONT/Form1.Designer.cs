@@ -122,6 +122,13 @@
             administrationToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            groupBox5 = new GroupBox();
+            dateTimePickerJardin = new DateTimePicker();
+            tFRONTBindingJardin = new BindingSource(components);
+            dateTimePickerVilla = new DateTimePicker();
+            tFRONTBindingVilla = new BindingSource(components);
+            labelJD = new Label();
+            labelVL = new Label();
             buttonSkipDays = new Button();
             buttonTLANG = new Button();
             dataGridView2 = new DataGridView();
@@ -166,6 +173,9 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingJardin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingVilla).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet21).BeginInit();
@@ -319,7 +329,7 @@
             // 
             dateTimePickerCVNew.DataBindings.Add(new Binding("Text", tFRONTBindingSourceCVNew, "colDat", true));
             dateTimePickerCVNew.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVNew.Location = new Point(155, 251);
+            dateTimePickerCVNew.Location = new Point(155, 271);
             dateTimePickerCVNew.Name = "dateTimePickerCVNew";
             dateTimePickerCVNew.Size = new Size(131, 23);
             dateTimePickerCVNew.TabIndex = 15;
@@ -335,11 +345,11 @@
             // 
             labelCVNew.AutoSize = true;
             labelCVNew.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCVNew.Location = new Point(27, 252);
+            labelCVNew.Location = new Point(27, 275);
             labelCVNew.Name = "labelCVNew";
-            labelCVNew.Size = new Size(51, 15);
+            labelCVNew.Size = new Size(66, 15);
             labelCVNew.TabIndex = 14;
-            labelCVNew.Text = "CV New";
+            labelCVNew.Text = "Certificate";
             // 
             // dateTimePickerCVEnv
             // 
@@ -948,6 +958,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(groupBox5);
             tabPage1.Controls.Add(buttonSkipDays);
             tabPage1.Controls.Add(buttonTLANG);
             tabPage1.Controls.Add(dataGridView2);
@@ -973,6 +984,69 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(dateTimePickerJardin);
+            groupBox5.Controls.Add(dateTimePickerVilla);
+            groupBox5.Controls.Add(labelJD);
+            groupBox5.Controls.Add(labelVL);
+            groupBox5.Location = new Point(645, 593);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(260, 162);
+            groupBox5.TabIndex = 21;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Maison";
+            // 
+            // dateTimePickerJardin
+            // 
+            dateTimePickerJardin.DataBindings.Add(new Binding("Text", tFRONTBindingJardin, "colDat", true));
+            dateTimePickerJardin.Format = DateTimePickerFormat.Short;
+            dateTimePickerJardin.Location = new Point(105, 82);
+            dateTimePickerJardin.Name = "dateTimePickerJardin";
+            dateTimePickerJardin.Size = new Size(137, 23);
+            dateTimePickerJardin.TabIndex = 3;
+            dateTimePickerJardin.Validated += dateTimePickerJardin_Validated;
+            // 
+            // tFRONTBindingJardin
+            // 
+            tFRONTBindingJardin.DataMember = "TFRONT";
+            tFRONTBindingJardin.DataSource = dataSet11;
+            tFRONTBindingJardin.Filter = "colId='22'";
+            // 
+            // dateTimePickerVilla
+            // 
+            dateTimePickerVilla.DataBindings.Add(new Binding("Text", tFRONTBindingVilla, "colDat", true));
+            dateTimePickerVilla.Format = DateTimePickerFormat.Short;
+            dateTimePickerVilla.Location = new Point(105, 39);
+            dateTimePickerVilla.Name = "dateTimePickerVilla";
+            dateTimePickerVilla.Size = new Size(137, 23);
+            dateTimePickerVilla.TabIndex = 2;
+            dateTimePickerVilla.Validated += dateTimePickerVilla_Validated;
+            // 
+            // tFRONTBindingVilla
+            // 
+            tFRONTBindingVilla.DataMember = "TFRONT";
+            tFRONTBindingVilla.DataSource = dataSet11;
+            tFRONTBindingVilla.Filter = "colId='21'";
+            // 
+            // labelJD
+            // 
+            labelJD.AutoSize = true;
+            labelJD.Location = new Point(18, 82);
+            labelJD.Name = "labelJD";
+            labelJD.Size = new Size(38, 15);
+            labelJD.TabIndex = 1;
+            labelJD.Text = "Jardin";
+            // 
+            // labelVL
+            // 
+            labelVL.AutoSize = true;
+            labelVL.Location = new Point(18, 45);
+            labelVL.Name = "labelVL";
+            labelVL.Size = new Size(29, 15);
+            labelVL.TabIndex = 0;
+            labelVL.Text = "Villa";
             // 
             // buttonSkipDays
             // 
@@ -1135,6 +1209,10 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingJardin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingVilla).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSet21).EndInit();
@@ -1249,5 +1327,12 @@
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem madaStripMenuItem;
         private ToolStripSeparator toolStripSeparator5;
+        private GroupBox groupBox5;
+        private Label labelVL;
+        private DateTimePicker dateTimePickerJardin;
+        private DateTimePicker dateTimePickerVilla;
+        private Label labelJD;
+        private BindingSource tFRONTBindingVilla;
+        private BindingSource tFRONTBindingJardin;
     }
 }

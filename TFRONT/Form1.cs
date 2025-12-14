@@ -31,6 +31,9 @@ namespace TFRONT
         private const int cycleCVNew = -3;
         private const int cycleReel = -2;
 
+        private const int cycleVL = -7;
+        private const int cycleJD = -7;
+
         private Hourly hourly;
         private Front front;
         private Learn learn;
@@ -52,7 +55,7 @@ namespace TFRONT
 
                 // TFRONT
                 dataAdapter = (SqlDataAdapter?)front.dataAdapterFront();
-                dataAdapter.Fill(dataSet11,"TFRONT");
+                dataAdapter.Fill(dataSet11, "TFRONT");
 
 
 
@@ -153,6 +156,9 @@ namespace TFRONT
 
             label_Color(dateTimePickerReel, labelReel, cycleReel);
 
+            label_Color(dateTimePickerVilla, labelVL, cycleVL);
+            label_Color(dateTimePickerJardin, labelJD, cycleJD);
+            
         }
 
 
@@ -473,7 +479,7 @@ namespace TFRONT
 
             // TFRONT
             dataAdapter = (SqlDataAdapter)front.dataAdapterFront();
-            dataAdapter.Fill(dataSet11,"TFRONT");
+            dataAdapter.Fill(dataSet11, "TFRONT");
 
             // TLEARN
             dataAdapter = (SqlDataAdapter?)learn.dataAdapterLearn();
@@ -488,6 +494,19 @@ namespace TFRONT
         {
             hourly.updateHourlyMada();
             updateHourly();
+        }
+
+
+        private void dateTimePickerVilla_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerVilla, tFRONTBindingVilla.Filter);
+            label_Color(dateTimePickerVilla, labelVL, cycleVL);
+        }
+
+        private void dateTimePickerJardin_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerJardin, tFRONTBindingJardin.Filter);
+            label_Color(dateTimePickerJardin, labelJD, cycleJD);
         }
     }
 }
