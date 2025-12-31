@@ -16,7 +16,7 @@ namespace TFRONT
 
         private String connectionString = Properties.Settings1.Default.msSqlConnString;
 
-        private const string whereClauseDay = " ('*','1','2','3','4','5','6','7')  ";
+        private const string whereClauseDay = " ('*','1','2','3','4','5','6','7','8')  ";
 
         public SQL() { }
 
@@ -34,20 +34,20 @@ namespace TFRONT
 
             SqlCommand commandWeeklHour = conn.CreateCommand();
 
-            String sql = " SELECT ROUND(SUM(cnt)/2,2) FROM" +
-                 "   (  SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSun IN " + whereClauseDay +
+            String sql = " SELECT ROUND(SUM(cnt)/2/2,2) FROM" +
+                 "   (  SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 0  and colSun IN " + whereClauseDay +
                  "      UNION ALL " +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colSat IN " + whereClauseDay +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 0  and colSat IN " + whereClauseDay +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colFri IN " + whereClauseDay +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 0  and colFri IN " + whereClauseDay +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colThu IN " + whereClauseDay +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 0  and colThu IN " + whereClauseDay +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colWed IN " + whereClauseDay +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 0  and colWed IN " + whereClauseDay +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colTue IN " + whereClauseDay +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 0  and colTue IN " + whereClauseDay +
                  "      UNION ALL" +
-                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 6  and colMon IN " + whereClauseDay +
+                 "      SELECT COUNT(*) cnt FROM  [winman].[dbo].[TBL_THOUR]  WHERE colId > 0  and colMon IN " + whereClauseDay +
                  "     ) A";
 
             //and(upper(DATENAME(weekday, GETDATE())) != 'FRIDAY')
@@ -151,7 +151,7 @@ namespace TFRONT
 
         public DataAdapter GetDataAdapterHourly()
         {
-            return getDataAdapter("select colid, colTitle, colMon, colTue, colWed, colThu, colFri, colSat, colSun  from [winman].[dbo].[TBL_THOUR]");
+            return getDataAdapter("select colid, colTitle, colMon, colTue, colWed, colThu, colFri, colSat, colSun  from [winman].[dbo].[TBL_THOUR] order by colTitle" );
 
         }
 

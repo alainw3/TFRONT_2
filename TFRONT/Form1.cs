@@ -39,7 +39,7 @@ namespace TFRONT
         private Learn learn;
 
 
-        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen };
+        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Orange };
 
         public Form1()
         {
@@ -158,7 +158,7 @@ namespace TFRONT
 
             label_Color(dateTimePickerVilla, labelVL, cycleVL);
             label_Color(dateTimePickerJardin, labelJD, cycleJD);
-            
+
         }
 
 
@@ -507,6 +507,12 @@ namespace TFRONT
         {
             commandSQL(dateTimePickerJardin, tFRONTBindingJardin.Filter);
             label_Color(dateTimePickerJardin, labelJD, cycleJD);
+        }
+
+        private void certificateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyCertificate();
+            updateHourly();
         }
     }
 }
