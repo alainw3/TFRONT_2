@@ -86,11 +86,13 @@
             contextMenuStripHourly = new ContextMenuStrip(components);
             learnToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator3 = new ToolStripSeparator();
+            certificateToolStripMenuItem = new ToolStripMenuItem();
             jobSearchToolStripMenuItem = new ToolStripMenuItem();
             bCICToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
             administrationToolStripMenuItem1 = new ToolStripMenuItem();
             financeToolStripMenuItem = new ToolStripMenuItem();
+            StategieMenuItem = new ToolStripMenuItem();
             toolStripSeparator4 = new ToolStripSeparator();
             leTempsToolStripMenuItem = new ToolStripMenuItem();
             madaStripMenuItem = new ToolStripMenuItem();
@@ -142,7 +144,6 @@
             colSunDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
-            certificateToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -279,8 +280,6 @@
             // 
             groupBox1.Controls.Add(dateTimePickerReel);
             groupBox1.Controls.Add(labelReel);
-            groupBox1.Controls.Add(dateTimePickerCVNew);
-            groupBox1.Controls.Add(labelCVNew);
             groupBox1.Controls.Add(dateTimePickerCVEnv);
             groupBox1.Controls.Add(labelCVEnv);
             groupBox1.Controls.Add(dateTimePickerCVFRLecture);
@@ -304,7 +303,7 @@
             // 
             dateTimePickerReel.DataBindings.Add(new Binding("Text", tFRONTBindingSourceReel, "colDat", true));
             dateTimePickerReel.Format = DateTimePickerFormat.Short;
-            dateTimePickerReel.Location = new Point(151, 375);
+            dateTimePickerReel.Location = new Point(155, 375);
             dateTimePickerReel.Name = "dateTimePickerReel";
             dateTimePickerReel.Size = new Size(132, 23);
             dateTimePickerReel.TabIndex = 17;
@@ -320,7 +319,7 @@
             // 
             labelReel.AutoSize = true;
             labelReel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelReel.Location = new Point(29, 376);
+            labelReel.Location = new Point(24, 376);
             labelReel.Name = "labelReel";
             labelReel.Size = new Size(32, 15);
             labelReel.TabIndex = 16;
@@ -330,9 +329,9 @@
             // 
             dateTimePickerCVNew.DataBindings.Add(new Binding("Text", tFRONTBindingSourceCVNew, "colDat", true));
             dateTimePickerCVNew.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVNew.Location = new Point(155, 271);
+            dateTimePickerCVNew.Location = new Point(104, 311);
             dateTimePickerCVNew.Name = "dateTimePickerCVNew";
-            dateTimePickerCVNew.Size = new Size(131, 23);
+            dateTimePickerCVNew.Size = new Size(148, 23);
             dateTimePickerCVNew.TabIndex = 15;
             dateTimePickerCVNew.Validated += dateTimePickerCVNew_Validated;
             // 
@@ -346,7 +345,7 @@
             // 
             labelCVNew.AutoSize = true;
             labelCVNew.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCVNew.Location = new Point(27, 275);
+            labelCVNew.Location = new Point(15, 315);
             labelCVNew.Name = "labelCVNew";
             labelCVNew.Size = new Size(66, 15);
             labelCVNew.TabIndex = 14;
@@ -356,7 +355,7 @@
             // 
             dateTimePickerCVEnv.DataBindings.Add(new Binding("Text", tFRONTBindingCVEnv, "colDat", true));
             dateTimePickerCVEnv.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVEnv.Location = new Point(151, 337);
+            dateTimePickerCVEnv.Location = new Point(154, 333);
             dateTimePickerCVEnv.Name = "dateTimePickerCVEnv";
             dateTimePickerCVEnv.Size = new Size(132, 23);
             dateTimePickerCVEnv.TabIndex = 12;
@@ -372,7 +371,7 @@
             // 
             labelCVEnv.AutoSize = true;
             labelCVEnv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCVEnv.Location = new Point(27, 340);
+            labelCVEnv.Location = new Point(23, 333);
             labelCVEnv.Name = "labelCVEnv";
             labelCVEnv.Size = new Size(74, 15);
             labelCVEnv.TabIndex = 11;
@@ -382,7 +381,7 @@
             // 
             dateTimePickerCVFRLecture.DataBindings.Add(new Binding("Text", tFRONTBindingCVFRLecture, "colDat", true));
             dateTimePickerCVFRLecture.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVFRLecture.Location = new Point(155, 212);
+            dateTimePickerCVFRLecture.Location = new Point(155, 289);
             dateTimePickerCVFRLecture.Name = "dateTimePickerCVFRLecture";
             dateTimePickerCVFRLecture.Size = new Size(131, 23);
             dateTimePickerCVFRLecture.TabIndex = 10;
@@ -397,11 +396,12 @@
             // labelCVFRLecture
             // 
             labelCVFRLecture.AutoSize = true;
-            labelCVFRLecture.Location = new Point(24, 212);
+            labelCVFRLecture.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelCVFRLecture.Location = new Point(24, 289);
             labelCVFRLecture.Name = "labelCVFRLecture";
-            labelCVFRLecture.Size = new Size(90, 15);
+            labelCVFRLecture.Size = new Size(56, 15);
             labelCVFRLecture.TabIndex = 9;
-            labelCVFRLecture.Text = "Dernière lecture";
+            labelCVFRLecture.Text = "Arazakar";
             // 
             // label3
             // 
@@ -482,7 +482,9 @@
             // 
             groupBox2.Controls.Add(dateTimePickerWebSite);
             groupBox2.Controls.Add(labelWebSite);
+            groupBox2.Controls.Add(dateTimePickerCVNew);
             groupBox2.Controls.Add(dateTimePickerMAT);
+            groupBox2.Controls.Add(labelCVNew);
             groupBox2.Controls.Add(labelMAT);
             groupBox2.Controls.Add(dateTimePickerPRO);
             groupBox2.Controls.Add(labelPRO);
@@ -518,7 +520,7 @@
             labelWebSite.AutoSize = true;
             labelWebSite.Location = new Point(15, 265);
             labelWebSite.Name = "labelWebSite";
-            labelWebSite.Size = new Size(50, 15);
+            labelWebSite.Size = new Size(42, 15);
             labelWebSite.TabIndex = 14;
             labelWebSite.Text = "Papers";
             // 
@@ -664,95 +666,109 @@
             // 
             // contextMenuStripHourly
             // 
-            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { learnToolStripMenuItem, toolStripSeparator3, certificateToolStripMenuItem, jobSearchToolStripMenuItem, bCICToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, toolStripSeparator4, leTempsToolStripMenuItem, madaStripMenuItem, toolStripSeparator5, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
+            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { learnToolStripMenuItem, toolStripSeparator3, certificateToolStripMenuItem, jobSearchToolStripMenuItem, bCICToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, StategieMenuItem, toolStripSeparator4, leTempsToolStripMenuItem, madaStripMenuItem, toolStripSeparator5, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(181, 276);
+            contextMenuStripHourly.Size = new Size(154, 276);
             // 
             // learnToolStripMenuItem
             // 
             learnToolStripMenuItem.Name = "learnToolStripMenuItem";
-            learnToolStripMenuItem.Size = new Size(180, 22);
+            learnToolStripMenuItem.Size = new Size(153, 22);
             learnToolStripMenuItem.Text = "Learn";
             learnToolStripMenuItem.Click += learnToolStripMenuItem_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(177, 6);
+            toolStripSeparator3.Size = new Size(150, 6);
+            // 
+            // certificateToolStripMenuItem
+            // 
+            certificateToolStripMenuItem.Name = "certificateToolStripMenuItem";
+            certificateToolStripMenuItem.Size = new Size(153, 22);
+            certificateToolStripMenuItem.Text = "Certificate";
+            certificateToolStripMenuItem.Click += certificateToolStripMenuItem_Click;
             // 
             // jobSearchToolStripMenuItem
             // 
             jobSearchToolStripMenuItem.Name = "jobSearchToolStripMenuItem";
-            jobSearchToolStripMenuItem.Size = new Size(180, 22);
+            jobSearchToolStripMenuItem.Size = new Size(153, 22);
             jobSearchToolStripMenuItem.Text = "Job Search";
             jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
             // 
             // bCICToolStripMenuItem
             // 
             bCICToolStripMenuItem.Name = "bCICToolStripMenuItem";
-            bCICToolStripMenuItem.Size = new Size(180, 22);
+            bCICToolStripMenuItem.Size = new Size(153, 22);
             bCICToolStripMenuItem.Text = "BCIC";
             bCICToolStripMenuItem.Click += bCICToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(150, 6);
             // 
             // administrationToolStripMenuItem1
             // 
             administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
-            administrationToolStripMenuItem1.Size = new Size(180, 22);
+            administrationToolStripMenuItem1.Size = new Size(153, 22);
             administrationToolStripMenuItem1.Text = "Administration";
             administrationToolStripMenuItem1.Click += administrationToolStripMenuItem1_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(180, 22);
+            financeToolStripMenuItem.Size = new Size(153, 22);
             financeToolStripMenuItem.Text = "Finance";
             financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
+            // 
+            // StategieMenuItem
+            // 
+            StategieMenuItem.Name = "StategieMenuItem";
+            StategieMenuItem.Size = new Size(153, 22);
+            StategieMenuItem.Text = "Strategie";
+            StategieMenuItem.Click += StategieMenuItem_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(177, 6);
+            toolStripSeparator4.Size = new Size(150, 6);
             // 
             // leTempsToolStripMenuItem
             // 
             leTempsToolStripMenuItem.Name = "leTempsToolStripMenuItem";
-            leTempsToolStripMenuItem.Size = new Size(180, 22);
+            leTempsToolStripMenuItem.Size = new Size(153, 22);
             leTempsToolStripMenuItem.Text = "Le Temps";
             leTempsToolStripMenuItem.Click += leTempsToolStripMenuItem_Click;
             // 
             // madaStripMenuItem
             // 
             madaStripMenuItem.Name = "madaStripMenuItem";
-            madaStripMenuItem.Size = new Size(180, 22);
+            madaStripMenuItem.Size = new Size(153, 22);
             madaStripMenuItem.Text = "Mada";
             madaStripMenuItem.Click += madaStripMenuItem_Click;
             // 
             // toolStripSeparator5
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(177, 6);
+            toolStripSeparator5.Size = new Size(150, 6);
             // 
             // autreToolStripMenuItem
             // 
             autreToolStripMenuItem.Name = "autreToolStripMenuItem";
-            autreToolStripMenuItem.Size = new Size(180, 22);
+            autreToolStripMenuItem.Size = new Size(153, 22);
             autreToolStripMenuItem.Text = "Autre";
             autreToolStripMenuItem.Click += autreToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(150, 6);
             // 
             // noneToolStripMenuItem
             // 
             noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            noneToolStripMenuItem.Size = new Size(180, 22);
+            noneToolStripMenuItem.Size = new Size(153, 22);
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
@@ -1164,13 +1180,6 @@
             dataSet21.Namespace = "http://tempuri.org/DataSet2.xsd";
             dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // certificateToolStripMenuItem
-            // 
-            certificateToolStripMenuItem.Name = "certificateToolStripMenuItem";
-            certificateToolStripMenuItem.Size = new Size(180, 22);
-            certificateToolStripMenuItem.Text = "Certificate";
-            certificateToolStripMenuItem.Click += certificateToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1343,5 +1352,6 @@
         private BindingSource tFRONTBindingVilla;
         private BindingSource tFRONTBindingJardin;
         private ToolStripMenuItem certificateToolStripMenuItem;
+        private ToolStripMenuItem StategieMenuItem;
     }
 }

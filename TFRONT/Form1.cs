@@ -39,7 +39,7 @@ namespace TFRONT
         private Learn learn;
 
 
-        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Orange };
+        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Orange, Color.Blue};
 
         public Form1()
         {
@@ -359,7 +359,7 @@ namespace TFRONT
                 {
                     if (gridViewCell.Value.ToString() == "*")
                     {
-                        gridViewCell.Style.BackColor = Color.Blue;
+                        gridViewCell.Style.BackColor = Color.Gray;
                     }
                     else
                     {
@@ -512,6 +512,12 @@ namespace TFRONT
         private void certificateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             hourly.updateHourlyCertificate();
+            updateHourly();
+        }
+
+        private void StategieMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyStrategie();
             updateHourly();
         }
     }

@@ -97,6 +97,12 @@ namespace TFRONT
         }
 
 
+        public void updateHourlyStrategie()
+        {
+            sQL.updateHourly(dayID, "9", hourID);
+        }
+
+
         public void resetHourly()
         {
             sQL.resetHourly();
