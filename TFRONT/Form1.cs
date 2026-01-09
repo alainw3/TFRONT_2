@@ -13,8 +13,9 @@ namespace TFRONT
         SqlDataAdapter dataAdapterTHour;
 
         private const int cycleCV = -14;
-        private const int cycleCVLecture = -7;
+        private const int cycleArazakar = -7;
         private const int cycleCVEnv = -2;
+        private const int cycleCentura = -3;
 
         private const int cycleSP = -3;
 
@@ -22,24 +23,25 @@ namespace TFRONT
 
         private const int cycleFinance = -2;
         private const int cycleAdmin = -2;
-        private const int cycleWebSite = -3;
+        private const int cycleWebSite = -7;
 
         private const int cycleMada = -5;
         private const int cycleMiremont = -3;
 
         private const int cycleJR = -5;
-        private const int cycleCVNew = -3;
+        private const int cycleCertificate = -14;
         private const int cycleReel = -2;
 
         private const int cycleVL = -7;
         private const int cycleJD = -7;
+        private const int cyclePapers = -7;
 
         private Hourly hourly;
         private Front front;
         private Learn learn;
 
 
-        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Orange, Color.Blue};
+        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Orange, Color.Blue };
 
         public Form1()
         {
@@ -121,13 +123,13 @@ namespace TFRONT
 
             // CV link  / English
             label_Color(dateTimePickerCV, labelCV, cycleCV);
-            label_Color(dateTimePickerCVLecture, labelCVLecture, cycleCVLecture);
+            label_Color(dateTimePickerCentura, labelCentura, cycleCentura);
 
 
 
             // CV link  / français
             label_Color(dateTimePickerCVFR, labelCVFR, cycleCV);
-            label_Color(dateTimePickerCVFRLecture, labelCVFRLecture, cycleCVLecture);
+            label_Color(dateTimePickerArazakar, labelArazakar, cycleArazakar);
 
             // Envoi candidature
             label_Color(dateTimePickerCVEnv, labelCVEnv, cycleCVEnv);
@@ -146,13 +148,13 @@ namespace TFRONT
 
             label_Color(dateTimePickerFinance, labelFinance, cycleFinance);
             label_Color(dateTimePickerAdmin, labelAdmin, cycleAdmin);
-            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite);
+            label_Color(dateTimePickerPapers, labelPapers, cyclePapers);
 
             label_Color(dateTimePickerMada, labelMada, cycleMada);
             label_Color(dateTimePickerMiremont, labelMiremont, cycleMiremont);
 
             label_Color(dateTimePickerJR, labelJR, cycleJR);
-            label_Color(dateTimePickerCVNew, labelCVNew, cycleCVNew);
+            label_Color(dateTimePickerCertificate, labelCertificate, cycleCertificate);
 
             label_Color(dateTimePickerReel, labelReel, cycleReel);
 
@@ -242,10 +244,10 @@ namespace TFRONT
             label_Color(dateTimePickerAdmin, labelAdmin, cycleAdmin);
         }
 
-        private void dateTimePickerWebSite_Validated(object sender, EventArgs e)
+        private void dateTimePickerPapers_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerWebSite, tFRONTBindingWebSite.Filter);
-            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite);
+            commandSQL(dateTimePickerPapers, tFRONTBindingPapers.Filter);
+            label_Color(dateTimePickerPapers, labelPapers, cycleWebSite);
         }
 
         private void dateTimePickerMada_Validated(object sender, EventArgs e)
@@ -268,20 +270,20 @@ namespace TFRONT
 
         private void dateTimePickerCVLecture_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerCVLecture, tFRONTBindingCVLecture.Filter);
-            label_Color(dateTimePickerCVLecture, labelCVLecture, cycleCVLecture);
+            commandSQL(dateTimePickerCentura, tFRONTBindingCentura.Filter);
+            label_Color(dateTimePickerCentura, labelCentura, cycleArazakar);
         }
 
-        private void dateTimePickerCVFR_Validated(object sender, EventArgs e)
+        private void dateTimePickerCentura_Validated(object sender, EventArgs e)
         {
             commandSQL(dateTimePickerCVFR, tFRONTBindingSourceCVFR.Filter);
-            label_Color(dateTimePickerCVFR, labelCVFR, cycleCVLecture);
+            label_Color(dateTimePickerCVFR, labelCVFR, cycleArazakar);
         }
 
-        private void dateTimePickerCVFRLecture_Validated(object sender, EventArgs e)
+        private void dateTimePickerArazakar_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerCVFRLecture, tFRONTBindingCVFRLecture.Filter);
-            label_Color(dateTimePickerCVFRLecture, labelCVFRLecture, cycleCVLecture);
+            commandSQL(dateTimePickerArazakar, tFRONTBindingArazakar.Filter);
+            label_Color(dateTimePickerArazakar, labelArazakar, cycleArazakar);
         }
 
         private void dateTimePickerCVEnv_Validated(object sender, EventArgs e)
@@ -293,13 +295,13 @@ namespace TFRONT
         private void dateTimePickerSP_Validated(object sender, EventArgs e)
         {
             commandSQL(dateTimePickerSP, tFRONTBindingSourceSP.Filter);
-            label_Color(dateTimePickerSP, labelSP, cycleCVLecture);
+            label_Color(dateTimePickerSP, labelSP, cycleArazakar);
         }
 
         private void dateTimePickerHK_Validated(object sender, EventArgs e)
         {
             commandSQL(dateTimePickerHK, tFRONTBindingSourceHK.Filter);
-            label_Color(dateTimePickerHK, labelHK, cycleCVLecture);
+            label_Color(dateTimePickerHK, labelHK, cycleArazakar);
         }
 
         private void buttonResetDay_Click(object sender, EventArgs e)
@@ -343,10 +345,10 @@ namespace TFRONT
             label_Color(dateTimePickerJR, labelJR, cycleJR);
         }
 
-        private void dateTimePickerCVNew_Validated(object sender, EventArgs e)
+        private void dateTimePickerCertificate_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerCVNew, tFRONTBindingSourceCVNew.Filter);
-            label_Color(dateTimePickerCVNew, labelCVNew, cycleCVNew);
+            commandSQL(dateTimePickerCertificate, tFRONTBindingSourceCertficate.Filter);
+            label_Color(dateTimePickerCertificate, labelCertificate, cycleCertificate);
         }
 
         private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -519,6 +521,12 @@ namespace TFRONT
         {
             hourly.updateHourlyStrategie();
             updateHourly();
+        }
+
+        private void dateTimePickerWebSite_Validated(object sender, EventArgs e)
+        {
+            commandSQL(dateTimePickerWebSite, tFRONTbindingSourceWebsite.Filter);
+            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite);
         }
     }
 }
