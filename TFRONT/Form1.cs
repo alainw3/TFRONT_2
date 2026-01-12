@@ -41,7 +41,7 @@ namespace TFRONT
         private Learn learn;
 
 
-        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Orange, Color.Blue };
+        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Plum, Color.Blue };
 
         public Form1()
         {
@@ -363,7 +363,11 @@ namespace TFRONT
                     {
                         gridViewCell.Style.BackColor = Color.Gray;
                     }
-                    else
+                    else if (gridViewCell.Value.ToString() == "0")
+                    {
+                        gridViewCell.Style.BackColor = Color.Orange;
+                    }
+                    else 
                     {
                         gridViewCell.Style.BackColor = colorHour[Int32.Parse(gridViewCell.Value.ToString()) - 1];
                     }
@@ -527,6 +531,12 @@ namespace TFRONT
         {
             commandSQL(dateTimePickerWebSite, tFRONTbindingSourceWebsite.Filter);
             label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite);
+        }
+
+        private void arazakarMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyArazakar();
+            updateHourly();
         }
     }
 }

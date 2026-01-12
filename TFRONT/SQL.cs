@@ -16,7 +16,7 @@ namespace TFRONT
 
         private String connectionString = Properties.Settings1.Default.msSqlConnString;
 
-        private const string whereClauseDay = " ('*','1','2','3','4','5','6','7','8','9')  ";
+        private const string whereClauseDay = " ('*','1','2','3','4','5','6','7','8','9','0')  ";
 
         public SQL() { }
 

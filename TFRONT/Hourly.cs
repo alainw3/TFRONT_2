@@ -103,6 +103,11 @@ namespace TFRONT
         }
 
 
+        public void updateHourlyArazakar()
+        {
+            sQL.updateHourly(dayID, "0", hourID);
+        }
+
         public void resetHourly()
         {
             sQL.resetHourly();
