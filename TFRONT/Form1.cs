@@ -12,7 +12,7 @@ namespace TFRONT
         SqlDataAdapter dataAdapter;
         SqlDataAdapter dataAdapterTHour;
 
-        private const int cycleCV = -14;
+        private const int cycleMotiv = -14;
         private const int cycleArazakar = -7;
         private const int cycleCVEnv = -2;
         private const int cycleCentura = -3;
@@ -122,13 +122,13 @@ namespace TFRONT
 
 
             // CV link  / English
-            label_Color(dateTimePickerCV, labelCV, cycleCV);
+            label_Color(dateTimePickerCV, labelCV, cycleMotiv);
             label_Color(dateTimePickerCentura, labelCentura, cycleCentura);
 
 
 
             // CV link  / français
-            label_Color(dateTimePickerCVFR, labelCVFR, cycleCV);
+            label_Color(dateTimePickerMotiv, labelMotiv, cycleMotiv);
             label_Color(dateTimePickerArazakar, labelArazakar, cycleArazakar);
 
             // Envoi candidature
@@ -265,7 +265,7 @@ namespace TFRONT
         private void dateTimePickerCV_Validated(object sender, EventArgs e)
         {
             commandSQL(dateTimePickerCV, tFRONTBindingSourceCV.Filter);
-            label_Color(dateTimePickerCV, labelCV, cycleCV);
+            label_Color(dateTimePickerCV, labelCV, cycleMotiv);
         }
 
         private void dateTimePickerCVLecture_Validated(object sender, EventArgs e)
@@ -276,8 +276,8 @@ namespace TFRONT
 
         private void dateTimePickerCentura_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerCVFR, tFRONTBindingSourceCVFR.Filter);
-            label_Color(dateTimePickerCVFR, labelCVFR, cycleArazakar);
+            commandSQL(dateTimePickerMotiv, tFRONTBindingSourceMotiv.Filter);
+            label_Color(dateTimePickerMotiv, labelMotiv, cycleArazakar);
         }
 
         private void dateTimePickerArazakar_Validated(object sender, EventArgs e)
