@@ -1,4 +1,5 @@
 using Microsoft.Data.SqlClient;
+using System;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
@@ -42,6 +43,7 @@ namespace TFRONT
 
 
         private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Plum, Color.Blue };
+        private static readonly string[] cellTips= {"JobSearch","Administration" ,"Finance","Learn","Le Temps","BCIC","Mada","Certificate","Strategie"};
 
         public Form1()
         {
@@ -69,11 +71,11 @@ namespace TFRONT
 
 
                 // Binding data source & refresh
-                tFRONTBindingSourceCV.DataSource = dataSet11.Tables[0];
-                tFRONTBindingSourceCV.Filter = "colid ='01'";
+                tFRONTBindingLeadership.DataSource = dataSet11.Tables[0];
+                tFRONTBindingLeadership.Filter = "colid ='01'";
 
 
-                tFRONTBindingSourceCV.ResetBindings(false);
+                tFRONTBindingLeadership.ResetBindings(false);
                 tFRONTBindingSourceHK.ResetBindings(false);
 
                 updateHourly();
@@ -122,7 +124,7 @@ namespace TFRONT
 
 
             // CV link  / English
-            label_Color(dateTimePickerCV, labelCV, cycleMotiv);
+            label_Color(dateTimePickerLeadership, labelLeaderShip, cycleMotiv);
             label_Color(dateTimePickerCentura, labelCentura, cycleCentura);
 
 
@@ -160,6 +162,9 @@ namespace TFRONT
 
             label_Color(dateTimePickerVilla, labelVL, cycleVL);
             label_Color(dateTimePickerJardin, labelJD, cycleJD);
+
+            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite );
+
 
         }
 
@@ -264,8 +269,8 @@ namespace TFRONT
 
         private void dateTimePickerCV_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerCV, tFRONTBindingSourceCV.Filter);
-            label_Color(dateTimePickerCV, labelCV, cycleMotiv);
+            commandSQL(dateTimePickerLeadership, tFRONTBindingLeadership.Filter);
+            label_Color(dateTimePickerLeadership, labelLeaderShip, cycleMotiv);
         }
 
         private void dateTimePickerCVLecture_Validated(object sender, EventArgs e)
@@ -362,14 +367,22 @@ namespace TFRONT
                     if (gridViewCell.Value.ToString() == "*")
                     {
                         gridViewCell.Style.BackColor = Color.Gray;
+                        gridViewCell.ToolTipText = "Other activity";
                     }
                     else if (gridViewCell.Value.ToString() == "0")
                     {
                         gridViewCell.Style.BackColor = Color.Orange;
+                        gridViewCell.ToolTipText = "Arazakar";
                     }
-                    else 
+                    else if (gridViewCell.Value.ToString() == "+")
+                    {
+                        gridViewCell.Style.BackColor = Color.Tomato;
+                        gridViewCell.ToolTipText = "Leadership activity";
+                    }
+                    else
                     {
                         gridViewCell.Style.BackColor = colorHour[Int32.Parse(gridViewCell.Value.ToString()) - 1];
+                        gridViewCell.ToolTipText = cellTips[Int32.Parse(gridViewCell.Value.ToString()) - 1];
                     }
                 }
                 else
@@ -536,6 +549,12 @@ namespace TFRONT
         private void arazakarMenuItem_Click(object sender, EventArgs e)
         {
             hourly.updateHourlyArazakar();
+            updateHourly();
+        }
+
+        private void leadershipStripMenu_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyLeadership();
             updateHourly();
         }
     }

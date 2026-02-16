@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
-            tFRONTBindingSourceCV = new BindingSource(components);
+            tFRONTBindingLeadership = new BindingSource(components);
             dataSet11 = new DataSet1();
             labelHK = new Label();
             dateTimePickerHK = new DateTimePicker();
@@ -142,14 +142,14 @@
             dateTimePickerMotiv = new DateTimePicker();
             dateTimePickerCentura = new DateTimePicker();
             labelCentura = new Label();
-            label1 = new Label();
-            labelCV = new Label();
-            dateTimePickerCV = new DateTimePicker();
+            labelLeaderShip = new Label();
+            dateTimePickerLeadership = new DateTimePicker();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
             sqlCommand2 = new Microsoft.Data.SqlClient.SqlCommand();
+            leadershipStripMenu = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingLeadership).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceHK).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceSP).BeginInit();
@@ -197,11 +197,11 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // tFRONTBindingSourceCV
+            // tFRONTBindingLeadership
             // 
-            tFRONTBindingSourceCV.DataMember = "TFRONT";
-            tFRONTBindingSourceCV.DataSource = typeof(DataSet1);
-            tFRONTBindingSourceCV.Filter = "colid='01'";
+            tFRONTBindingLeadership.DataMember = "TFRONT";
+            tFRONTBindingLeadership.DataSource = typeof(DataSet1);
+            tFRONTBindingLeadership.Filter = "colid='01'";
             // 
             // dataSet11
             // 
@@ -516,116 +516,116 @@
             // 
             // contextMenuStripHourly
             // 
-            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { learnToolStripMenuItem, certificateToolStripMenuItem, toolStripSeparator3, arazakarMenuItem, jobSearchToolStripMenuItem, bCICToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, StategieMenuItem, toolStripSeparator4, leTempsToolStripMenuItem, madaStripMenuItem, toolStripSeparator5, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
+            contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { leadershipStripMenu, learnToolStripMenuItem, certificateToolStripMenuItem, toolStripSeparator3, arazakarMenuItem, jobSearchToolStripMenuItem, bCICToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, StategieMenuItem, toolStripSeparator4, leTempsToolStripMenuItem, madaStripMenuItem, toolStripSeparator5, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(154, 298);
+            contextMenuStripHourly.Size = new Size(181, 342);
             // 
             // learnToolStripMenuItem
             // 
             learnToolStripMenuItem.Name = "learnToolStripMenuItem";
-            learnToolStripMenuItem.Size = new Size(153, 22);
+            learnToolStripMenuItem.Size = new Size(180, 22);
             learnToolStripMenuItem.Text = "Learn";
             learnToolStripMenuItem.Click += learnToolStripMenuItem_Click;
             // 
             // certificateToolStripMenuItem
             // 
             certificateToolStripMenuItem.Name = "certificateToolStripMenuItem";
-            certificateToolStripMenuItem.Size = new Size(153, 22);
+            certificateToolStripMenuItem.Size = new Size(180, 22);
             certificateToolStripMenuItem.Text = "Certificate";
             certificateToolStripMenuItem.Click += certificateToolStripMenuItem_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(150, 6);
+            toolStripSeparator3.Size = new Size(177, 6);
             // 
             // arazakarMenuItem
             // 
             arazakarMenuItem.Name = "arazakarMenuItem";
-            arazakarMenuItem.Size = new Size(153, 22);
+            arazakarMenuItem.Size = new Size(180, 22);
             arazakarMenuItem.Text = "Arazakar";
             arazakarMenuItem.Click += arazakarMenuItem_Click;
             // 
             // jobSearchToolStripMenuItem
             // 
             jobSearchToolStripMenuItem.Name = "jobSearchToolStripMenuItem";
-            jobSearchToolStripMenuItem.Size = new Size(153, 22);
+            jobSearchToolStripMenuItem.Size = new Size(180, 22);
             jobSearchToolStripMenuItem.Text = "Job Search";
             jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
             // 
             // bCICToolStripMenuItem
             // 
             bCICToolStripMenuItem.Name = "bCICToolStripMenuItem";
-            bCICToolStripMenuItem.Size = new Size(153, 22);
+            bCICToolStripMenuItem.Size = new Size(180, 22);
             bCICToolStripMenuItem.Text = "BCIC";
             bCICToolStripMenuItem.Click += bCICToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(150, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // administrationToolStripMenuItem1
             // 
             administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
-            administrationToolStripMenuItem1.Size = new Size(153, 22);
+            administrationToolStripMenuItem1.Size = new Size(180, 22);
             administrationToolStripMenuItem1.Text = "Administration";
             administrationToolStripMenuItem1.Click += administrationToolStripMenuItem1_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(153, 22);
+            financeToolStripMenuItem.Size = new Size(180, 22);
             financeToolStripMenuItem.Text = "Finance";
             financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
             // 
             // StategieMenuItem
             // 
             StategieMenuItem.Name = "StategieMenuItem";
-            StategieMenuItem.Size = new Size(153, 22);
+            StategieMenuItem.Size = new Size(180, 22);
             StategieMenuItem.Text = "Strategie";
             StategieMenuItem.Click += StategieMenuItem_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(150, 6);
+            toolStripSeparator4.Size = new Size(177, 6);
             // 
             // leTempsToolStripMenuItem
             // 
             leTempsToolStripMenuItem.Name = "leTempsToolStripMenuItem";
-            leTempsToolStripMenuItem.Size = new Size(153, 22);
+            leTempsToolStripMenuItem.Size = new Size(180, 22);
             leTempsToolStripMenuItem.Text = "Le Temps";
             leTempsToolStripMenuItem.Click += leTempsToolStripMenuItem_Click;
             // 
             // madaStripMenuItem
             // 
             madaStripMenuItem.Name = "madaStripMenuItem";
-            madaStripMenuItem.Size = new Size(153, 22);
+            madaStripMenuItem.Size = new Size(180, 22);
             madaStripMenuItem.Text = "Mada";
             madaStripMenuItem.Click += madaStripMenuItem_Click;
             // 
             // toolStripSeparator5
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(150, 6);
+            toolStripSeparator5.Size = new Size(177, 6);
             // 
             // autreToolStripMenuItem
             // 
             autreToolStripMenuItem.Name = "autreToolStripMenuItem";
-            autreToolStripMenuItem.Size = new Size(153, 22);
+            autreToolStripMenuItem.Size = new Size(180, 22);
             autreToolStripMenuItem.Text = "Autre";
             autreToolStripMenuItem.Click += autreToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(150, 6);
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // noneToolStripMenuItem
             // 
             noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            noneToolStripMenuItem.Size = new Size(153, 22);
+            noneToolStripMenuItem.Size = new Size(180, 22);
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
@@ -1040,9 +1040,8 @@
             groupBox1.Controls.Add(dateTimePickerMotiv);
             groupBox1.Controls.Add(dateTimePickerCentura);
             groupBox1.Controls.Add(labelCentura);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(labelCV);
-            groupBox1.Controls.Add(dateTimePickerCV);
+            groupBox1.Controls.Add(labelLeaderShip);
+            groupBox1.Controls.Add(dateTimePickerLeadership);
             groupBox1.Location = new Point(268, 10);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(331, 396);
@@ -1054,7 +1053,7 @@
             // 
             dateTimePickerWebSite.DataBindings.Add(new Binding("Text", tFRONTbindingSourceWebsite, "colDat", true));
             dateTimePickerWebSite.Format = DateTimePickerFormat.Short;
-            dateTimePickerWebSite.Location = new Point(159, 161);
+            dateTimePickerWebSite.Location = new Point(159, 143);
             dateTimePickerWebSite.Name = "dateTimePickerWebSite";
             dateTimePickerWebSite.Size = new Size(131, 23);
             dateTimePickerWebSite.TabIndex = 19;
@@ -1064,7 +1063,7 @@
             // 
             labelWebSite.AutoSize = true;
             labelWebSite.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelWebSite.Location = new Point(26, 162);
+            labelWebSite.Location = new Point(26, 144);
             labelWebSite.Name = "labelWebSite";
             labelWebSite.Size = new Size(53, 15);
             labelWebSite.TabIndex = 18;
@@ -1094,7 +1093,7 @@
             // 
             dateTimePickerCVEnv.DataBindings.Add(new Binding("Text", tFRONTBindingCVEnv, "colDat", true));
             dateTimePickerCVEnv.Format = DateTimePickerFormat.Short;
-            dateTimePickerCVEnv.Location = new Point(159, 299);
+            dateTimePickerCVEnv.Location = new Point(159, 281);
             dateTimePickerCVEnv.Name = "dateTimePickerCVEnv";
             dateTimePickerCVEnv.Size = new Size(131, 23);
             dateTimePickerCVEnv.TabIndex = 12;
@@ -1104,7 +1103,7 @@
             // 
             labelCVEnv.AutoSize = true;
             labelCVEnv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCVEnv.Location = new Point(23, 299);
+            labelCVEnv.Location = new Point(23, 281);
             labelCVEnv.Name = "labelCVEnv";
             labelCVEnv.Size = new Size(74, 15);
             labelCVEnv.TabIndex = 11;
@@ -1114,7 +1113,7 @@
             // 
             dateTimePickerArazakar.DataBindings.Add(new Binding("Text", tFRONTBindingArazakar, "colDat", true));
             dateTimePickerArazakar.Format = DateTimePickerFormat.Short;
-            dateTimePickerArazakar.Location = new Point(159, 255);
+            dateTimePickerArazakar.Location = new Point(159, 237);
             dateTimePickerArazakar.Name = "dateTimePickerArazakar";
             dateTimePickerArazakar.Size = new Size(131, 23);
             dateTimePickerArazakar.TabIndex = 10;
@@ -1124,7 +1123,7 @@
             // 
             labelArazakar.AutoSize = true;
             labelArazakar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelArazakar.Location = new Point(24, 255);
+            labelArazakar.Location = new Point(24, 237);
             labelArazakar.Name = "labelArazakar";
             labelArazakar.Size = new Size(56, 15);
             labelArazakar.TabIndex = 9;
@@ -1134,7 +1133,7 @@
             // 
             labelMotiv.AutoSize = true;
             labelMotiv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelMotiv.Location = new Point(24, 121);
+            labelMotiv.Location = new Point(24, 103);
             labelMotiv.Name = "labelMotiv";
             labelMotiv.Size = new Size(77, 15);
             labelMotiv.TabIndex = 6;
@@ -1144,7 +1143,7 @@
             // 
             dateTimePickerMotiv.DataBindings.Add(new Binding("Text", tFRONTBindingSourceMotiv, "colDat", true));
             dateTimePickerMotiv.Format = DateTimePickerFormat.Short;
-            dateTimePickerMotiv.Location = new Point(159, 119);
+            dateTimePickerMotiv.Location = new Point(159, 101);
             dateTimePickerMotiv.Name = "dateTimePickerMotiv";
             dateTimePickerMotiv.Size = new Size(131, 23);
             dateTimePickerMotiv.TabIndex = 7;
@@ -1154,7 +1153,7 @@
             // 
             dateTimePickerCentura.DataBindings.Add(new Binding("Text", tFRONTBindingCentura, "colDat", true));
             dateTimePickerCentura.Format = DateTimePickerFormat.Short;
-            dateTimePickerCentura.Location = new Point(159, 214);
+            dateTimePickerCentura.Location = new Point(159, 196);
             dateTimePickerCentura.Name = "dateTimePickerCentura";
             dateTimePickerCentura.Size = new Size(131, 23);
             dateTimePickerCentura.TabIndex = 5;
@@ -1164,41 +1163,32 @@
             // 
             labelCentura.AutoSize = true;
             labelCentura.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCentura.Location = new Point(24, 214);
+            labelCentura.Location = new Point(24, 196);
             labelCentura.Name = "labelCentura";
             labelCentura.Size = new Size(51, 15);
             labelCentura.TabIndex = 4;
             labelCentura.Text = "Centura";
             // 
-            // label1
+            // labelLeaderShip
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label1.Location = new Point(24, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(45, 15);
-            label1.TabIndex = 3;
-            label1.Text = "English";
+            labelLeaderShip.AutoSize = true;
+            labelLeaderShip.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelLeaderShip.Location = new Point(24, 53);
+            labelLeaderShip.Name = "labelLeaderShip";
+            labelLeaderShip.Size = new Size(67, 15);
+            labelLeaderShip.TabIndex = 1;
+            labelLeaderShip.Text = "Leadership";
             // 
-            // labelCV
+            // dateTimePickerLeadership
             // 
-            labelCV.AutoSize = true;
-            labelCV.Location = new Point(24, 60);
-            labelCV.Name = "labelCV";
-            labelCV.Size = new Size(69, 15);
-            labelCV.TabIndex = 1;
-            labelCV.Text = "Last Update";
-            // 
-            // dateTimePickerCV
-            // 
-            dateTimePickerCV.DataBindings.Add(new Binding("Text", tFRONTBindingSourceCV, "colDat", true));
-            dateTimePickerCV.DataBindings.Add(new Binding("Value", tFRONTBindingSourceCV, "colDat", true));
-            dateTimePickerCV.Format = DateTimePickerFormat.Short;
-            dateTimePickerCV.Location = new Point(108, 58);
-            dateTimePickerCV.Name = "dateTimePickerCV";
-            dateTimePickerCV.Size = new Size(128, 23);
-            dateTimePickerCV.TabIndex = 2;
-            dateTimePickerCV.Validated += dateTimePickerCV_Validated;
+            dateTimePickerLeadership.DataBindings.Add(new Binding("Text", tFRONTBindingLeadership, "colDat", true));
+            dateTimePickerLeadership.DataBindings.Add(new Binding("Value", tFRONTBindingLeadership, "colDat", true));
+            dateTimePickerLeadership.Format = DateTimePickerFormat.Short;
+            dateTimePickerLeadership.Location = new Point(159, 50);
+            dateTimePickerLeadership.Name = "dateTimePickerLeadership";
+            dateTimePickerLeadership.Size = new Size(128, 23);
+            dateTimePickerLeadership.TabIndex = 2;
+            dateTimePickerLeadership.Validated += dateTimePickerCV_Validated;
             // 
             // tLANGUAGEBindingSource
             // 
@@ -1216,6 +1206,13 @@
             sqlCommand2.CommandTimeout = 30;
             sqlCommand2.EnableOptimizedParameterBinding = false;
             // 
+            // leadershipStripMenu
+            // 
+            leadershipStripMenu.Name = "leadershipStripMenu";
+            leadershipStripMenu.Size = new Size(180, 22);
+            leadershipStripMenu.Text = "Leadership";
+            leadershipStripMenu.Click += leadershipStripMenu_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1227,7 +1224,7 @@
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingLeadership).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceHK).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceSP).EndInit();
@@ -1276,7 +1273,7 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private BindingSource tFRONTBindingSourceCV;
+        private BindingSource tFRONTBindingLeadership;
         public DataSet1 dataSet11;
         private Label labelHK;
         private DateTimePicker dateTimePickerHK;
@@ -1390,9 +1387,9 @@
         private DateTimePicker dateTimePickerMotiv;
         private DateTimePicker dateTimePickerCentura;
         private Label labelCentura;
-        private Label label1;
-        private Label labelCV;
-        private DateTimePicker dateTimePickerCV;
+        private Label labelLeaderShip;
+        private DateTimePicker dateTimePickerLeadership;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand2;
+        private ToolStripMenuItem leadershipStripMenu;
     }
 }
