@@ -17,7 +17,7 @@
             <xs:sequence>
               <xs:element name="colid" msprop:Generator_ColumnPropNameInTable="colidColumn" msprop:Generator_ColumnPropNameInRow="colid" msprop:Generator_UserColumnName="colid" msprop:Generator_ColumnVarNameInTable="columncolid" type="xs:string" minOccurs="0" />
               <xs:element name="colDat" msdata:DateTimeMode="Local" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_UserColumnName="colDat" msprop:Generator_ColumnVarNameInTable="columncolDat" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="colCycle" msprop:Generator_ColumnPropNameInRow="colCycle" msprop:Generator_ColumnPropNameInTable="colCycleColumn" msprop:Generator_ColumnVarNameInTable="columncolCycle" msprop:Generator_UserColumnName="colCycle" type="xs:short" minOccurs="0" />
+              <xs:element name="colCycle" msprop:Generator_UserColumnName="colCycle" msprop:Generator_ColumnPropNameInTable="colCycleColumn" msprop:Generator_ColumnPropNameInRow="colCycle" msprop:Generator_ColumnVarNameInTable="columncolCycle" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -36,12 +36,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TLEARN" msprop:Generator_RowClassName="TLEARNRow" msprop:Generator_RowEvHandlerName="TLEARNRowChangeEventHandler" msprop:Generator_RowDeletedName="TLEARNRowDeleted" msprop:Generator_RowDeletingName="TLEARNRowDeleting" msprop:Generator_RowEvArgName="TLEARNRowChangeEvent" msprop:Generator_TablePropName="TLEARN" msprop:Generator_RowChangedName="TLEARNRowChanged" msprop:Generator_UserTableName="TLEARN" msprop:Generator_RowChangingName="TLEARNRowChanging" msprop:Generator_TableClassName="TLEARNDataTable" msprop:Generator_TableVarName="tableTLEARN">
+        <xs:element name="TLEARN" msprop:Generator_RowEvHandlerName="TLEARNRowChangeEventHandler" msprop:Generator_RowDeletedName="TLEARNRowDeleted" msprop:Generator_RowDeletingName="TLEARNRowDeleting" msprop:Generator_RowEvArgName="TLEARNRowChangeEvent" msprop:Generator_TablePropName="TLEARN" msprop:Generator_RowChangedName="TLEARNRowChanged" msprop:Generator_UserTableName="TLEARN" msprop:Generator_RowChangingName="TLEARNRowChanging" msprop:Generator_RowClassName="TLEARNRow" msprop:Generator_TableClassName="TLEARNDataTable" msprop:Generator_TableVarName="tableTLEARN">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="colId" msprop:Generator_UserColumnName="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnVarNameInTable="columncolId" type="xs:string" />
-              <xs:element name="colLang" msprop:Generator_UserColumnName="colLang" msprop:Generator_ColumnPropNameInTable="colLangColumn" msprop:Generator_ColumnPropNameInRow="colLang" msprop:Generator_ColumnVarNameInTable="columncolLang" type="xs:string" minOccurs="0" />
-              <xs:element name="colDat" msprop:Generator_UserColumnName="colDat" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_ColumnVarNameInTable="columncolDat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_UserColumnName="colId" msprop:Generator_ColumnVarNameInTable="columncolId" type="xs:string" />
+              <xs:element name="colLang" msprop:Generator_ColumnPropNameInTable="colLangColumn" msprop:Generator_ColumnPropNameInRow="colLang" msprop:Generator_UserColumnName="colLang" msprop:Generator_ColumnVarNameInTable="columncolLang" type="xs:string" minOccurs="0" />
+              <xs:element name="colDat" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_UserColumnName="colDat" msprop:Generator_ColumnVarNameInTable="columncolDat" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TBACKUP" msprop:Generator_RowEvHandlerName="TBACKUPRowChangeEventHandler" msprop:Generator_RowDeletedName="TBACKUPRowDeleted" msprop:Generator_RowDeletingName="TBACKUPRowDeleting" msprop:Generator_RowEvArgName="TBACKUPRowChangeEvent" msprop:Generator_TablePropName="TBACKUP" msprop:Generator_RowChangedName="TBACKUPRowChanged" msprop:Generator_RowChangingName="TBACKUPRowChanging" msprop:Generator_TableClassName="TBACKUPDataTable" msprop:Generator_RowClassName="TBACKUPRow" msprop:Generator_TableVarName="tableTBACKUP" msprop:Generator_UserTableName="TBACKUP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colId" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnVarNameInTable="columncolId" msprop:Generator_UserColumnName="colId" type="xs:string" />
+              <xs:element name="colDesc" msdata:Caption="colLang" msprop:Generator_ColumnPropNameInRow="colDesc" msprop:Generator_ColumnPropNameInTable="colDescColumn" msprop:Generator_ColumnVarNameInTable="columncolDesc" msprop:Generator_UserColumnName="colDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="colDat" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnVarNameInTable="columncolDat" msprop:Generator_UserColumnName="colDat" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -57,6 +66,10 @@
     </xs:unique>
     <xs:unique name="TLEARN_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TLEARN" />
+      <xs:field xpath="mstns:colId" />
+    </xs:unique>
+    <xs:unique name="TBACKUP_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TBACKUP" />
       <xs:field xpath="mstns:colId" />
     </xs:unique>
   </xs:element>

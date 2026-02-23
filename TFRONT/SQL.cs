@@ -142,6 +142,12 @@ namespace TFRONT
           
         }
 
+        public DataAdapter GetDataAdapterBackup()
+        {
+            return getDataAdapter("select colid , colDat, colDesc from [winman].[dbo].[TBL_TBACKUP]");
+
+        }
+
         public DataAdapter GetDataAdapterLearn()
         {
             return getDataAdapter("select colid , colDat, colLang from [winman].[dbo].[TBL_TLEARN] where colArch is null");
