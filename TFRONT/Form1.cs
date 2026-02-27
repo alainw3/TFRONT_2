@@ -10,8 +10,10 @@ namespace TFRONT
 {
     public partial class Form1 : Form
     {
-        SqlDataAdapter dataAdapter;
+        SqlDataAdapter dataAdapterTLearn;
+        SqlDataAdapter dataAdapterTFront   ;
         SqlDataAdapter dataAdapterTHour;
+        SqlDataAdapter dataAdapterTBackup;
 
         private const int cycleMotiv = -14;
         private const int cycleArazakar = -7;
@@ -60,19 +62,19 @@ namespace TFRONT
             {
 
                 // TFRONT
-                dataAdapter = (SqlDataAdapter?)front.dataAdapterFront();
-                dataAdapter.Fill(dataSet11, "TFRONT");
+                dataAdapterTFront = (SqlDataAdapter?)front.dataAdapterFront();
+                dataAdapterTFront.Fill(dataSet11, "TFRONT");
 
 
 
 
                 // TLEARN
-                dataAdapter = (SqlDataAdapter?)learn.dataAdapterLearn();
-                dataAdapter.Fill(dataSet11, "TLEARN");
+                dataAdapterTLearn = (SqlDataAdapter?)learn.dataAdapterLearn();
+                dataAdapterTLearn.Fill(dataSet11, "TLEARN");
 
                 //Backup
-                dataAdapter = (SqlDataAdapter?)backup.dataAdapterBackup();
-                dataAdapter.Fill(dataSet11, "TBACKUP");
+                dataAdapterTBackup = (SqlDataAdapter?)backup.dataAdapterBackup();
+                dataAdapterTBackup.Fill(dataSet11, "TBACKUP");
 
 
 
@@ -487,9 +489,9 @@ namespace TFRONT
 
         private void buttonTLANG_Click(object sender, EventArgs e)
         {
-            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapterTLearn);
             SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
-            dataAdapter.Update(dataSet11.Tables[2]);
+            dataAdapterTLearn.Update(dataSet11.Tables[2]);
         }
 
         private void bCICToolStripMenuItem_Click(object sender, EventArgs e)
@@ -505,12 +507,12 @@ namespace TFRONT
             dialogSkipDays.ShowDialog();
 
             // TFRONT
-            dataAdapter = (SqlDataAdapter)front.dataAdapterFront();
-            dataAdapter.Fill(dataSet11, "TFRONT");
+            dataAdapterTFront = (SqlDataAdapter)front.dataAdapterFront();
+            dataAdapterTFront.Fill(dataSet11, "TFRONT");
 
             // TLEARN
-            dataAdapter = (SqlDataAdapter?)learn.dataAdapterLearn();
-            dataAdapter.Fill(dataSet11, "TLEARN");
+            dataAdapterTLearn = (SqlDataAdapter?)learn.dataAdapterLearn();
+            dataAdapterTLearn.Fill(dataSet11, "TLEARN");
 
             tFRONTBindingLLM.ResetBindings(false);
 
@@ -611,9 +613,9 @@ namespace TFRONT
 
         private void buttonTBackup_Click(object sender, EventArgs e)
         {
-            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapterTBackup);
             SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
-            dataAdapter.Update(dataSet11.Tables[3]);
+            dataAdapterTBackup.Update(dataSet11.Tables[3]);
         }
     }
 }
