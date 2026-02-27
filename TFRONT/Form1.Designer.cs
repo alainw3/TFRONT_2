@@ -70,6 +70,7 @@
             Refresh = new DataGridViewButtonColumn();
             tLEARNBindingSource = new BindingSource(components);
             contextMenuStripHourly = new ContextMenuStrip(components);
+            leadershipStripMenu = new ToolStripMenuItem();
             learnToolStripMenuItem = new ToolStripMenuItem();
             certificateToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator3 = new ToolStripSeparator();
@@ -111,6 +112,11 @@
             administrationToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            dataGridViewBackup = new DataGridView();
+            colDescDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colDatDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            TRefresh = new DataGridViewButtonColumn();
+            tBACKUPbindingSource = new BindingSource(components);
             groupBox5 = new GroupBox();
             dateTimePickerJardin = new DateTimePicker();
             tFRONTBindingJardin = new BindingSource(components);
@@ -147,7 +153,7 @@
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
             sqlCommand2 = new Microsoft.Data.SqlClient.SqlCommand();
-            leadershipStripMenu = new ToolStripMenuItem();
+            buttonTBackup = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLeadership).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -179,6 +185,8 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewBackup).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tBACKUPbindingSource).BeginInit();
             groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingJardin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingVilla).BeginInit();
@@ -479,6 +487,7 @@
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colLangDataGridViewTextBoxColumn, colDatDataGridViewTextBoxColumn, Refresh });
@@ -518,114 +527,121 @@
             // 
             contextMenuStripHourly.Items.AddRange(new ToolStripItem[] { leadershipStripMenu, learnToolStripMenuItem, certificateToolStripMenuItem, toolStripSeparator3, arazakarMenuItem, jobSearchToolStripMenuItem, bCICToolStripMenuItem, toolStripSeparator2, administrationToolStripMenuItem1, financeToolStripMenuItem, StategieMenuItem, toolStripSeparator4, leTempsToolStripMenuItem, madaStripMenuItem, toolStripSeparator5, autreToolStripMenuItem, toolStripSeparator1, noneToolStripMenuItem });
             contextMenuStripHourly.Name = "contextMenuStripHourly";
-            contextMenuStripHourly.Size = new Size(181, 342);
+            contextMenuStripHourly.Size = new Size(154, 320);
+            // 
+            // leadershipStripMenu
+            // 
+            leadershipStripMenu.Name = "leadershipStripMenu";
+            leadershipStripMenu.Size = new Size(153, 22);
+            leadershipStripMenu.Text = "Leadership";
+            leadershipStripMenu.Click += leadershipStripMenu_Click;
             // 
             // learnToolStripMenuItem
             // 
             learnToolStripMenuItem.Name = "learnToolStripMenuItem";
-            learnToolStripMenuItem.Size = new Size(180, 22);
+            learnToolStripMenuItem.Size = new Size(153, 22);
             learnToolStripMenuItem.Text = "Learn";
             learnToolStripMenuItem.Click += learnToolStripMenuItem_Click;
             // 
             // certificateToolStripMenuItem
             // 
             certificateToolStripMenuItem.Name = "certificateToolStripMenuItem";
-            certificateToolStripMenuItem.Size = new Size(180, 22);
+            certificateToolStripMenuItem.Size = new Size(153, 22);
             certificateToolStripMenuItem.Text = "Certificate";
             certificateToolStripMenuItem.Click += certificateToolStripMenuItem_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(177, 6);
+            toolStripSeparator3.Size = new Size(150, 6);
             // 
             // arazakarMenuItem
             // 
             arazakarMenuItem.Name = "arazakarMenuItem";
-            arazakarMenuItem.Size = new Size(180, 22);
+            arazakarMenuItem.Size = new Size(153, 22);
             arazakarMenuItem.Text = "Arazakar";
             arazakarMenuItem.Click += arazakarMenuItem_Click;
             // 
             // jobSearchToolStripMenuItem
             // 
             jobSearchToolStripMenuItem.Name = "jobSearchToolStripMenuItem";
-            jobSearchToolStripMenuItem.Size = new Size(180, 22);
+            jobSearchToolStripMenuItem.Size = new Size(153, 22);
             jobSearchToolStripMenuItem.Text = "Job Search";
             jobSearchToolStripMenuItem.Click += jobSearchToolStripMenuItem_Click;
             // 
             // bCICToolStripMenuItem
             // 
             bCICToolStripMenuItem.Name = "bCICToolStripMenuItem";
-            bCICToolStripMenuItem.Size = new Size(180, 22);
+            bCICToolStripMenuItem.Size = new Size(153, 22);
             bCICToolStripMenuItem.Text = "BCIC";
             bCICToolStripMenuItem.Click += bCICToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(150, 6);
             // 
             // administrationToolStripMenuItem1
             // 
             administrationToolStripMenuItem1.Name = "administrationToolStripMenuItem1";
-            administrationToolStripMenuItem1.Size = new Size(180, 22);
+            administrationToolStripMenuItem1.Size = new Size(153, 22);
             administrationToolStripMenuItem1.Text = "Administration";
             administrationToolStripMenuItem1.Click += administrationToolStripMenuItem1_Click;
             // 
             // financeToolStripMenuItem
             // 
             financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            financeToolStripMenuItem.Size = new Size(180, 22);
+            financeToolStripMenuItem.Size = new Size(153, 22);
             financeToolStripMenuItem.Text = "Finance";
             financeToolStripMenuItem.Click += financeToolStripMenuItem_Click;
             // 
             // StategieMenuItem
             // 
             StategieMenuItem.Name = "StategieMenuItem";
-            StategieMenuItem.Size = new Size(180, 22);
+            StategieMenuItem.Size = new Size(153, 22);
             StategieMenuItem.Text = "Strategie";
             StategieMenuItem.Click += StategieMenuItem_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(177, 6);
+            toolStripSeparator4.Size = new Size(150, 6);
             // 
             // leTempsToolStripMenuItem
             // 
             leTempsToolStripMenuItem.Name = "leTempsToolStripMenuItem";
-            leTempsToolStripMenuItem.Size = new Size(180, 22);
+            leTempsToolStripMenuItem.Size = new Size(153, 22);
             leTempsToolStripMenuItem.Text = "Le Temps";
             leTempsToolStripMenuItem.Click += leTempsToolStripMenuItem_Click;
             // 
             // madaStripMenuItem
             // 
             madaStripMenuItem.Name = "madaStripMenuItem";
-            madaStripMenuItem.Size = new Size(180, 22);
+            madaStripMenuItem.Size = new Size(153, 22);
             madaStripMenuItem.Text = "Mada";
             madaStripMenuItem.Click += madaStripMenuItem_Click;
             // 
             // toolStripSeparator5
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(177, 6);
+            toolStripSeparator5.Size = new Size(150, 6);
             // 
             // autreToolStripMenuItem
             // 
             autreToolStripMenuItem.Name = "autreToolStripMenuItem";
-            autreToolStripMenuItem.Size = new Size(180, 22);
+            autreToolStripMenuItem.Size = new Size(153, 22);
             autreToolStripMenuItem.Text = "Autre";
             autreToolStripMenuItem.Click += autreToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(150, 6);
             // 
             // noneToolStripMenuItem
             // 
             noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            noneToolStripMenuItem.Size = new Size(180, 22);
+            noneToolStripMenuItem.Size = new Size(153, 22);
             noneToolStripMenuItem.Text = "None";
             noneToolStripMenuItem.Click += noneToolStripMenuItem_Click;
             // 
@@ -700,7 +716,7 @@
             // textBoxTotalHour
             // 
             textBoxTotalHour.Font = new Font("Segoe UI", 15F);
-            textBoxTotalHour.Location = new Point(1088, 622);
+            textBoxTotalHour.Location = new Point(1098, 904);
             textBoxTotalHour.Name = "textBoxTotalHour";
             textBoxTotalHour.Size = new Size(100, 34);
             textBoxTotalHour.TabIndex = 13;
@@ -710,7 +726,7 @@
             // 
             labelTotalHour.AutoSize = true;
             labelTotalHour.Font = new Font("Segoe UI", 15F);
-            labelTotalHour.Location = new Point(928, 625);
+            labelTotalHour.Location = new Point(938, 907);
             labelTotalHour.Name = "labelTotalHour";
             labelTotalHour.Size = new Size(142, 28);
             labelTotalHour.TabIndex = 14;
@@ -781,7 +797,7 @@
             // 
             // buttonResetDay
             // 
-            buttonResetDay.Location = new Point(928, 675);
+            buttonResetDay.Location = new Point(938, 957);
             buttonResetDay.Name = "buttonResetDay";
             buttonResetDay.Size = new Size(115, 33);
             buttonResetDay.TabIndex = 15;
@@ -832,6 +848,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(buttonTBackup);
+            tabPage1.Controls.Add(dataGridViewBackup);
             tabPage1.Controls.Add(groupBox5);
             tabPage1.Controls.Add(buttonSkipDays);
             tabPage1.Controls.Add(buttonTLANG);
@@ -858,6 +876,43 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewBackup
+            // 
+            dataGridViewBackup.AllowUserToAddRows = false;
+            dataGridViewBackup.AllowUserToDeleteRows = false;
+            dataGridViewBackup.AutoGenerateColumns = false;
+            dataGridViewBackup.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewBackup.Columns.AddRange(new DataGridViewColumn[] { colDescDataGridViewTextBoxColumn, colDatDataGridViewTextBoxColumn1, TRefresh });
+            dataGridViewBackup.DataSource = tBACKUPbindingSource;
+            dataGridViewBackup.Location = new Point(917, 539);
+            dataGridViewBackup.Name = "dataGridViewBackup";
+            dataGridViewBackup.Size = new Size(372, 313);
+            dataGridViewBackup.TabIndex = 22;
+            dataGridViewBackup.CellContentClick += dataGridViewBackup_CellContentClick;
+            dataGridViewBackup.CellPainting += dataGridViewBackup_CellPainting;
+            // 
+            // colDescDataGridViewTextBoxColumn
+            // 
+            colDescDataGridViewTextBoxColumn.DataPropertyName = "colDesc";
+            colDescDataGridViewTextBoxColumn.HeaderText = "colDesc";
+            colDescDataGridViewTextBoxColumn.Name = "colDescDataGridViewTextBoxColumn";
+            // 
+            // colDatDataGridViewTextBoxColumn1
+            // 
+            colDatDataGridViewTextBoxColumn1.DataPropertyName = "colDat";
+            colDatDataGridViewTextBoxColumn1.HeaderText = "colDat";
+            colDatDataGridViewTextBoxColumn1.Name = "colDatDataGridViewTextBoxColumn1";
+            // 
+            // TRefresh
+            // 
+            TRefresh.HeaderText = "Refresh";
+            TRefresh.Name = "TRefresh";
+            // 
+            // tBACKUPbindingSource
+            // 
+            tBACKUPbindingSource.DataMember = "TBACKUP";
+            tBACKUPbindingSource.DataSource = dataSet11;
             // 
             // groupBox5
             // 
@@ -924,7 +979,7 @@
             // 
             // buttonSkipDays
             // 
-            buttonSkipDays.Location = new Point(1094, 677);
+            buttonSkipDays.Location = new Point(1104, 959);
             buttonSkipDays.Name = "buttonSkipDays";
             buttonSkipDays.Size = new Size(101, 30);
             buttonSkipDays.TabIndex = 20;
@@ -1206,12 +1261,14 @@
             sqlCommand2.CommandTimeout = 30;
             sqlCommand2.EnableOptimizedParameterBinding = false;
             // 
-            // leadershipStripMenu
+            // buttonTBackup
             // 
-            leadershipStripMenu.Name = "leadershipStripMenu";
-            leadershipStripMenu.Size = new Size(180, 22);
-            leadershipStripMenu.Text = "Leadership";
-            leadershipStripMenu.Click += leadershipStripMenu_Click;
+            buttonTBackup.Location = new Point(996, 864);
+            buttonTBackup.Name = "buttonTBackup";
+            buttonTBackup.Size = new Size(128, 23);
+            buttonTBackup.TabIndex = 23;
+            buttonTBackup.Text = "buttonTBackup";
+            buttonTBackup.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1258,6 +1315,8 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewBackup).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tBACKUPbindingSource).EndInit();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingJardin).EndInit();
@@ -1391,5 +1450,11 @@
         private DateTimePicker dateTimePickerLeadership;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand2;
         private ToolStripMenuItem leadershipStripMenu;
+        private DataGridView dataGridViewBackup;
+        private BindingSource tBACKUPbindingSource;
+        private DataGridViewTextBoxColumn colDescDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn1;
+        private DataGridViewButtonColumn TRefresh;
+        private Button buttonTBackup;
     }
 }

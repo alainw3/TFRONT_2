@@ -40,10 +40,11 @@ namespace TFRONT
         private Hourly hourly;
         private Front front;
         private Learn learn;
+        private Backup backup;
 
 
         private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Plum, Color.Blue };
-        private static readonly string[] cellTips= {"JobSearch","Administration" ,"Finance","Learn","Le Temps","BCIC","Mada","Certificate","Strategie"};
+        private static readonly string[] cellTips = { "JobSearch", "Administration", "Finance", "Learn", "Le Temps", "BCIC", "Mada", "Certificate", "Strategie" };
 
         public Form1()
         {
@@ -52,6 +53,7 @@ namespace TFRONT
             hourly = new Hourly();
             front = new Front();
             learn = new Learn();
+            backup = new Backup();
 
 
             try
@@ -68,6 +70,11 @@ namespace TFRONT
                 dataAdapter = (SqlDataAdapter?)learn.dataAdapterLearn();
                 dataAdapter.Fill(dataSet11, "TLEARN");
 
+                //Backup
+                dataAdapter = (SqlDataAdapter?)backup.dataAdapterBackup();
+                dataAdapter.Fill(dataSet11, "TBACKUP");
+
+
 
 
                 // Binding data source & refresh
@@ -77,6 +84,7 @@ namespace TFRONT
 
                 tFRONTBindingLeadership.ResetBindings(false);
                 tFRONTBindingSourceHK.ResetBindings(false);
+
 
                 updateHourly();
 
@@ -163,7 +171,7 @@ namespace TFRONT
             label_Color(dateTimePickerVilla, labelVL, cycleVL);
             label_Color(dateTimePickerJardin, labelJD, cycleJD);
 
-            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite );
+            label_Color(dateTimePickerWebSite, labelWebSite, cycleWebSite);
 
 
         }
@@ -556,6 +564,56 @@ namespace TFRONT
         {
             hourly.updateHourlyLeadership();
             updateHourly();
+        }
+
+        private void dataGridViewBackup_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0)
+                if (DateTime.ParseExact(e.Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture) < DateTime.UtcNow.AddDays(-7))
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.White;
+                }
+        }
+
+        private void dataGridViewBackup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex != 2)
+            {
+                return; // Ignore clicks on header or invalid cells
+            }
+            if (MessageBox.Show("Do you want to update the date for " + dataGridViewBackup.Rows[e.RowIndex].Cells[e.ColumnIndex - 2].Value,
+                                                              "Question",
+                                                                                              MessageBoxButtons.YesNo,
+                                                                                                                              MessageBoxIcon.Question,
+                                                                                                                                                              MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+            {
+                return; // User chose not to update
+            }
+            else {
+                dataGridViewBackup.BeginEdit(true);
+
+                dataGridViewBackup.Rows[e.RowIndex].Cells[e.ColumnIndex - 1].Value = DateTime.UtcNow.ToString("dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+
+                buttonTBackup.Focus();
+                buttonTBackup_Click(sender, e); // Save changes to the database
+
+
+
+
+            }
+        }
+
+        private void buttonTBackup_Click(object sender, EventArgs e)
+        {
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+            SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
+            dataAdapter.Update(dataSet11.Tables[3]);
         }
     }
 }
