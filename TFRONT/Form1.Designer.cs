@@ -112,6 +112,7 @@
             administrationToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            buttonTBackup = new Button();
             dataGridViewBackup = new DataGridView();
             colDescDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colDatDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -153,7 +154,6 @@
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
             sqlCommand2 = new Microsoft.Data.SqlClient.SqlCommand();
-            buttonTBackup = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLeadership).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -247,7 +247,7 @@
             // labelSP
             // 
             labelSP.AutoSize = true;
-            labelSP.Location = new Point(30, 228);
+            labelSP.Location = new Point(65, 228);
             labelSP.Name = "labelSP";
             labelSP.Size = new Size(35, 15);
             labelSP.TabIndex = 6;
@@ -257,7 +257,7 @@
             // 
             dateTimePickerSP.DataBindings.Add(new Binding("Text", tFRONTBindingSourceSP, "colDat", true));
             dateTimePickerSP.Format = DateTimePickerFormat.Short;
-            dateTimePickerSP.Location = new Point(87, 226);
+            dateTimePickerSP.Location = new Point(108, 226);
             dateTimePickerSP.Name = "dateTimePickerSP";
             dateTimePickerSP.Size = new Size(128, 23);
             dateTimePickerSP.TabIndex = 7;
@@ -808,7 +808,7 @@
             // labelJR
             // 
             labelJR.AutoSize = true;
-            labelJR.Location = new Point(35, 268);
+            labelJR.Location = new Point(82, 268);
             labelJR.Name = "labelJR";
             labelJR.Size = new Size(18, 15);
             labelJR.TabIndex = 16;
@@ -818,7 +818,7 @@
             // 
             dateTimePickerJR.DataBindings.Add(new Binding("Text", tFRONTBindingSourceJR, "colDat", true));
             dateTimePickerJR.Format = DateTimePickerFormat.Short;
-            dateTimePickerJR.Location = new Point(87, 262);
+            dateTimePickerJR.Location = new Point(107, 262);
             dateTimePickerJR.Name = "dateTimePickerJR";
             dateTimePickerJR.Size = new Size(129, 23);
             dateTimePickerJR.TabIndex = 17;
@@ -876,6 +876,15 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonTBackup
+            // 
+            buttonTBackup.Location = new Point(996, 864);
+            buttonTBackup.Name = "buttonTBackup";
+            buttonTBackup.Size = new Size(128, 23);
+            buttonTBackup.TabIndex = 23;
+            buttonTBackup.Text = "buttonTBackup";
+            buttonTBackup.UseVisualStyleBackColor = true;
             // 
             // dataGridViewBackup
             // 
@@ -1092,9 +1101,9 @@
             groupBox1.Controls.Add(dateTimePickerArazakar);
             groupBox1.Controls.Add(labelArazakar);
             groupBox1.Controls.Add(labelMotiv);
-            groupBox1.Controls.Add(dateTimePickerMotiv);
             groupBox1.Controls.Add(dateTimePickerCentura);
             groupBox1.Controls.Add(labelCentura);
+            groupBox1.Controls.Add(dateTimePickerMotiv);
             groupBox1.Controls.Add(labelLeaderShip);
             groupBox1.Controls.Add(dateTimePickerLeadership);
             groupBox1.Location = new Point(268, 10);
@@ -1158,7 +1167,7 @@
             // 
             labelCVEnv.AutoSize = true;
             labelCVEnv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCVEnv.Location = new Point(23, 281);
+            labelCVEnv.Location = new Point(26, 281);
             labelCVEnv.Name = "labelCVEnv";
             labelCVEnv.Size = new Size(74, 15);
             labelCVEnv.TabIndex = 11;
@@ -1178,7 +1187,7 @@
             // 
             labelArazakar.AutoSize = true;
             labelArazakar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelArazakar.Location = new Point(24, 237);
+            labelArazakar.Location = new Point(26, 237);
             labelArazakar.Name = "labelArazakar";
             labelArazakar.Size = new Size(56, 15);
             labelArazakar.TabIndex = 9;
@@ -1188,17 +1197,17 @@
             // 
             labelMotiv.AutoSize = true;
             labelMotiv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelMotiv.Location = new Point(24, 103);
+            labelMotiv.Location = new Point(26, 81);
             labelMotiv.Name = "labelMotiv";
-            labelMotiv.Size = new Size(77, 15);
+            labelMotiv.Size = new Size(92, 15);
             labelMotiv.TabIndex = 6;
-            labelMotiv.Text = "Motivational";
+            labelMotiv.Text = "Bonne Manière";
             // 
             // dateTimePickerMotiv
             // 
             dateTimePickerMotiv.DataBindings.Add(new Binding("Text", tFRONTBindingSourceMotiv, "colDat", true));
             dateTimePickerMotiv.Format = DateTimePickerFormat.Short;
-            dateTimePickerMotiv.Location = new Point(159, 101);
+            dateTimePickerMotiv.Location = new Point(159, 79);
             dateTimePickerMotiv.Name = "dateTimePickerMotiv";
             dateTimePickerMotiv.Size = new Size(131, 23);
             dateTimePickerMotiv.TabIndex = 7;
@@ -1218,7 +1227,7 @@
             // 
             labelCentura.AutoSize = true;
             labelCentura.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelCentura.Location = new Point(24, 196);
+            labelCentura.Location = new Point(26, 196);
             labelCentura.Name = "labelCentura";
             labelCentura.Size = new Size(51, 15);
             labelCentura.TabIndex = 4;
@@ -1228,7 +1237,7 @@
             // 
             labelLeaderShip.AutoSize = true;
             labelLeaderShip.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelLeaderShip.Location = new Point(24, 53);
+            labelLeaderShip.Location = new Point(26, 38);
             labelLeaderShip.Name = "labelLeaderShip";
             labelLeaderShip.Size = new Size(67, 15);
             labelLeaderShip.TabIndex = 1;
@@ -1239,7 +1248,7 @@
             dateTimePickerLeadership.DataBindings.Add(new Binding("Text", tFRONTBindingLeadership, "colDat", true));
             dateTimePickerLeadership.DataBindings.Add(new Binding("Value", tFRONTBindingLeadership, "colDat", true));
             dateTimePickerLeadership.Format = DateTimePickerFormat.Short;
-            dateTimePickerLeadership.Location = new Point(159, 50);
+            dateTimePickerLeadership.Location = new Point(162, 35);
             dateTimePickerLeadership.Name = "dateTimePickerLeadership";
             dateTimePickerLeadership.Size = new Size(128, 23);
             dateTimePickerLeadership.TabIndex = 2;
@@ -1260,15 +1269,6 @@
             // 
             sqlCommand2.CommandTimeout = 30;
             sqlCommand2.EnableOptimizedParameterBinding = false;
-            // 
-            // buttonTBackup
-            // 
-            buttonTBackup.Location = new Point(996, 864);
-            buttonTBackup.Name = "buttonTBackup";
-            buttonTBackup.Size = new Size(128, 23);
-            buttonTBackup.TabIndex = 23;
-            buttonTBackup.Text = "buttonTBackup";
-            buttonTBackup.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
