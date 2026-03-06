@@ -17,7 +17,7 @@
             <xs:sequence>
               <xs:element name="colid" msprop:Generator_ColumnPropNameInTable="colidColumn" msprop:Generator_ColumnPropNameInRow="colid" msprop:Generator_UserColumnName="colid" msprop:Generator_ColumnVarNameInTable="columncolid" type="xs:string" minOccurs="0" />
               <xs:element name="colDat" msdata:DateTimeMode="Local" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_UserColumnName="colDat" msprop:Generator_ColumnVarNameInTable="columncolDat" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="colCycle" msprop:Generator_UserColumnName="colCycle" msprop:Generator_ColumnPropNameInTable="colCycleColumn" msprop:Generator_ColumnPropNameInRow="colCycle" msprop:Generator_ColumnVarNameInTable="columncolCycle" type="xs:short" minOccurs="0" />
+              <xs:element name="colCycle" msprop:Generator_ColumnPropNameInTable="colCycleColumn" msprop:Generator_ColumnPropNameInRow="colCycle" msprop:Generator_UserColumnName="colCycle" msprop:Generator_ColumnVarNameInTable="columncolCycle" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -45,12 +45,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TBACKUP" msprop:Generator_RowEvHandlerName="TBACKUPRowChangeEventHandler" msprop:Generator_RowDeletedName="TBACKUPRowDeleted" msprop:Generator_RowDeletingName="TBACKUPRowDeleting" msprop:Generator_RowEvArgName="TBACKUPRowChangeEvent" msprop:Generator_TablePropName="TBACKUP" msprop:Generator_RowChangedName="TBACKUPRowChanged" msprop:Generator_RowChangingName="TBACKUPRowChanging" msprop:Generator_TableClassName="TBACKUPDataTable" msprop:Generator_RowClassName="TBACKUPRow" msprop:Generator_TableVarName="tableTBACKUP" msprop:Generator_UserTableName="TBACKUP">
+        <xs:element name="TBACKUP" msprop:Generator_RowClassName="TBACKUPRow" msprop:Generator_RowEvHandlerName="TBACKUPRowChangeEventHandler" msprop:Generator_RowDeletedName="TBACKUPRowDeleted" msprop:Generator_RowDeletingName="TBACKUPRowDeleting" msprop:Generator_RowEvArgName="TBACKUPRowChangeEvent" msprop:Generator_TablePropName="TBACKUP" msprop:Generator_RowChangedName="TBACKUPRowChanged" msprop:Generator_UserTableName="TBACKUP" msprop:Generator_RowChangingName="TBACKUPRowChanging" msprop:Generator_TableClassName="TBACKUPDataTable" msprop:Generator_TableVarName="tableTBACKUP">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="colId" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnVarNameInTable="columncolId" msprop:Generator_UserColumnName="colId" type="xs:string" />
-              <xs:element name="colDesc" msdata:Caption="colLang" msprop:Generator_ColumnPropNameInRow="colDesc" msprop:Generator_ColumnPropNameInTable="colDescColumn" msprop:Generator_ColumnVarNameInTable="columncolDesc" msprop:Generator_UserColumnName="colDesc" type="xs:string" minOccurs="0" />
-              <xs:element name="colDat" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnVarNameInTable="columncolDat" msprop:Generator_UserColumnName="colDat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="colId" msprop:Generator_UserColumnName="colId" msprop:Generator_ColumnPropNameInTable="colIdColumn" msprop:Generator_ColumnPropNameInRow="colId" msprop:Generator_ColumnVarNameInTable="columncolId" type="xs:string" />
+              <xs:element name="colDesc" msdata:Caption="colLang" msprop:Generator_UserColumnName="colDesc" msprop:Generator_ColumnPropNameInTable="colDescColumn" msprop:Generator_ColumnPropNameInRow="colDesc" msprop:Generator_ColumnVarNameInTable="columncolDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="colDat" msprop:Generator_UserColumnName="colDat" msprop:Generator_ColumnPropNameInTable="colDatColumn" msprop:Generator_ColumnPropNameInRow="colDat" msprop:Generator_ColumnVarNameInTable="columncolDat" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TSTAT" msprop:Generator_RowEvHandlerName="TSTATRowChangeEventHandler" msprop:Generator_RowDeletedName="TSTATRowDeleted" msprop:Generator_RowDeletingName="TSTATRowDeleting" msprop:Generator_RowEvArgName="TSTATRowChangeEvent" msprop:Generator_TablePropName="TSTAT" msprop:Generator_RowChangedName="TSTATRowChanged" msprop:Generator_RowChangingName="TSTATRowChanging" msprop:Generator_TableClassName="TSTATDataTable" msprop:Generator_RowClassName="TSTATRow" msprop:Generator_TableVarName="tableTSTAT" msprop:Generator_UserTableName="TSTAT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colCod" msprop:Generator_ColumnPropNameInRow="colCod" msprop:Generator_ColumnPropNameInTable="colCodColumn" msprop:Generator_ColumnVarNameInTable="columncolCod" msprop:Generator_UserColumnName="colCod" type="xs:string" minOccurs="0" />
+              <xs:element name="colDesc" msprop:Generator_ColumnPropNameInRow="colDesc" msprop:Generator_ColumnPropNameInTable="colDescColumn" msprop:Generator_ColumnVarNameInTable="columncolDesc" msprop:Generator_UserColumnName="colDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="colTotal" msprop:Generator_ColumnPropNameInRow="colTotal" msprop:Generator_ColumnPropNameInTable="colTotalColumn" msprop:Generator_ColumnVarNameInTable="columncolTotal" msprop:Generator_UserColumnName="colTotal" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

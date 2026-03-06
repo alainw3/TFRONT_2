@@ -161,6 +161,15 @@ namespace TFRONT
 
         }
 
+        public DataAdapter GetDataAdapterStat()
+        {
+            return getDataAdapter("\r\nselect  A1.[colMon]  colCod,\r\n\t\tcase \r\n\t\t\twhen A1.[colMon] = '4' then 'Learn'\r\n\t\t\twhen A1.[colMon] = '7' then 'Mada'\r\n\t\t\twhen A1.[colMon] = '5' then 'Le Temps'\r\n\t\t\twhen A1.[colMon] = '3' then 'Finance'\r\n\t\t\twhen A1.[colMon] = '6' then 'BCIC'\r\n\t\t\twhen A1.[colMon] = '*' then 'Autres'\r\n\t\t\twhen A1.[colMon] = '+' then 'Leadership'\r\n\t\t\twhen A1.[colMon] = '1' then 'Job Search'\r\n\t\t\twhen A1.[colMon] = '2' then 'Administration'\r\n\t\t\twhen A1.[colMon] = '9' then 'Stratégie'\r\n\t\t\telse '???'\r\n\t\tend as 'colDEsc' ,\r\n\t\tcount(*)/4 colTotal  \r\n  from \r\n  (\r\n\t\tSELECT   [colMon]  FROM [winman].[dbo].[TBL_THOUR] where colMon is not null \r\n\tunion all\r\n\t\tSELECT   [colTue]  FROM [winman].[dbo].[TBL_THOUR] where [colTue] is not null \r\n\tunion all\r\n\t\tSELECT   [colWed]  FROM [winman].[dbo].[TBL_THOUR] where [colWed] is not null \r\n\tunion all\r\n\t\tSELECT   [colWed]  FROM [winman].[dbo].[TBL_THOUR] where [colWed] is not null\r\n\tunion all\r\n\t\tSELECT   [colThu]  FROM [winman].[dbo].[TBL_THOUR] where [colThu] is not null\r\n\tunion all\r\n\t\tSELECT   [colFri]  FROM [winman].[dbo].[TBL_THOUR] where [colFri] is not null\r\n\tunion all\r\n\t\tSELECT   [colSat]  FROM [winman].[dbo].[TBL_THOUR] where [colSat] is not null\r\n\tunion all \r\n\t\tSELECT   [colSun]  FROM [winman].[dbo].[TBL_THOUR] where [colSun] is not null\r\n) A1\r\n\r\nwhere  A1.[colMon] !=''\r\ngroup by  A1.[colMon]\r\norder by colTotal desc\r\n");           
+        }
+
+
+
+        /// <summary>
+
         private DataAdapter getDataAdapter(string selectCommand) {
 
             connect();

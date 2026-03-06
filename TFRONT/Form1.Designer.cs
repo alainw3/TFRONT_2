@@ -42,7 +42,7 @@
             tFRONTBindingSourceReel = new BindingSource(components);
             tFRONTBindingCVEnv = new BindingSource(components);
             tFRONTBindingArazakar = new BindingSource(components);
-            tFRONTBindingSourceMotiv = new BindingSource(components);
+            tFRONTBindingSourceBonneManiere = new BindingSource(components);
             tFRONTBindingCentura = new BindingSource(components);
             dateTimePickerCertificate = new DateTimePicker();
             tFRONTBindingSourceCertficate = new BindingSource(components);
@@ -112,6 +112,8 @@
             administrationToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            dataGridView3 = new DataGridView();
+            tFRONTbindingStat = new BindingSource(components);
             buttonTBackup = new Button();
             dataGridViewBackup = new DataGridView();
             colDescDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -145,15 +147,18 @@
             labelCVEnv = new Label();
             dateTimePickerArazakar = new DateTimePicker();
             labelArazakar = new Label();
-            labelMotiv = new Label();
-            dateTimePickerMotiv = new DateTimePicker();
+            labelBonneManiere = new Label();
             dateTimePickerCentura = new DateTimePicker();
             labelCentura = new Label();
+            dateTimePickerBonneManiere = new DateTimePicker();
             labelLeaderShip = new Label();
             dateTimePickerLeadership = new DateTimePicker();
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
             sqlCommand2 = new Microsoft.Data.SqlClient.SqlCommand();
+            colCodDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colDescDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            colTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLeadership).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -163,7 +168,7 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceReel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVEnv).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingArazakar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceMotiv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceBonneManiere).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCentura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCertficate).BeginInit();
             groupBox2.SuspendLayout();
@@ -185,6 +190,8 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceJR).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTbindingStat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewBackup).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tBACKUPbindingSource).BeginInit();
             groupBox5.SuspendLayout();
@@ -293,11 +300,11 @@
             tFRONTBindingArazakar.DataSource = dataSet11;
             tFRONTBindingArazakar.Filter = "colId='06'";
             // 
-            // tFRONTBindingSourceMotiv
+            // tFRONTBindingSourceBonneManiere
             // 
-            tFRONTBindingSourceMotiv.DataMember = "TFRONT";
-            tFRONTBindingSourceMotiv.DataSource = dataSet11;
-            tFRONTBindingSourceMotiv.Filter = "colId='05'";
+            tFRONTBindingSourceBonneManiere.DataMember = "TFRONT";
+            tFRONTBindingSourceBonneManiere.DataSource = dataSet11;
+            tFRONTBindingSourceBonneManiere.Filter = "colId='05'";
             // 
             // tFRONTBindingCentura
             // 
@@ -848,6 +855,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(dataGridView3);
             tabPage1.Controls.Add(buttonTBackup);
             tabPage1.Controls.Add(dataGridViewBackup);
             tabPage1.Controls.Add(groupBox5);
@@ -876,6 +884,25 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.AutoGenerateColumns = false;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { colCodDataGridViewTextBoxColumn, colDescDataGridViewTextBoxColumn1, colTotalDataGridViewTextBoxColumn });
+            dataGridView3.DataSource = tFRONTbindingStat;
+            dataGridView3.Location = new Point(268, 619);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.ReadOnly = true;
+            dataGridView3.Size = new Size(320, 339);
+            dataGridView3.TabIndex = 24;
+            // 
+            // tFRONTbindingStat
+            // 
+            tFRONTbindingStat.DataMember = "TSTAT";
+            tFRONTbindingStat.DataSource = dataSet11;
             // 
             // buttonTBackup
             // 
@@ -1100,10 +1127,10 @@
             groupBox1.Controls.Add(labelCVEnv);
             groupBox1.Controls.Add(dateTimePickerArazakar);
             groupBox1.Controls.Add(labelArazakar);
-            groupBox1.Controls.Add(labelMotiv);
+            groupBox1.Controls.Add(labelBonneManiere);
             groupBox1.Controls.Add(dateTimePickerCentura);
             groupBox1.Controls.Add(labelCentura);
-            groupBox1.Controls.Add(dateTimePickerMotiv);
+            groupBox1.Controls.Add(dateTimePickerBonneManiere);
             groupBox1.Controls.Add(labelLeaderShip);
             groupBox1.Controls.Add(dateTimePickerLeadership);
             groupBox1.Location = new Point(268, 10);
@@ -1193,25 +1220,15 @@
             labelArazakar.TabIndex = 9;
             labelArazakar.Text = "Arazakar";
             // 
-            // labelMotiv
+            // labelBonneManiere
             // 
-            labelMotiv.AutoSize = true;
-            labelMotiv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelMotiv.Location = new Point(26, 81);
-            labelMotiv.Name = "labelMotiv";
-            labelMotiv.Size = new Size(92, 15);
-            labelMotiv.TabIndex = 6;
-            labelMotiv.Text = "Bonne Manière";
-            // 
-            // dateTimePickerMotiv
-            // 
-            dateTimePickerMotiv.DataBindings.Add(new Binding("Text", tFRONTBindingSourceMotiv, "colDat", true));
-            dateTimePickerMotiv.Format = DateTimePickerFormat.Short;
-            dateTimePickerMotiv.Location = new Point(159, 79);
-            dateTimePickerMotiv.Name = "dateTimePickerMotiv";
-            dateTimePickerMotiv.Size = new Size(131, 23);
-            dateTimePickerMotiv.TabIndex = 7;
-            dateTimePickerMotiv.Validated += dateTimePickerCentura_Validated;
+            labelBonneManiere.AutoSize = true;
+            labelBonneManiere.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelBonneManiere.Location = new Point(26, 81);
+            labelBonneManiere.Name = "labelBonneManiere";
+            labelBonneManiere.Size = new Size(92, 15);
+            labelBonneManiere.TabIndex = 6;
+            labelBonneManiere.Text = "Bonne Manière";
             // 
             // dateTimePickerCentura
             // 
@@ -1232,6 +1249,16 @@
             labelCentura.Size = new Size(51, 15);
             labelCentura.TabIndex = 4;
             labelCentura.Text = "Centura";
+            // 
+            // dateTimePickerBonneManiere
+            // 
+            dateTimePickerBonneManiere.DataBindings.Add(new Binding("Text", tFRONTBindingSourceBonneManiere, "colDat", true));
+            dateTimePickerBonneManiere.Format = DateTimePickerFormat.Short;
+            dateTimePickerBonneManiere.Location = new Point(159, 79);
+            dateTimePickerBonneManiere.Name = "dateTimePickerBonneManiere";
+            dateTimePickerBonneManiere.Size = new Size(131, 23);
+            dateTimePickerBonneManiere.TabIndex = 7;
+            dateTimePickerBonneManiere.Validated += dateTimePickerBonneManiere_Validated;
             // 
             // labelLeaderShip
             // 
@@ -1270,6 +1297,28 @@
             sqlCommand2.CommandTimeout = 30;
             sqlCommand2.EnableOptimizedParameterBinding = false;
             // 
+            // colCodDataGridViewTextBoxColumn
+            // 
+            colCodDataGridViewTextBoxColumn.DataPropertyName = "colCod";
+            colCodDataGridViewTextBoxColumn.HeaderText = "colCod";
+            colCodDataGridViewTextBoxColumn.MinimumWidth = 3;
+            colCodDataGridViewTextBoxColumn.Name = "colCodDataGridViewTextBoxColumn";
+            colCodDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colDescDataGridViewTextBoxColumn1
+            // 
+            colDescDataGridViewTextBoxColumn1.DataPropertyName = "colDesc";
+            colDescDataGridViewTextBoxColumn1.HeaderText = "colDesc";
+            colDescDataGridViewTextBoxColumn1.Name = "colDescDataGridViewTextBoxColumn1";
+            colDescDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // colTotalDataGridViewTextBoxColumn
+            // 
+            colTotalDataGridViewTextBoxColumn.DataPropertyName = "colTotal";
+            colTotalDataGridViewTextBoxColumn.HeaderText = "colTotal";
+            colTotalDataGridViewTextBoxColumn.Name = "colTotalDataGridViewTextBoxColumn";
+            colTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1289,7 +1338,7 @@
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceReel).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCVEnv).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingArazakar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceMotiv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceBonneManiere).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingCentura).EndInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingSourceCertficate).EndInit();
             groupBox2.ResumeLayout(false);
@@ -1315,6 +1364,8 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tFRONTbindingStat).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewBackup).EndInit();
             ((System.ComponentModel.ISupportInitialize)tBACKUPbindingSource).EndInit();
             groupBox5.ResumeLayout(false);
@@ -1342,7 +1393,7 @@
         private BindingSource tFRONTBindingSourceSP;
         private BindingSource tFRONTBindingCentura;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private BindingSource tFRONTBindingSourceMotiv;
+        private BindingSource tFRONTBindingSourceBonneManiere;
         private BindingSource tFRONTBindingArazakar;
         private BindingSource tFRONTBindingCVEnv;
         private GroupBox groupBox2;
@@ -1442,8 +1493,8 @@
         private Label labelCVEnv;
         private DateTimePicker dateTimePickerArazakar;
         private Label labelArazakar;
-        private Label labelMotiv;
-        private DateTimePicker dateTimePickerMotiv;
+        private Label labelBonneManiere;
+        private DateTimePicker dateTimePickerBonneManiere;
         private DateTimePicker dateTimePickerCentura;
         private Label labelCentura;
         private Label labelLeaderShip;
@@ -1456,5 +1507,10 @@
         private DataGridViewTextBoxColumn colDatDataGridViewTextBoxColumn1;
         private DataGridViewButtonColumn TRefresh;
         private Button buttonTBackup;
+        private BindingSource tFRONTbindingStat;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn colCodDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn colDescDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn colTotalDataGridViewTextBoxColumn;
     }
 }

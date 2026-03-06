@@ -14,8 +14,11 @@ namespace TFRONT
         SqlDataAdapter dataAdapterTFront   ;
         SqlDataAdapter dataAdapterTHour;
         SqlDataAdapter dataAdapterTBackup;
+        SqlDataAdapter dataAdapterTSTat ;
 
-        private const int cycleMotiv = -14;
+
+        private const int cycleBonneManiere = -2;
+        private const int cycleLeaderShip = -2;
         private const int cycleArazakar = -7;
         private const int cycleCVEnv = -2;
         private const int cycleCentura = -3;
@@ -43,6 +46,7 @@ namespace TFRONT
         private Front front;
         private Learn learn;
         private Backup backup;
+        private Stat stat;
 
 
         private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Plum, Color.Blue };
@@ -56,6 +60,7 @@ namespace TFRONT
             front = new Front();
             learn = new Learn();
             backup = new Backup();
+            stat = new Stat();
 
 
             try
@@ -64,8 +69,6 @@ namespace TFRONT
                 // TFRONT
                 dataAdapterTFront = (SqlDataAdapter?)front.dataAdapterFront();
                 dataAdapterTFront.Fill(dataSet11, "TFRONT");
-
-
 
 
                 // TLEARN
@@ -77,6 +80,9 @@ namespace TFRONT
                 dataAdapterTBackup.Fill(dataSet11, "TBACKUP");
 
 
+                // TSTAT
+                dataAdapterTSTat = (SqlDataAdapter?)stat.dataAdapterStat();
+                dataAdapterTSTat.Fill(dataSet11, "TSTAT");
 
 
                 // Binding data source & refresh
@@ -110,7 +116,11 @@ namespace TFRONT
             // 
             updateHourlySum();
 
+            dataSet11.Tables[4].Clear();
+            dataAdapterTSTat = (SqlDataAdapter?)stat.dataAdapterStat();
+            dataAdapterTSTat.Fill(dataSet11, "TSTAT");
         }
+
         private void updateHourlySum()
         {
 
@@ -134,13 +144,13 @@ namespace TFRONT
 
 
             // CV link  / English
-            label_Color(dateTimePickerLeadership, labelLeaderShip, cycleMotiv);
+            label_Color(dateTimePickerLeadership, labelLeaderShip, cycleLeaderShip);
             label_Color(dateTimePickerCentura, labelCentura, cycleCentura);
 
 
 
             // CV link  / français
-            label_Color(dateTimePickerMotiv, labelMotiv, cycleMotiv);
+            label_Color(dateTimePickerBonneManiere, labelBonneManiere, cycleBonneManiere);
             label_Color(dateTimePickerArazakar, labelArazakar, cycleArazakar);
 
             // Envoi candidature
@@ -280,7 +290,7 @@ namespace TFRONT
         private void dateTimePickerCV_Validated(object sender, EventArgs e)
         {
             commandSQL(dateTimePickerLeadership, tFRONTBindingLeadership.Filter);
-            label_Color(dateTimePickerLeadership, labelLeaderShip, cycleMotiv);
+            label_Color(dateTimePickerLeadership, labelLeaderShip, cycleBonneManiere);
         }
 
         private void dateTimePickerCVLecture_Validated(object sender, EventArgs e)
@@ -289,10 +299,10 @@ namespace TFRONT
             label_Color(dateTimePickerCentura, labelCentura, cycleArazakar);
         }
 
-        private void dateTimePickerCentura_Validated(object sender, EventArgs e)
+        private void dateTimePickerBonneManiere_Validated(object sender, EventArgs e)
         {
-            commandSQL(dateTimePickerMotiv, tFRONTBindingSourceMotiv.Filter);
-            label_Color(dateTimePickerMotiv, labelMotiv, cycleArazakar);
+            commandSQL(dateTimePickerBonneManiere, tFRONTBindingSourceBonneManiere.Filter);
+            label_Color(dateTimePickerBonneManiere, labelBonneManiere, cycleArazakar);
         }
 
         private void dateTimePickerArazakar_Validated(object sender, EventArgs e)
