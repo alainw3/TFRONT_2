@@ -113,6 +113,9 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             dataGridView3 = new DataGridView();
+            colCodDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            colDescDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            colTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tFRONTbindingStat = new BindingSource(components);
             buttonTBackup = new Button();
             dataGridViewBackup = new DataGridView();
@@ -156,9 +159,10 @@
             tLANGUAGEBindingSource = new BindingSource(components);
             dataSet21 = new DataSet2();
             sqlCommand2 = new Microsoft.Data.SqlClient.SqlCommand();
-            colCodDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            colDescDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            colTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            menuStrip1 = new MenuStrip();
+            menu1ToolStripMenuItem = new ToolStripMenuItem();
+            submenu1ToolStripMenuItem = new ToolStripMenuItem();
+            mwnu2ToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLeadership).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -201,12 +205,13 @@
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet21).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.mr;
-            pictureBox1.Location = new Point(30, 10);
+            pictureBox1.Location = new Point(30, 29);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(197, 197);
             pictureBox1.TabIndex = 0;
@@ -254,7 +259,7 @@
             // labelSP
             // 
             labelSP.AutoSize = true;
-            labelSP.Location = new Point(65, 228);
+            labelSP.Location = new Point(65, 247);
             labelSP.Name = "labelSP";
             labelSP.Size = new Size(35, 15);
             labelSP.TabIndex = 6;
@@ -264,7 +269,7 @@
             // 
             dateTimePickerSP.DataBindings.Add(new Binding("Text", tFRONTBindingSourceSP, "colDat", true));
             dateTimePickerSP.Format = DateTimePickerFormat.Short;
-            dateTimePickerSP.Location = new Point(108, 226);
+            dateTimePickerSP.Location = new Point(108, 245);
             dateTimePickerSP.Name = "dateTimePickerSP";
             dateTimePickerSP.Size = new Size(128, 23);
             dateTimePickerSP.TabIndex = 7;
@@ -357,7 +362,7 @@
             groupBox2.Controls.Add(labelMIT);
             groupBox2.Controls.Add(dateTimePickerLLM);
             groupBox2.Controls.Add(labelLLM);
-            groupBox2.Location = new Point(646, 10);
+            groupBox2.Location = new Point(646, 24);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(259, 396);
             groupBox2.TabIndex = 9;
@@ -815,7 +820,7 @@
             // labelJR
             // 
             labelJR.AutoSize = true;
-            labelJR.Location = new Point(82, 268);
+            labelJR.Location = new Point(82, 287);
             labelJR.Name = "labelJR";
             labelJR.Size = new Size(18, 15);
             labelJR.TabIndex = 16;
@@ -825,7 +830,7 @@
             // 
             dateTimePickerJR.DataBindings.Add(new Binding("Text", tFRONTBindingSourceJR, "colDat", true));
             dateTimePickerJR.Format = DateTimePickerFormat.Short;
-            dateTimePickerJR.Location = new Point(107, 262);
+            dateTimePickerJR.Location = new Point(107, 281);
             dateTimePickerJR.Name = "dateTimePickerJR";
             dateTimePickerJR.Size = new Size(129, 23);
             dateTimePickerJR.TabIndex = 17;
@@ -845,6 +850,7 @@
             // 
             // tabControl1
             // 
+            tabControl1.Alignment = TabAlignment.Bottom;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
@@ -877,7 +883,7 @@
             tabPage1.Controls.Add(dataGridView1);
             tabPage1.Controls.Add(labelHK);
             tabPage1.Controls.Add(dateTimePickerHK);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1880, 1033);
@@ -898,6 +904,28 @@
             dataGridView3.ReadOnly = true;
             dataGridView3.Size = new Size(320, 339);
             dataGridView3.TabIndex = 24;
+            // 
+            // colCodDataGridViewTextBoxColumn
+            // 
+            colCodDataGridViewTextBoxColumn.DataPropertyName = "colCod";
+            colCodDataGridViewTextBoxColumn.HeaderText = "colCod";
+            colCodDataGridViewTextBoxColumn.MinimumWidth = 3;
+            colCodDataGridViewTextBoxColumn.Name = "colCodDataGridViewTextBoxColumn";
+            colCodDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colDescDataGridViewTextBoxColumn1
+            // 
+            colDescDataGridViewTextBoxColumn1.DataPropertyName = "colDesc";
+            colDescDataGridViewTextBoxColumn1.HeaderText = "colDesc";
+            colDescDataGridViewTextBoxColumn1.Name = "colDescDataGridViewTextBoxColumn1";
+            colDescDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // colTotalDataGridViewTextBoxColumn
+            // 
+            colTotalDataGridViewTextBoxColumn.DataPropertyName = "colTotal";
+            colTotalDataGridViewTextBoxColumn.HeaderText = "colTotal";
+            colTotalDataGridViewTextBoxColumn.Name = "colTotalDataGridViewTextBoxColumn";
+            colTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tFRONTbindingStat
             // 
@@ -1133,7 +1161,7 @@
             groupBox1.Controls.Add(dateTimePickerBonneManiere);
             groupBox1.Controls.Add(labelLeaderShip);
             groupBox1.Controls.Add(dateTimePickerLeadership);
-            groupBox1.Location = new Point(268, 10);
+            groupBox1.Location = new Point(268, 28);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(331, 396);
             groupBox1.TabIndex = 8;
@@ -1297,34 +1325,42 @@
             sqlCommand2.CommandTimeout = 30;
             sqlCommand2.EnableOptimizedParameterBinding = false;
             // 
-            // colCodDataGridViewTextBoxColumn
+            // menuStrip1
             // 
-            colCodDataGridViewTextBoxColumn.DataPropertyName = "colCod";
-            colCodDataGridViewTextBoxColumn.HeaderText = "colCod";
-            colCodDataGridViewTextBoxColumn.MinimumWidth = 3;
-            colCodDataGridViewTextBoxColumn.Name = "colCodDataGridViewTextBoxColumn";
-            colCodDataGridViewTextBoxColumn.ReadOnly = true;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menu1ToolStripMenuItem, mwnu2ToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1888, 24);
+            menuStrip1.TabIndex = 19;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // colDescDataGridViewTextBoxColumn1
+            // menu1ToolStripMenuItem
             // 
-            colDescDataGridViewTextBoxColumn1.DataPropertyName = "colDesc";
-            colDescDataGridViewTextBoxColumn1.HeaderText = "colDesc";
-            colDescDataGridViewTextBoxColumn1.Name = "colDescDataGridViewTextBoxColumn1";
-            colDescDataGridViewTextBoxColumn1.ReadOnly = true;
+            menu1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { submenu1ToolStripMenuItem });
+            menu1ToolStripMenuItem.Name = "menu1ToolStripMenuItem";
+            menu1ToolStripMenuItem.Size = new Size(56, 20);
+            menu1ToolStripMenuItem.Text = "Menu1";
             // 
-            // colTotalDataGridViewTextBoxColumn
+            // submenu1ToolStripMenuItem
             // 
-            colTotalDataGridViewTextBoxColumn.DataPropertyName = "colTotal";
-            colTotalDataGridViewTextBoxColumn.HeaderText = "colTotal";
-            colTotalDataGridViewTextBoxColumn.Name = "colTotalDataGridViewTextBoxColumn";
-            colTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            submenu1ToolStripMenuItem.Name = "submenu1ToolStripMenuItem";
+            submenu1ToolStripMenuItem.Size = new Size(180, 22);
+            submenu1ToolStripMenuItem.Text = "Submenu1";
+            // 
+            // mwnu2ToolStripMenuItem
+            // 
+            mwnu2ToolStripMenuItem.Name = "mwnu2ToolStripMenuItem";
+            mwnu2ToolStripMenuItem.Size = new Size(59, 20);
+            mwnu2ToolStripMenuItem.Text = "Mwnu2";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1888, 1061);
+            Controls.Add(menuStrip1);
             Controls.Add(tabControl1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
@@ -1377,7 +1413,10 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tLANGUAGEBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataSet21).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1512,5 +1551,9 @@
         private DataGridViewTextBoxColumn colCodDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn colDescDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn colTotalDataGridViewTextBoxColumn;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menu1ToolStripMenuItem;
+        private ToolStripMenuItem submenu1ToolStripMenuItem;
+        private ToolStripMenuItem mwnu2ToolStripMenuItem;
     }
 }
