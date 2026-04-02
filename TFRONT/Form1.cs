@@ -11,10 +11,10 @@ namespace TFRONT
     public partial class Form1 : Form
     {
         SqlDataAdapter dataAdapterTLearn;
-        SqlDataAdapter dataAdapterTFront   ;
+        SqlDataAdapter dataAdapterTFront;
         SqlDataAdapter dataAdapterTHour;
         SqlDataAdapter dataAdapterTBackup;
-        SqlDataAdapter dataAdapterTSTat ;
+        SqlDataAdapter dataAdapterTSTat;
 
 
         private const int cycleBonneManiere = -2;
@@ -452,15 +452,6 @@ namespace TFRONT
             label_Color(dateTimePickerReel, labelReel, cycleReel);
         }
 
-        private void tabPage2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonTLanguageSave_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void leTempsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -607,7 +598,8 @@ namespace TFRONT
             {
                 return; // User chose not to update
             }
-            else {
+            else
+            {
                 dataGridViewBackup.BeginEdit(true);
 
                 dataGridViewBackup.Rows[e.RowIndex].Cells[e.ColumnIndex - 1].Value = DateTime.UtcNow.ToString("dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
@@ -626,6 +618,19 @@ namespace TFRONT
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapterTBackup);
             SqlCommand sqlCommand = sqlCommandBuilder.GetUpdateCommand();
             dataAdapterTBackup.Update(dataSet11.Tables[3]);
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Backup form_Backup = new Form_Backup();
+            form_Backup.ShowDialog();
+
+            // TBACKUP
+            //dataAdapterTBackup = (SqlDataAdapter)backup.dataAdapterBackup();
+            //dataAdapterTBackup.Fill(dataSet11, "TBACKUP");
+
+            //tBACKUPBindingSource.ResetBindings(false);
+
         }
     }
 }

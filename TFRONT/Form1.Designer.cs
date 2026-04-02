@@ -162,7 +162,8 @@
             menuStrip1 = new MenuStrip();
             menu1ToolStripMenuItem = new ToolStripMenuItem();
             submenu1ToolStripMenuItem = new ToolStripMenuItem();
-            mwnu2ToolStripMenuItem = new ToolStripMenuItem();
+            AdminToolStripMenuItem = new ToolStripMenuItem();
+            backupToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tFRONTBindingLeadership).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataSet11).BeginInit();
@@ -1327,7 +1328,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menu1ToolStripMenuItem, mwnu2ToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menu1ToolStripMenuItem, AdminToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1888, 24);
@@ -1344,14 +1345,22 @@
             // submenu1ToolStripMenuItem
             // 
             submenu1ToolStripMenuItem.Name = "submenu1ToolStripMenuItem";
-            submenu1ToolStripMenuItem.Size = new Size(180, 22);
+            submenu1ToolStripMenuItem.Size = new Size(131, 22);
             submenu1ToolStripMenuItem.Text = "Submenu1";
             // 
-            // mwnu2ToolStripMenuItem
+            // AdminToolStripMenuItem
             // 
-            mwnu2ToolStripMenuItem.Name = "mwnu2ToolStripMenuItem";
-            mwnu2ToolStripMenuItem.Size = new Size(59, 20);
-            mwnu2ToolStripMenuItem.Text = "Mwnu2";
+            AdminToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { backupToolStripMenuItem });
+            AdminToolStripMenuItem.Name = "AdminToolStripMenuItem";
+            AdminToolStripMenuItem.Size = new Size(55, 20);
+            AdminToolStripMenuItem.Text = "Admin";
+            // 
+            // backupToolStripMenuItem
+            // 
+            backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            backupToolStripMenuItem.Size = new Size(180, 22);
+            backupToolStripMenuItem.Text = "Backup";
+            backupToolStripMenuItem.Click += backupToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -1554,6 +1563,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem menu1ToolStripMenuItem;
         private ToolStripMenuItem submenu1ToolStripMenuItem;
-        private ToolStripMenuItem mwnu2ToolStripMenuItem;
+        private ToolStripMenuItem AdminToolStripMenuItem;
+        private ToolStripMenuItem backupToolStripMenuItem;
     }
 }
