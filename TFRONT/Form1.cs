@@ -48,6 +48,8 @@ namespace TFRONT
         private Backup backup;
         private Stat stat;
 
+        private Counter counter = new Counter();
+
 
         private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Plum, Color.Blue };
         private static readonly string[] cellTips = { "JobSearch", "Administration", "Finance", "Learn", "Le Temps", "BCIC", "Mada", "Certificate", "Strategie" };
@@ -232,28 +234,37 @@ namespace TFRONT
 
         private void label_Color(DateTimePicker dateTimePicker, Label label, int day)
         {
+            counter.IncrementAll();
             if (dateTimePicker.Value < DateTime.UtcNow.AddDays(day))
             {
                 label.BackColor = Color.Red;
+                counter.IncrementRed();
             }
             else
             {
                 label.BackColor = Color.Transparent;
             }
+            labelPercentValue.Text = counter.GetCountPercent() + "%";
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+
             if (e.ColumnIndex == 1 && e.RowIndex >= 0)
+            {
+                counter.IncrementAll();
                 if (
                     DateTime.ParseExact(e.Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture) < DateTime.UtcNow.AddDays(-3))
                 {
                     e.CellStyle.BackColor = Color.Red;
+                    counter.IncrementRed();
                 }
                 else
                 {
                     e.CellStyle.BackColor = Color.White;
                 }
+                labelPercentValue.Text = counter.GetCountPercent() + "%";
+            }
 
         }
 
@@ -573,14 +584,19 @@ namespace TFRONT
         {
 
             if (e.ColumnIndex == 1 && e.RowIndex >= 0)
+            {
+                counter.IncrementAll();
                 if (DateTime.ParseExact(e.Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture) < DateTime.UtcNow.AddDays(-7))
                 {
                     e.CellStyle.BackColor = Color.Red;
+                    counter.IncrementRed();
                 }
                 else
                 {
                     e.CellStyle.BackColor = Color.White;
                 }
+                labelPercentValue.Text = counter.GetCountPercent() + "%";
+            }
         }
 
         private void dataGridViewBackup_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -631,6 +647,20 @@ namespace TFRONT
 
             //tBACKUPBindingSource.ResetBindings(false);
 
+        }
+
+        private void labelPercentValue_TextChanged(object sender, EventArgs e)
+        {
+            if (counter.GetCountPercent() < 50 )
+            {
+                labelPercentValue.BackColor = Color.Red;
+                labelPercentValue.ForeColor = Color.White;
+            }
+            else
+            {
+                labelPercentValue.BackColor = Color.Green;
+                labelPercentValue.ForeColor = Color.Black;
+            }
         }
     }
 }

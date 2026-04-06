@@ -112,6 +112,8 @@
             administrationToolStripMenuItem = new ToolStripMenuItem();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            labelPercentValue = new Label();
+            labelPercent = new Label();
             dataGridView3 = new DataGridView();
             colCodDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             colDescDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -729,7 +731,7 @@
             // textBoxTotalHour
             // 
             textBoxTotalHour.Font = new Font("Segoe UI", 15F);
-            textBoxTotalHour.Location = new Point(1098, 904);
+            textBoxTotalHour.Location = new Point(1098, 893);
             textBoxTotalHour.Name = "textBoxTotalHour";
             textBoxTotalHour.Size = new Size(100, 34);
             textBoxTotalHour.TabIndex = 13;
@@ -739,7 +741,7 @@
             // 
             labelTotalHour.AutoSize = true;
             labelTotalHour.Font = new Font("Segoe UI", 15F);
-            labelTotalHour.Location = new Point(938, 907);
+            labelTotalHour.Location = new Point(938, 896);
             labelTotalHour.Name = "labelTotalHour";
             labelTotalHour.Size = new Size(142, 28);
             labelTotalHour.TabIndex = 14;
@@ -810,7 +812,7 @@
             // 
             // buttonResetDay
             // 
-            buttonResetDay.Location = new Point(938, 957);
+            buttonResetDay.Location = new Point(938, 946);
             buttonResetDay.Name = "buttonResetDay";
             buttonResetDay.Size = new Size(115, 33);
             buttonResetDay.TabIndex = 15;
@@ -862,6 +864,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(labelPercentValue);
+            tabPage1.Controls.Add(labelPercent);
             tabPage1.Controls.Add(dataGridView3);
             tabPage1.Controls.Add(buttonTBackup);
             tabPage1.Controls.Add(dataGridViewBackup);
@@ -891,6 +895,27 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // labelPercentValue
+            // 
+            labelPercentValue.AutoSize = true;
+            labelPercentValue.Font = new Font("Segoe UI", 30F);
+            labelPercentValue.Location = new Point(712, 802);
+            labelPercentValue.Name = "labelPercentValue";
+            labelPercentValue.Size = new Size(111, 54);
+            labelPercentValue.TabIndex = 26;
+            labelPercentValue.Text = "50 %";
+            labelPercentValue.TextChanged += labelPercentValue_TextChanged;
+            // 
+            // labelPercent
+            // 
+            labelPercent.AutoSize = true;
+            labelPercent.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            labelPercent.Location = new Point(691, 777);
+            labelPercent.Name = "labelPercent";
+            labelPercent.Size = new Size(148, 25);
+            labelPercent.TabIndex = 25;
+            labelPercent.Text = "POURCENTAGE";
             // 
             // dataGridView3
             // 
@@ -1044,7 +1069,7 @@
             // 
             // buttonSkipDays
             // 
-            buttonSkipDays.Location = new Point(1104, 959);
+            buttonSkipDays.Location = new Point(1104, 948);
             buttonSkipDays.Name = "buttonSkipDays";
             buttonSkipDays.Size = new Size(101, 30);
             buttonSkipDays.TabIndex = 20;
@@ -1358,7 +1383,7 @@
             // backupToolStripMenuItem
             // 
             backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            backupToolStripMenuItem.Size = new Size(180, 22);
+            backupToolStripMenuItem.Size = new Size(113, 22);
             backupToolStripMenuItem.Text = "Backup";
             backupToolStripMenuItem.Click += backupToolStripMenuItem_Click;
             // 
@@ -1565,5 +1590,7 @@
         private ToolStripMenuItem submenu1ToolStripMenuItem;
         private ToolStripMenuItem AdminToolStripMenuItem;
         private ToolStripMenuItem backupToolStripMenuItem;
+        private Label labelPercentValue;
+        private Label labelPercent;
     }
 }
