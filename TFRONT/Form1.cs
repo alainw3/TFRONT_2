@@ -51,7 +51,7 @@ namespace TFRONT
         private Counter counter = new Counter();
 
 
-        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Plum, Color.Blue };
+        private static readonly Color[] colorHour = { Color.Yellow, Color.Red, Color.Green, Color.Fuchsia, Color.Khaki, Color.Aquamarine, Color.LightGreen, Color.Plum, Color.Blue};
         private static readonly string[] cellTips = { "JobSearch", "Administration", "Finance", "Learn", "Le Temps", "BCIC", "Mada", "Certificate", "Strategie" };
 
         public Form1()
@@ -410,6 +410,11 @@ namespace TFRONT
                         gridViewCell.Style.BackColor = Color.Tomato;
                         gridViewCell.ToolTipText = "Leadership activity";
                     }
+                    else if (gridViewCell.Value.ToString() == "-")
+                    {
+                        gridViewCell.Style.BackColor = Color.LightSkyBlue;
+                        gridViewCell.ToolTipText = "Réel";
+                    }
                     else
                     {
                         gridViewCell.Style.BackColor = colorHour[Int32.Parse(gridViewCell.Value.ToString()) - 1];
@@ -651,7 +656,7 @@ namespace TFRONT
 
         private void labelPercentValue_TextChanged(object sender, EventArgs e)
         {
-            if (counter.GetCountPercent() < 50 )
+            if (counter.GetCountPercent() < 50)
             {
                 labelPercentValue.BackColor = Color.Red;
                 labelPercentValue.ForeColor = Color.White;
@@ -661,6 +666,12 @@ namespace TFRONT
                 labelPercentValue.BackColor = Color.Green;
                 labelPercentValue.ForeColor = Color.Black;
             }
+        }
+
+        private void reelMenuItem_Click(object sender, EventArgs e)
+        {
+            hourly.updateHourlyReel();
+            updateHourly(); 
         }
     }
 }

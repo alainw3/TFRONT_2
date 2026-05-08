@@ -114,7 +114,10 @@ namespace TFRONT
             sQL.updateHourly(dayID, "+", hourID);
         }
 
-
+        public void updateHourlyReel()
+        {
+            sQL.updateHourly(dayID, "-", hourID);
+        }
         public void resetHourly()
         {
             sQL.resetHourly();
